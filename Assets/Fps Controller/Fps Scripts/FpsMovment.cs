@@ -6,7 +6,7 @@ using UnityEngine;
 public class FpsMovment : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] int MoveSpeed;
+    [SerializeField] float MoveSpeed;
 
 
     // Start is called before the first frame update

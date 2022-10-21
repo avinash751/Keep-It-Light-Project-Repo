@@ -33,6 +33,7 @@ public class Pick_Up_Object : MonoBehaviour
 		{
             MoveObject();
 		}
+        
 	}
 
 	void MoveObject()
@@ -67,6 +68,5 @@ public class Pick_Up_Object : MonoBehaviour
 		heldObjRb.transform.parent = null;
 		heldObj = null;
 	}
-
 
 }

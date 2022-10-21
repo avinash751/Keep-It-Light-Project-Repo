@@ -42,6 +42,7 @@ public class Pick_Up_Object : MonoBehaviour
 		{
             Vector3 moveDirection = (holdArea.position - heldObj.transform.position);
             heldObjRb.AddForce(moveDirection * pickupForce);
+			
 		}
 	}
 
@@ -53,7 +54,7 @@ public class Pick_Up_Object : MonoBehaviour
 			heldObjRb.useGravity = false;
 			heldObjRb.drag = 10;
 			heldObjRb.constraints = RigidbodyConstraints.FreezeRotation;
-
+			heldObjRb.transform.position = holdArea.position;
 			heldObjRb.transform.parent = holdArea;
 			heldObj = pickObj;
 		}

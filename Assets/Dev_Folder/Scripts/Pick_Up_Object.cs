@@ -31,18 +31,17 @@ public class Pick_Up_Object : MonoBehaviour
 		}
 		if (heldObj != null)
 		{
-            MoveObject();
+			MoveObject();
 		}
-        
+
 	}
 
 	void MoveObject()
 	{
 		if (Vector3.Distance(heldObj.transform.position, holdArea.position) > 0.1f)
 		{
-            Vector3 moveDirection = (holdArea.position - heldObj.transform.position);
-            heldObjRb.AddForce(moveDirection * pickupForce);
-			
+			Vector3 moveDirection = (holdArea.position - heldObj.transform.position);
+			heldObjRb.AddForce(moveDirection * pickupForce);
 		}
 	}
 

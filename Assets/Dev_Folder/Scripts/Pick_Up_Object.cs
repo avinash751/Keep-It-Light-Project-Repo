@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Pick_Up_Object : MonoBehaviour
 {
+	// research fixed joints
+	// or disable the rigidbody after picking the object
+	//  start an animation if needed 
 
 	[SerializeField] Transform holdArea;
 	private GameObject heldObj;
@@ -11,22 +14,28 @@ public class Pick_Up_Object : MonoBehaviour
 
 	[SerializeField] float pickupRange;
 	[SerializeField] float pickupForce;
+	GameObject pickable;
 
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.E))
 		{
-			if (heldObj == null)
+			if (pickable != null)
 			{
-				RaycastHit hit;
-				if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange))
+
+
+				if (heldObj == null)
 				{
-					PickupObject(hit.transform.gameObject);
+					RaycastHit hit;
+					if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange))
+					{
+						PickupObject(hit.transform.gameObject);
+					}
 				}
-			}
-			else
-			{
-				DropObject();
+				else
+				{
+					DropObject();
+				}
 			}
 		}
 		if (heldObj != null)
@@ -68,5 +77,14 @@ public class Pick_Up_Object : MonoBehaviour
 		heldObjRb.transform.parent = null;
 		heldObj = null;
 	}
-
+	private void OnTriggerEnter(Collider other)
+	{
+		// is the object in the trigger something I can pick up
+		//if yes set the puickable object to be the one I collided with 
+	}
+	private void OnTriggerExit(Collider other)
+	{
+		// if the one that exits the triiger is the same one that is currently pickable
+		// set pickable = null;
+	}
 }

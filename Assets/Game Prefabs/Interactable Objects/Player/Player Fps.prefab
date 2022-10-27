@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 7839685640456747522}
   - component: {fileID: 7839685640456747523}
   - component: {fileID: 1366726073}
+  - component: {fileID: 429201242}
   m_Layer: 0
   m_Name: Player Fps
   m_TagString: Player
@@ -306,6 +307,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 11400000, guid: 434e351342904bf4995446b5982fc3d1, type: 2}
   MaxHealth: {fileID: 11400000, guid: 06dd488ade84101469671eff52e42580, type: 2}
+--- !u!114 &429201242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839685640456747532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337c62f467499a84cba656175f61b7f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpForce: 5000
+  gravityForce: 0
+  OnGround: 1
+  MinPositionToFallDown: 1.02
+  DurationOfFall: 3
+  JumpMultiplier: 100000
 --- !u!1 &7839685641083197723
 GameObject:
   m_ObjectHideFlags: 0

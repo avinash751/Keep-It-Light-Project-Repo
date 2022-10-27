@@ -41,9 +41,5 @@ public class FpsMovment : MonoBehaviour
         // Vector3.SmoothDamp(currentDir, Direction, ref RefVelocity, SmoothTime,SmoothMaxSpeed);
        // currentDir = Vector3.Lerp(currentDir, Direction, Mathf.SmoothStep(0, 1, Time.time - startTime / SmoothTime));
 
-
-
-
-
     }
 }

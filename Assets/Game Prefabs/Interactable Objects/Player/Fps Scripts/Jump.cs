@@ -5,48 +5,35 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     [SerializeField] float JumpForce;
-    [SerializeField] float gravityForce;
     [SerializeField] bool OnGround;
-    [SerializeField] float MinPositionToFallDown;
-    [SerializeField] float DurationOfFall;
-    float time;
+    [SerializeField] int JumpMultiplier;
      Rigidbody Rb;
 
-    void Start()
+    private void Start()
     {
         Rb = GetComponent<Rigidbody>();
-        OnGround = true;
     }
 
-    void Update()
+    private void Update()
     {
-        JustJump();
-        BringPlayerDownWhenUp();
-        
+        InputToJump();
     }
+   
 
-    void JustJump()
+
+    void InputToJump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && OnGround)
         {
             OnGround = false;
-            Rb.AddForce(Vector3.up * JumpForce *1000);
+            JustJump();
         }
     }
 
 
-    void BringPlayerDownWhenUp()
+    void JustJump()
     {
-        float Yposition = gameObject.transform.position.y;
-        if (Yposition >MinPositionToFallDown && Yposition !=1)
-        {
-            time += Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, Mathf.Lerp(Yposition, 1, time / DurationOfFall),transform.position.z);
-        }
-        else
-        {
-            time = 0;
-        }
+        Rb.velocity = (Vector3.up * JumpMultiplier * JumpForce);
     }
 
     private void OnCollisionEnter(Collision collision)

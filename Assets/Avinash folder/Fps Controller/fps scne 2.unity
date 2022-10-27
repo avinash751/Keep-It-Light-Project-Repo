@@ -192,29 +192,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820282476b6743744be52bbb53fc3c89, type: 3}
---- !u!1 &429201233 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7839685640456747532, guid: b565683b051279248a9c20a18c4e46f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1384278820}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &429201242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429201233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337c62f467499a84cba656175f61b7f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpForce: 5000
-  gravityForce: 0
-  OnGround: 1
-  MinPositionToFallDown: 1.02
-  DurationOfFall: 3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +489,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 429201242, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
+      propertyPath: JumpForce
+      value: 500000
+      objectReference: {fileID: 0}
     - target: {fileID: 7839685640456747521, guid: b565683b051279248a9c20a18c4e46f3,
         type: 3}
       propertyPath: m_RootOrder

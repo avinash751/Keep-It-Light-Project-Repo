@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 2927020795527361859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9, y: 8.8, z: -0.58}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.49, y: 0.6939079, z: 1.49}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd82d9103796f8c43bb83fb765859983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnEnemy: {fileID: 6098041655973682497, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2, type: 3}
+  SpawnEnemy: {fileID: 6098041655973682497, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+    type: 3}

@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmountOfDamage: 1
+  DoMoreOnCollsion: 0
 --- !u!114 &1478946873189571688
 MonoBehaviour:
   m_ObjectHideFlags: 0

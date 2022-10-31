@@ -16,7 +16,7 @@ public class Pick_Up_Object : MonoBehaviour
 	[SerializeField] float pickupForce;
 	GameObject pickable;
 
-	void Update()
+	/* void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.E))
 		{
@@ -43,7 +43,7 @@ public class Pick_Up_Object : MonoBehaviour
 			MoveObject();
 		}
 
-	}
+	} */
 
 	void MoveObject()
 	{

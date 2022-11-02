@@ -7,13 +7,13 @@ public class PickUpObjectTrigger : MonoBehaviour
 	[SerializeField] GameObject pickUpObject;
 	[SerializeField] float throwForce;
     Rigidbody objectRb;
-	bool hasClicked = false;
+	public bool hasClicked = false;
     bool throwObject = false;
 
 
 	void Start()
 	{
-		objectRb = pickUpObject.GetComponent<Rigidbody>();
+		
 
 	}
 
@@ -76,6 +76,8 @@ public class PickUpObjectTrigger : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Light Orb")
 		{
+			pickUpObject = other.gameObject;
+			objectRb = pickUpObject.GetComponent<Rigidbody>();
 			hasClicked = true;
 		}
 	}
@@ -84,6 +86,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 		if (other.gameObject.tag == "Light Orb")
 		{
 			hasClicked = false;
+			pickUpObject = null;
 		}
 	}
 }

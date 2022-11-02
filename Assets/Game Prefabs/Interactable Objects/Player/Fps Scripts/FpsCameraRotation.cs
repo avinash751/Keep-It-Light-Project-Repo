@@ -8,14 +8,10 @@ public class FpsCameraRotation : MonoBehaviour
     [SerializeField] Camera FpsCamera;
     [SerializeField] float MouseAxisX;
     [SerializeField] float MouseAxisY;
-    private Transform Player;
+    [SerializeField] Transform CameraPositionHolder;
     [Range(0,100)][SerializeField] float CameraSensetivity;
 
 
-    private void Awake()
-    {
-        Player = FindObjectOfType<FpsMovment>().transform;
-    }
 
     void Start()
     {
@@ -25,20 +21,27 @@ public class FpsCameraRotation : MonoBehaviour
     
     void Update()
     {
-       RotateCameraOnXaxis();
-       RotateCameraOnYAxis();
+       RotateCameraPsoitionHolderForMovemntDirection();
+       RotateCamera();
     }
 
-    void RotateCameraOnXaxis() // Horizontal rotation
+    private void LateUpdate()
     {
-       MouseAxisX += Input.GetAxis("Mouse X") * Time.deltaTime; /// why do we have to add axix every frame? 
-       Player.rotation = Quaternion.Euler(MouseAxisX * Vector3.up * CameraSensetivity ); /// how does roatation and rotate fucntion differ?
+        
     }
 
-    void RotateCameraOnYAxis()
+    void RotateCameraPsoitionHolderForMovemntDirection() // Horizontal rotation
     {
-        MouseAxisY -= Input.GetAxis("Mouse Y") * CameraSensetivity * Time.deltaTime; // the value betwwen -1 and 1 in y axis camera of unity is inverted, that why we substract
+       
+       CameraPositionHolder.rotation = Quaternion.Euler(MouseAxisX * Vector3.up ); /// how does roatation and rotate fucntion differ?
+    }
+
+    void RotateCamera()
+    {
+        MouseAxisX += Input.GetAxis("Mouse X") * CameraSensetivity * Time.smoothDeltaTime; /// why do we have to add axix every frame? 
+        MouseAxisY -= Input.GetAxis("Mouse Y") * CameraSensetivity * Time.smoothDeltaTime; // the value betwwen -1 and 1 in y axis camera of unity is inverted, that why we substract
         MouseAxisY = Mathf.Clamp(MouseAxisY, -90, 90);
-        FpsCamera.transform.localEulerAngles = MouseAxisY * Vector3.right;
+        FpsCamera.transform.rotation = Quaternion .Euler(MouseAxisX * Vector3.up + MouseAxisY*Vector3.right);
+
     }
 }

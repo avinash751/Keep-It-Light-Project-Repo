@@ -1,12 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    [SerializeField] float JumpForce;
-    [SerializeField] bool OnGround;
-    [SerializeField] int JumpMultiplier;
+    [Range(0,100)][SerializeField] float jumpForce;
+    public float  JumpForce
+    {
+        get { return jumpForce; }
+
+        
+    }
+
+    [SerializeField]  bool  onGround;
+    public bool OnGround
+    {
+        get { return onGround; }
+    } 
+
+    [Range(0, 2)][SerializeField] float  GravityMultiplier;
      Rigidbody Rb;
 
     private void Start()
@@ -17,15 +30,16 @@ public class Jump : MonoBehaviour
     private void Update()
     {
         InputToJump();
+        ComeDownTogroundWhenJumped();   
     }
    
 
 
     void InputToJump()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && OnGround)
+        if(Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            OnGround = false;
+            onGround = false;
             JustJump();
         }
     }
@@ -33,14 +47,23 @@ public class Jump : MonoBehaviour
 
     void JustJump()
     {
-        Rb.velocity = (Vector3.up * JumpMultiplier * JumpForce);
+        Rb.velocity = (Vector3.up  * jumpForce);
+    }
+
+    void  ComeDownTogroundWhenJumped()
+    {
+        if( Rb.velocity.y!=0)
+        {
+            Rb.velocity += -transform.up * GravityMultiplier;
+        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Ground")
         {
-            OnGround = true;
+            onGround = true;
         }
     }
 }

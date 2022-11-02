@@ -10,7 +10,18 @@ public class Enemy_Spawn : MonoBehaviour,IDestroyable
     [Range(1, 10)][SerializeField] float SpawnRate;
     public int SpawnRadius;
 
+    // all spawn objects  that are part of the spawner
+    private Transform SpawnDome;
+    private Transform DarknessVolume;
+    private Transform DarkFog;
+
     // Start is called before the first frame update
+
+    private void OnValidate()
+    {
+        RefrenceAllSpawnvalues();
+        InitialiseAllSpawnValues();
+    }
     void Start()
     {
         InstantiateEnemy ();
@@ -68,5 +79,19 @@ public class Enemy_Spawn : MonoBehaviour,IDestroyable
     public virtual void DestroyObject()
     {
         Destroy(gameObject);
+    }
+
+    void InitialiseAllSpawnValues()
+    {
+        SpawnDome.localScale = Vector3.one* (SpawnRadius * 2);
+        DarknessVolume.localScale = new Vector3(SpawnRadius * 2, SpawnRadius, SpawnRadius * 2);
+        DarkFog.localScale = Vector3.one * (SpawnRadius / 10);
+    }
+    void RefrenceAllSpawnvalues()
+    {
+        SpawnDome = transform.GetChild(1);
+        DarknessVolume = transform.GetChild(2);
+        DarkFog = transform.GetChild(3);
+
     }
 }

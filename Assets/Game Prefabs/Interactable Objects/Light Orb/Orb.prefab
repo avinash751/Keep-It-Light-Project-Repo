@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7521034891785767654}
   - component: {fileID: 7521034891785767653}
   - component: {fileID: 7521034891785767649}
+  - component: {fileID: 1479248683}
+  - component: {fileID: 3799380462947611170}
   m_Layer: 0
   m_Name: Orb
   m_TagString: Light Orb
@@ -109,8 +111,37 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1479248683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb6d7c1c364faf4fb886cc928bfb59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DarkOrbsDestroyed: {fileID: 11400000, guid: 8b4fa837519bad746abe19159ca94597, type: 2}
+--- !u!114 &3799380462947611170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3604de8fe9e7ba14cb653eb181f69851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 5276535594975207091, guid: 02a10aee129984c47a63331a4ecda119,
+    type: 3}
+  scaleOfSpawnedObject: 2
+  positionOffsetWhenSpawned: {x: 0, y: 0.4, z: 0}

@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class PickUpObjectTrigger : MonoBehaviour
 {
-	[SerializeField] GameObject pickUpObject;
-	[SerializeField] float throwForce;
-    Rigidbody objectRb;
-	public bool hasClicked = false;
-    bool throwObject = false;
-
-
-	void Start()
-	{
-		
-
-	}
+	[HideInInspector]
+	public GameObject orbObject;
+	[HideInInspector]
+	public Rigidbody objectRb;
+	bool hasClicked = false;
+	[HideInInspector]
+	public bool isPickedUp = false;
+	bool throwObject = false;
+	[SerializeField] Transform holdTransform;
 
 	void Update()
 	{
@@ -24,69 +21,56 @@ public class PickUpObjectTrigger : MonoBehaviour
 
 	void Inputs()
 	{
-		if (Input.GetKeyDown(KeyCode.E) && hasClicked == true)
+		if (Input.GetKeyDown(KeyCode.E) && hasClicked == true && !isPickedUp)
 		{
-			EnablePickUp();
-            
+			PickUpObject();
 		}
-		else if (Input.GetKeyDown(KeyCode.G))
+		else if (Input.GetKeyDown(KeyCode.E) && isPickedUp)
 		{
-			DisablePickUp();
+
+			DropObject();
+			orbObject = null;
 		}
-        if(Input.GetMouseButtonDown(0) && hasClicked == true)
-        {
-            ThrowObject();
-            throwObject = false;
-        }
+
 
 	}
 
-    void ThrowObject()
-    {
-        throwObject = true;
-        objectRb.AddForce(transform.forward * throwForce);
-        objectRb.useGravity = true;
-        pickUpObject.transform.parent = null;
-        hasClicked = false;
-        objectRb.constraints = RigidbodyConstraints.None;   
-        Debug.Log("Thrown Item");
-
-    }
-
-	void EnablePickUp()
+	public void PickUpObject()
 	{
 		Debug.Log("Picked up item");
-		pickUpObject.transform.SetParent(this.transform);
+		orbObject.transform.position = holdTransform.position;
+		orbObject.transform.SetParent(this.transform);
 		objectRb.useGravity = false;
-		objectRb.constraints = RigidbodyConstraints.FreezePosition;
-
+		objectRb.constraints = RigidbodyConstraints.FreezeAll;
+		isPickedUp = true;
 	}
 
-	void DisablePickUp()
+	public void DropObject()
 	{
 		Debug.Log("Dropped Item");
 		hasClicked = false;
 		objectRb.useGravity = true;
-		pickUpObject.transform.SetParent(null);
+		isPickedUp = false;
+		orbObject.transform.SetParent(null);
 		objectRb.constraints = RigidbodyConstraints.None;
 	}
 
-
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Light Orb")
+		if (other.gameObject.tag == "Light Orb" && !isPickedUp)
 		{
-			pickUpObject = other.gameObject;
-			objectRb = pickUpObject.GetComponent<Rigidbody>();
+			orbObject = other.gameObject;
+			objectRb = orbObject.GetComponent<Rigidbody>();
 			hasClicked = true;
 		}
+
 	}
+
 	void OnTriggerExit(Collider other)
 	{
-		if (other.gameObject.tag == "Light Orb")
+		if (other.gameObject.tag == "Light Orb" && !isPickedUp)
 		{
 			hasClicked = false;
-			pickUpObject = null;
 		}
 	}
 }

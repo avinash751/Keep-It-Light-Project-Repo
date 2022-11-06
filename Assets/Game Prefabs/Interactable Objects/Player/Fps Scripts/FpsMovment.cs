@@ -63,7 +63,7 @@ public class FpsMovment : MonoBehaviour
             if(Jump.OnGround && rb.velocity.y<=0 && rb.velocity.y>-0.8f)
             {
                 rb.velocity *= slowDownMultiplier;
-                Debug.Log("reducing speed;");
+                //Debug.Log("reducing speed;");
             }
         }
     }

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 547674558}
   - component: {fileID: 742959537}
   - component: {fileID: 742959538}
+  - component: {fileID: 1640169433}
+  - component: {fileID: 1640169436}
   m_Layer: 0
   m_Name: Hold_Area
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547674557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31, y: -0.244, z: 1.077}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.31, y: -0.047, z: 1.175}
+  m_LocalScale: {x: 1, y: 1, z: 1.2366741}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7839685641593133940}
@@ -44,8 +46,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8540999, y: 0.6496841, z: 0.8140011}
-  m_Center: {x: -0.23489091, y: -0.017237723, z: -0.12877625}
+  m_Size: {x: 0.7388376, y: 0.88563746, z: 0.9695945}
+  m_Center: {x: -0.019288674, y: -0.37, z: -0.05098008}
 --- !u!114 &742959538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,9 +60,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5788bf3c9fd5984ab3a23b140bc6211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpObject: {fileID: 0}
+  orbObject: {fileID: 0}
+  objectRb: {fileID: 0}
+  isPickedUp: 0
+  holdTransform: {fileID: 547674558}
+--- !u!114 &1640169433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547674557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef6ff01af6a09442be0670643fd2da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   throwForce: 500
-  hasClicked: 0
+  target: {fileID: 547674558}
+--- !u!114 &1640169436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547674557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d271d1aa0c456a14aa40af9523d49821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUp: {fileID: 0}
+  maxDistance: 5
+  shootingSpeed: 3
 --- !u!1 &1131399956
 GameObject:
   m_ObjectHideFlags: 0

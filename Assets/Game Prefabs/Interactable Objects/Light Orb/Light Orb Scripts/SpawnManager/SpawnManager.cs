@@ -18,15 +18,13 @@ public class SpawnManager : MonoBehaviour
   
     private void Start()
     {
-        lightOrbsSpawnData.availableSpawnLocationsOfLightOrbs.Clear();
-       
+        lightOrbsSpawnData.availableSpawnLocationsOfLightOrbs.Clear(); 
     }
     void Update()
     {
         AmountOfLightOrbsRequiredToStartSpawning(LightOrbsDestroyedToStartSpawnning);
         StartLightOrbSpawningProcess();
-        ResetTheNumberOfLightOrbsDestroyed();
-        
+        lightOrbsSpawnData.ResetTheNumberOfLightOrbsDestroyed();   
     }
 
     void AmountOfLightOrbsRequiredToStartSpawning(float amount)
@@ -43,36 +41,27 @@ public class SpawnManager : MonoBehaviour
     {
         if(StartSpawning)
         {
-            NewLightOrbsSpawned = false;
+            lightOrbsSpawnData.newOrbsSpawned = 0;
+            lightOrbsSpawnData.newLightOrbsSpawned = false;
             SpawnOrb();
-            SetNumberOfOrbsRequiredToBeDestroyedToStartSpawn(OrbsSpawned);
+            SetNumberOfOrbsRequiredToBeDestroyedToStartSpawn(lightOrbsSpawnData.newOrbsSpawned);
         }
     }
     void SpawnOrb()
     {
-        OrbsSpawned = 0;
         List<Vector3> AllAvailableLightOrbSpawnLocations = lightOrbsSpawnData.availableSpawnLocationsOfLightOrbs;
         int[] SelectedLocationToSpawn = lightOrbsSpawnData.AvailableLocationsToSpawnLightOrbs(AmountOfLightOrbsToSpawn);
 
         for (int i = 0; i < AmountOfLightOrbsToSpawn; i++)
         {
-            Debug.Log(SelectedLocationToSpawn[i]);
             GameObject LightOrbClone = Instantiate(LightOrbPrefabTpSpawn, AllAvailableLightOrbSpawnLocations[SelectedLocationToSpawn[i]], Quaternion.identity);
             Debug.Log("OrbSpawned");
-            OrbsSpawned++;
+            lightOrbsSpawnData.newOrbsSpawned++;
         }
         StartSpawning = false;
-        NewLightOrbsSpawned = true;
+        lightOrbsSpawnData.newLightOrbsSpawned = true;
     }
-    public void ResetTheNumberOfLightOrbsDestroyed()
-    {
-        if (NewLightOrbsSpawned)
-        {
-          lightOrbsSpawnData.lightOrbsdestroyed.value = 0;
-          NewLightOrbsSpawned = false;
-        }
-    }
-
+   
     void SetNumberOfOrbsRequiredToBeDestroyedToStartSpawn(int amount)
     {
         LightOrbsDestroyedToStartSpawnning = amount;

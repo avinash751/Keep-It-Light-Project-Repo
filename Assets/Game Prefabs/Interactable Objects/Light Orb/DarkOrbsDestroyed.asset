@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8be88653c0352449593598dcd79904, type: 3}
   m_Name: DarkOrbsDestroyed
   m_EditorClassIdentifier: 
-  Valuename: Dark orbs destroyed
-  value: 3
+  Valuename: DarkOrbsDestroyed
+  value: 0

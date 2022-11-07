@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 547674558}
   - component: {fileID: 742959537}
   - component: {fileID: 742959538}
-  - component: {fileID: 1640169433}
-  - component: {fileID: 1640169436}
+  - component: {fileID: 1698333036}
+  - component: {fileID: 1698333037}
   m_Layer: 0
   m_Name: Hold_Area
   m_TagString: Untagged
@@ -62,9 +62,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbObject: {fileID: 0}
   objectRb: {fileID: 0}
+  hasClicked: 0
   isPickedUp: 0
   holdTransform: {fileID: 547674558}
---- !u!114 &1640169433
+--- !u!114 &1698333036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,9 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef6ff01af6a09442be0670643fd2da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 500
-  target: {fileID: 547674558}
---- !u!114 &1640169436
+  throwForce: 1000
+  target: {fileID: 0}
+--- !u!114 &1698333037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

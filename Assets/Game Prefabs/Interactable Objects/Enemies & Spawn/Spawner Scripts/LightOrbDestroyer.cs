@@ -16,9 +16,6 @@ public class LightOrbDestroyer : MonoBehaviour,IDestroyable
         
     }
 
-   
-    
-   
     public virtual void DestroyObject() /// destroyes the dark spawner 
     {
         IncrementTheNumberOfLightOrbsDestroyed(1);
@@ -33,7 +30,7 @@ public class LightOrbDestroyer : MonoBehaviour,IDestroyable
             IDestroyable destroyable = collision.gameObject.GetComponent<IDestroyable>();
             DarkOrbDestroyer lightOrb = destroyable as DarkOrbDestroyer;
 
-            if(!lightOrb.IsThrowable )
+            if (!lightOrb.IsPickedUp &&!lightOrb.YoyoShot)
             {
                
                  destroyable.DestroyObject();

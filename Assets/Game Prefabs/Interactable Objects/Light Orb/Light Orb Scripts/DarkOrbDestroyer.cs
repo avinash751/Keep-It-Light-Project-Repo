@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
 {
-    [SerializeField] Value DarkOrbsDestroyed;
+   [SerializeField] Value DarkOrbsDestroyed;
     PickUpObjectTrigger trigger;
+    YoYoMechanic YoYo;
     bool collided;
 
-    public bool IsThrowable
+    public bool IsPickedUp
     {
-        get { return trigger.hasClicked;}
+        get { return trigger.isPickedUp;}
+    }
+
+    public bool YoyoShot
+    {
+        get { return YoYo.yoyoShot;}
     }
 
 
@@ -22,8 +28,9 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
     }
     void Start()
     {
-        DarkOrbsDestroyed.value = 0;
+      
         trigger = FindObjectOfType<PickUpObjectTrigger>();
+        YoYo = FindObjectOfType<YoYoMechanic>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -33,7 +40,7 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
             IDestroyable destroyable = collision.gameObject.GetComponent<IDestroyable>();
             
 
-            if (!IsThrowable && !collided)
+            if (!IsPickedUp && !collided && !YoyoShot)
             {
                 collided = true;
                 destroyable.DestroyObject();
@@ -45,6 +52,8 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
     {
         DarkOrbsDestroyed.value += amount;
     }
+
+ 
 
 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Enemy_Spawn : MonoBehaviour,IDestroyable
+public class Enemy_Spawn : MonoBehaviour
 {
 
     public GameObject SpawnEnemy;
@@ -74,11 +74,6 @@ public class Enemy_Spawn : MonoBehaviour,IDestroyable
         Bold.fontStyle = FontStyle.Bold;
         Bold.normal.textColor = Color.black;
         UnityEditor.Handles.Label(transform.position + new Vector3(0, 2, 0), gameObject.name, Bold);
-    }
-
-    public virtual void DestroyObject()
-    {
-        Destroy(gameObject);
     }
 
     void InitialiseAllSpawnValues()

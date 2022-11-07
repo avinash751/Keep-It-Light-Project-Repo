@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb6d7c1c364faf4fb886cc928bfb59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DarkOrbsDestroyed: {fileID: 11400000, guid: 8b4fa837519bad746abe19159ca94597, type: 2}
+  DarkOrbsDestroyed: {fileID: 11400000, guid: 1e95db1be1de30b409a821836f1769b7, type: 2}
 --- !u!114 &3799380462947611170
 MonoBehaviour:
   m_ObjectHideFlags: 0

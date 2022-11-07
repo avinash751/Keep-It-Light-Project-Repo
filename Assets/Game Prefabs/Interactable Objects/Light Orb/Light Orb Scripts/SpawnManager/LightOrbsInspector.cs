@@ -9,6 +9,8 @@ public class LightOrbsInspector : ScriptableObject
 {
    
     public Value lightOrbsdestroyed;
+    public bool newLightOrbsSpawned;
+    public int newOrbsSpawned;
     public int LightOrbsDestroyed
     { 
         get { return lightOrbsdestroyed.value;}
@@ -82,6 +84,15 @@ public class LightOrbsInspector : ScriptableObject
         }
         return locationarray;
     }
-    
+
+    public void ResetTheNumberOfLightOrbsDestroyed()
+    {
+        if (newLightOrbsSpawned)
+        {
+            lightOrbsdestroyed.value = 0;
+            newLightOrbsSpawned = false;
+        }
+    }
+
 
 }

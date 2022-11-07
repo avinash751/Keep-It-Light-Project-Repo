@@ -13,17 +13,24 @@ public class OnTriggerGetOrRemoveLightOrbLocation : MonoBehaviour
         get { return LightOrbSpawnDataManager.availableSpawnLocationsOfLightOrbs;}
         set { LightOrbSpawnDataManager.availableSpawnLocationsOfLightOrbs = value;}
     }
-    [SerializeField] DarkOrbDestroyer OccupiedLightOrb;
-    
 
+    [SerializeField] DarkOrbDestroyer OccupiedLightOrb;
     public bool IsOccupied;
+
+    private void Update()
+    {
+        if(LightOrbSpawnDataManager.newLightOrbsSpawned &&!IsOccupied)
+        {
+            AddLightOrbLocationToSpawnList(transform);
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.GetComponent<DarkOrbDestroyer>()!=null && !IsOccupied)
         {
             GetCurrentLightOrb(other.gameObject.GetComponent<DarkOrbDestroyer>());
 
-            if(!OccupiedLightOrb.IsThrowable)
+            if(!OccupiedLightOrb.IsPickedUp)
             {
                 RemoveCurrentLocationFromSpawnLocationList(transform);
                 IsOccupied = true;
@@ -36,7 +43,7 @@ public class OnTriggerGetOrRemoveLightOrbLocation : MonoBehaviour
     {
         if (OccupiedLightOrb != null && IsOccupied && other.gameObject == OccupiedLightOrb.gameObject)
         {
-            if(OccupiedLightOrb.IsThrowable)
+            if(OccupiedLightOrb.IsPickedUp)
             {
                 AddLightOrbLocationToSpawnList(transform);
                 IsOccupied = false;
@@ -69,4 +76,6 @@ public class OnTriggerGetOrRemoveLightOrbLocation : MonoBehaviour
     {
         OccupiedLightOrb = lightOrb;
     }
+
+    
 }

@@ -8,7 +8,6 @@ public class ThrowObject : MonoBehaviour
 	GameObject pickUpObject;
 	[Range(500, 1000)]
 	[SerializeField] float throwForce;
-	[SerializeField] Transform target;
 	Rigidbody objectRb;
 	bool hasClicked = false;
 	bool throwObject = false;

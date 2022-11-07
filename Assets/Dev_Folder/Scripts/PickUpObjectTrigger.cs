@@ -8,7 +8,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 	public GameObject orbObject;
 	[HideInInspector]
 	public Rigidbody objectRb;
-	bool hasClicked = false;
+	public bool hasClicked = false;
 	[HideInInspector]
 	public bool isPickedUp = false;
 	bool throwObject = false;

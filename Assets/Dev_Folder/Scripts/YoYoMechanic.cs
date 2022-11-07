@@ -7,7 +7,8 @@ public class YoYoMechanic : MonoBehaviour
 	[SerializeField] PickUpObjectTrigger pickUp;
 	GameObject pickUpObject;
 	Rigidbody objectRb;
-	bool yoyoShot = false;
+	[HideInInspector]
+	public bool yoyoShot = false;
 	[SerializeField] float maxDistance;
 	[SerializeField] float shootingSpeed;
 

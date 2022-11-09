@@ -11,20 +11,19 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] int AmountOfLightOrbsToSpawn;
     [SerializeField] int maxDelayTimeToSpawn;
     [SerializeField] bool StartSpawning;
-    [SerializeField] bool NewLightOrbsSpawned;
     private int OrbsSpawned;
 
 
   
     private void Start()
     {
-        lightOrbsSpawnData.availableSpawnLocationsOfLightOrbs.Clear(); 
+        lightOrbsSpawnData.availableSpawnLocationsOfLightOrbs.Clear();
     }
     void Update()
     {
         AmountOfLightOrbsRequiredToStartSpawning(LightOrbsDestroyedToStartSpawnning);
         StartLightOrbSpawningProcess();
-        lightOrbsSpawnData.ResetTheNumberOfLightOrbsDestroyed();   
+         
     }
 
     void AmountOfLightOrbsRequiredToStartSpawning(float amount)
@@ -45,6 +44,7 @@ public class SpawnManager : MonoBehaviour
             lightOrbsSpawnData.newLightOrbsSpawned = false;
             SpawnOrb();
             SetNumberOfOrbsRequiredToBeDestroyedToStartSpawn(lightOrbsSpawnData.newOrbsSpawned);
+            lightOrbsSpawnData.ResetLightOrbAndSpawnValues();
         }
     }
     void SpawnOrb()
@@ -55,7 +55,6 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < AmountOfLightOrbsToSpawn; i++)
         {
             GameObject LightOrbClone = Instantiate(LightOrbPrefabTpSpawn, AllAvailableLightOrbSpawnLocations[SelectedLocationToSpawn[i]], Quaternion.identity);
-            Debug.Log("OrbSpawned");
             lightOrbsSpawnData.newOrbsSpawned++;
         }
         StartSpawning = false;

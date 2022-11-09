@@ -5,16 +5,19 @@ using UnityEngine;
 public class YoYoMechanic : MonoBehaviour
 {
 	[SerializeField] PickUpObjectTrigger pickUp;
+	LightOrbAmmoCountSystem lightOrbAmmo;
 	GameObject pickUpObject;
 	Rigidbody objectRb;
 	[HideInInspector]
 	public bool yoyoShot = false;
 	[SerializeField] float maxDistance;
 	[SerializeField] float shootingSpeed;
+	[SerializeField] float maxSpeed;
 
 	void Start()
 	{
 		pickUp = GetComponent<PickUpObjectTrigger>();
+		lightOrbAmmo = GetComponent<LightOrbAmmoCountSystem>();
 	}
 
 	void Update()
@@ -29,6 +32,7 @@ public class YoYoMechanic : MonoBehaviour
 		{
 			ReferenceLightOrb();
 			ShootOrb();
+			
 		}
 
 	}
@@ -37,8 +41,10 @@ public class YoYoMechanic : MonoBehaviour
 	{
 		if (yoyoShot == false)
 		{
+			pickUp.DropObject();
 			yoyoShot = true;
-            pickUp.DropObject();
+			lightOrbAmmo.DecreaseAmmoWhenShot(1);
+			objectRb.useGravity = false;
 			objectRb.AddForce(transform.forward * 100, ForceMode.Impulse);
 			Debug.Log("Shot Orb");
 		}
@@ -49,7 +55,12 @@ public class YoYoMechanic : MonoBehaviour
 		float distanceFromOrb = CalculateDistanceBetweenPlayerAndOrb();
 		if (yoyoShot == true && distanceFromOrb > maxDistance)
 		{
-			objectRb.velocity = (this.transform.position - objectRb.transform.position) * shootingSpeed;
+
+			objectRb.velocity += ((this.transform.position - objectRb.transform.position) * maxSpeed).normalized;
+			if (objectRb.velocity.magnitude > maxSpeed)
+			{
+				objectRb.velocity = (this.transform.position - objectRb.transform.position).normalized * shootingSpeed;
+			}
 			Debug.Log("Returning");
 		}
 	}
@@ -76,8 +87,9 @@ public class YoYoMechanic : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Light Orb" && yoyoShot)
 		{
-            pickUp.PickUpObject();
+			pickUp.PickUpObject();
 			yoyoShot = false;
+			StartCoroutine(lightOrbAmmo.KillOrbWhenAmmoZeroAndShot(0,pickUpObject));
 		}
 	}
 }

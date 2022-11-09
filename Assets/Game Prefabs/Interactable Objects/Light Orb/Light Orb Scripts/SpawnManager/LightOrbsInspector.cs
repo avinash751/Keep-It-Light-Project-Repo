@@ -4,6 +4,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
+
+
 [CreateAssetMenu()]
 public class LightOrbsInspector : ScriptableObject
 {
@@ -85,12 +87,12 @@ public class LightOrbsInspector : ScriptableObject
         return locationarray;
     }
 
-    public void ResetTheNumberOfLightOrbsDestroyed()
+    public void ResetLightOrbAndSpawnValues()
     {
         if (newLightOrbsSpawned)
         {
-            lightOrbsdestroyed.value = 0;
-            newLightOrbsSpawned = false;
+           newLightOrbsSpawned= false;
+           lightOrbsdestroyed.value = 0;
         }
     }
 

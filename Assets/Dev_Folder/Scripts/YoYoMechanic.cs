@@ -5,6 +5,7 @@ using UnityEngine;
 public class YoYoMechanic : MonoBehaviour
 {
 	[SerializeField] PickUpObjectTrigger pickUp;
+	LightOrbAmmoCountSystem lightOrbAmmo;
 	GameObject pickUpObject;
 	Rigidbody objectRb;
 	[HideInInspector]
@@ -15,6 +16,7 @@ public class YoYoMechanic : MonoBehaviour
 	void Start()
 	{
 		pickUp = GetComponent<PickUpObjectTrigger>();
+		lightOrbAmmo = GetComponent<LightOrbAmmoCountSystem>();
 	}
 
 	void Update()
@@ -29,6 +31,7 @@ public class YoYoMechanic : MonoBehaviour
 		{
 			ReferenceLightOrb();
 			ShootOrb();
+			
 		}
 
 	}
@@ -37,7 +40,8 @@ public class YoYoMechanic : MonoBehaviour
 	{
 		if (yoyoShot == false)
 		{
-			yoyoShot = true;
+			lightOrbAmmo.DecreaseAmmoWhenShot(1);
+            yoyoShot = true;
             pickUp.DropObject();
 			objectRb.AddForce(transform.forward * 100, ForceMode.Impulse);
 			Debug.Log("Shot Orb");
@@ -78,6 +82,7 @@ public class YoYoMechanic : MonoBehaviour
 		{
             pickUp.PickUpObject();
 			yoyoShot = false;
+			StartCoroutine(lightOrbAmmo.KillOrbWhenAmmoZeroAndShot(0,pickUpObject));
 		}
 	}
 }

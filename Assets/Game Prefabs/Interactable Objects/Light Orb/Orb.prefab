@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7521034891785767649}
   - component: {fileID: 1479248683}
   - component: {fileID: 3799380462947611170}
+  - component: {fileID: 4295692542924950507}
   m_Layer: 0
   m_Name: Orb
   m_TagString: Light Orb
@@ -145,3 +146,17 @@ MonoBehaviour:
     type: 3}
   scaleOfSpawnedObject: 2
   positionOffsetWhenSpawned: {x: 0, y: 0.4, z: 0}
+--- !u!114 &4295692542924950507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3820ec00e62f3274fb9b30d6041d9172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountOfDamage: 1
+  DoMoreOnCollsion: 0

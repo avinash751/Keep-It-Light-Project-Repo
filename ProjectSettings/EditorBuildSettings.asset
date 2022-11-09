@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project Setting  assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/main Level scenes/startMenuScene.unity
+    guid: 0fbfa623d51dadb4b817817deacc5b0e
+  - enabled: 1
+    path: Assets/Avinash folder/Avinash Scenes/spawner test scene.unity
+    guid: f4e747641f8807f49a38a5563272be3b
   m_configObjects: {}

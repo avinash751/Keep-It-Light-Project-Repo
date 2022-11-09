@@ -5,15 +5,18 @@ using UnityEngine;
 public class ThrowObject : MonoBehaviour
 {
 	PickUpObjectTrigger pickUpTrigger;
+	LightOrbAmmoCountSystem orbAmmo;
 	GameObject pickUpObject;
 	[Range(500, 1000)]
 	[SerializeField] float throwForce;
 	Rigidbody objectRb;
 	bool hasClicked = false;
-	bool throwObject = false;
+	[HideInInspector]
+	public bool throwObject = false;
 	void Start()
 	{
 		pickUpTrigger = GetComponent<PickUpObjectTrigger>();
+		orbAmmo = GetComponent<LightOrbAmmoCountSystem>();
 	}
 	void Update()
 	{
@@ -25,7 +28,9 @@ public class ThrowObject : MonoBehaviour
 		if (Input.GetMouseButtonDown(0) && pickUpTrigger.isPickedUp)
 		{
 			ReferenceLightOrb();
-			ThrowOrb();
+            orbAmmo.DecreaseAmmoWhenShot(2);
+            StartCoroutine(orbAmmo.KillOrbWhenAmmoZeroAndShot(3.5f,pickUpObject));
+            ThrowOrb();
 		}
 	}
 	void ReferenceLightOrb()

@@ -8,6 +8,7 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
    [SerializeField] Value DarkOrbsDestroyed;
     PickUpObjectTrigger trigger;
     YoYoMechanic YoYo;
+    LightOrbAmmoCountSystem orbAmmo;
     bool collided;
 
     public bool IsPickedUp
@@ -24,11 +25,13 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
     public virtual void  DestroyObject() /// destroyes the light orb 
     {
         IncrementTheNumberOfDarkOrbsDestroyed(1);
+        orbAmmo.AmmoText.SetActive(false);
         Destroy(gameObject);
     }
     void Start()
     {
-      
+
+        orbAmmo = FindObjectOfType<LightOrbAmmoCountSystem>();
         trigger = FindObjectOfType<PickUpObjectTrigger>();
         YoYo = FindObjectOfType<YoYoMechanic>();
     }

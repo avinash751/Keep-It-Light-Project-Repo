@@ -17,12 +17,9 @@ public class OnTriggerGetOrRemoveLightOrbLocation : MonoBehaviour
     [SerializeField] DarkOrbDestroyer OccupiedLightOrb;
     public bool IsOccupied;
 
-    private void Update()
+    private void Start()
     {
-        if(LightOrbSpawnDataManager.newLightOrbsSpawned &&!IsOccupied)
-        {
-            AddLightOrbLocationToSpawnList(transform);
-        }
+        //LightOrbSpawnDataManager.newLightOrbsHasBeenSpawned += AddLocationWhenOrbsSpawnedWhenEmpty;
     }
     private void OnTriggerStay(Collider other)
     {
@@ -30,11 +27,11 @@ public class OnTriggerGetOrRemoveLightOrbLocation : MonoBehaviour
         {
             GetCurrentLightOrb(other.gameObject.GetComponent<DarkOrbDestroyer>());
 
-            if(!OccupiedLightOrb.IsPickedUp)
+            if(!OccupiedLightOrb.IsPickedUp && !OccupiedLightOrb.YoyoShot)
             {
+                Debug.Log("location removed");
                 RemoveCurrentLocationFromSpawnLocationList(transform);
                 IsOccupied = true;
-                Debug.Log(transform.gameObject + " got current orb location");
             }
         }
     }
@@ -59,7 +56,6 @@ public class OnTriggerGetOrRemoveLightOrbLocation : MonoBehaviour
             if (AvailableLightOrbSpawnLocations[i] == location.position)
             {
                 AvailableLightOrbSpawnLocations.RemoveAt(i);
-                Debug.Log(transform.gameObject + " light orb location removed from spawn list");
                 break;
             }
         } 
@@ -68,14 +64,11 @@ public class OnTriggerGetOrRemoveLightOrbLocation : MonoBehaviour
     private void AddLightOrbLocationToSpawnList(Transform location)
     {
         AvailableLightOrbSpawnLocations.Add(location.position);
-        Debug.Log(transform.gameObject + " light orb location added tospawn list");
     }
 
  
     void GetCurrentLightOrb(DarkOrbDestroyer lightOrb)
     {
         OccupiedLightOrb = lightOrb;
-    }
-
-    
+    }   
 }

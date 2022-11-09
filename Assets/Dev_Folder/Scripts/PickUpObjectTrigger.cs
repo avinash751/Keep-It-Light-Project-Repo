@@ -6,6 +6,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 {
 	[HideInInspector]
 	public GameObject orbObject;
+	LightOrbAmmoCountSystem orbAmmo;
 	[HideInInspector]
 	public Rigidbody objectRb;
 	public bool hasClicked = false;
@@ -14,6 +15,10 @@ public class PickUpObjectTrigger : MonoBehaviour
 	bool throwObject = false;
 	[SerializeField] Transform holdTransform;
 
+	private void Start()
+	{
+		orbAmmo = GetComponent<LightOrbAmmoCountSystem>();
+	}
 	void Update()
 	{
 		Inputs();
@@ -37,6 +42,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 
 	public void PickUpObject()
 	{
+		orbAmmo.AssignLightOrbAndResetAmmo(orbObject);
 		Debug.Log("Picked up item");
 		orbObject.transform.position = holdTransform.position;
 		orbObject.transform.SetParent(this.transform);

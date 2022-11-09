@@ -130,6 +130,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79244610062290848, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290848, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 97.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290848, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 52.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2927020795527361856, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: SpawnRate
@@ -290,7 +305,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &705507996
 MonoBehaviour:
@@ -312,6 +327,24 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &798580948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7839685640456747532, guid: b565683b051279248a9c20a18c4e46f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2113644856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &798580959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798580948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6c1ed4a805ca64d81d421bb176884f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1026189487
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +411,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029022553
 GameObject:
@@ -734,6 +767,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79244610062290848, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290848, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -78.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2927020795527361856, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: SpawnRate
@@ -897,7 +940,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2015144127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015144128}
+  m_Layer: 0
+  m_Name: PanicBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2015144128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015144127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 104.523766, y: 130.59346, z: 190.95358}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2113644856
 PrefabInstance:
@@ -1144,6 +1218,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79244610062290848, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -94.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290848, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 41.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2927020795527361856, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: SpawnRate

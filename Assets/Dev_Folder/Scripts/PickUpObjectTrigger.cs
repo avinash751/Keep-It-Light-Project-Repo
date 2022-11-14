@@ -16,14 +16,13 @@ public class PickUpObjectTrigger : MonoBehaviour
 	[SerializeField, HideInInspector]
 	ThrowObject throwOrb;
 
-	private void Start()
-	{
-		orbAmmo = GetComponent<LightOrbAmmoCountSystem>();
+	
 	private void Start()
 	{
 		throwOrb = GetComponent<ThrowObject>();
-		
-	}
+        OrbAmmo = GetComponent<LightOrbAmmoCountSystem>();
+
+    }
 	void Update()
 	{
 		Inputs();

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 742959538}
   - component: {fileID: 1698333036}
   - component: {fileID: 1698333037}
-  - component: {fileID: 640475470}
   m_Layer: 0
   m_Name: Hold_Area
   m_TagString: Untagged
@@ -66,6 +65,8 @@ MonoBehaviour:
   hasClicked: 0
   isPickedUp: 0
   holdTransform: {fileID: 547674558}
+  OrbAmmo: {fileID: 0}
+  throwOrb: {fileID: 0}
 --- !u!114 &1698333036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,26 +94,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUp: {fileID: 0}
+  orbAmmo: {fileID: 0}
   yoyoShot: 0
   maxDistance: 5
-  shootingSpeed: 3
-  maxSpeed: 0
---- !u!114 &640475470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547674557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11e91b674c36599408dd73b1320a432b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AmmoText: {fileID: 0}
-  lightOrbsDestroyed: {fileID: 11400000, guid: 21bdabdd29af16849bd483cfa96c93c4, type: 2}
-  maxAmmo: {fileID: 11400000, guid: 2e69a32ceded5d548848e863c213a3c8, type: 2}
-  currentAmmo: {fileID: 11400000, guid: 0b7168cd13aef0b459d9a09a4d1dcf34, type: 2}
+  shootingSpeed: 20
+  maxSpeed: 40
 --- !u!1 &1131399956
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +332,7 @@ MonoBehaviour:
   MouseAxisX: 0
   MouseAxisY: 0
   CameraPositionHolder: {fileID: 7839685641083197724}
-  CameraSensetivity: 100
+  CameraSensetivity: 151.7
 --- !u!114 &7839685640456747523
 MonoBehaviour:
   m_ObjectHideFlags: 0

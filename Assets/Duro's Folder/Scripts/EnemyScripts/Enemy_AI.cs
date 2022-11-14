@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Enemy_AI : MonoBehaviour
 {
+    float dist;
+    public PanicSystem panicSystem;
+    bool adding;
+
 
     Transform TF_Player;
     float RotationSpeed = 3.0f;
@@ -18,7 +22,9 @@ public class Enemy_AI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panicSystem = FindObjectOfType<PanicSystem>();
         TF_Player = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     // Update is called once per frame
@@ -53,6 +59,18 @@ public class Enemy_AI : MonoBehaviour
             }
         }
         this.transform.position += deltaPosition * Time.deltaTime;
+
+        dist = Vector3.Distance(transform.position, TF_Player.transform.position);
+        if(dist < 5 &! adding)
+        {
+            panicSystem.curPanic += 1;
+            adding = true;
+            Debug.Log("adding");
+        }
+        else if(dist > 5)
+        {
+            adding = false;
+        }
     }
 
 

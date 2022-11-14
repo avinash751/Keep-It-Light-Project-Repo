@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PanicSystem 
+public class PanicSystem: MonoBehaviour
 {
-    private int curPanic;
+    public int curPanic;
     private int panicMax;
 
     public PanicSystem (int panicMax)
@@ -33,6 +33,13 @@ public class PanicSystem
         if (curPanic <= 0)
         {
             curPanic = 0;
+        }
+    }
+    private void Update()
+    {
+        if (curPanic >= 100)
+        {
+            curPanic = 100;
         }
     }
 }

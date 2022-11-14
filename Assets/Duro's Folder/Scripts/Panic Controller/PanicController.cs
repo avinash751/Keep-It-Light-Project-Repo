@@ -1,4 +1,4 @@
-/*
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,17 +9,17 @@ public class PanicController : MonoBehaviour
     [Header("Panic Main Parameters")]
     public float playerPanic = 100.0f;
     [SerializeField] private float minPanic = 100.0f;
-    [SerializeField] private float enemiesAroundCost = 5f;
+    //[SerializeField] private float enemiesAroundCost = 5f;
     [HideInInspector] public bool hasRegenerated = true;
     [HideInInspector] public bool inEnemyVicinity = false;
 
     [Header("Panic Affecting rate")]
-    [Range (0,50)] [SerializeField] private float PanicDrain = 0.5f;
+    //[Range (0,50)] [SerializeField] private float PanicDrain = 0.5f;
     [Range(0, 50)] [SerializeField] private float PanicRegen = 0.5f;
 
     [Header("Panic by Enemy")]
-    [SerializeField] private int slowedRunSpeed = 4;
-    [SerializeField] private int normalrunSpeed = 8;
+    //[SerializeField] private int slowedRunSpeed = 4;
+    //[SerializeField] private int normalrunSpeed = 8;
 
     [Header("Panic UI Element")]
     [SerializeField] private Image panicDegressUI = null;
@@ -46,6 +46,7 @@ public class PanicController : MonoBehaviour
                 {
                     hasRegenerated = true;
                 }
+                
             }
         }
     }
@@ -65,4 +66,4 @@ public class PanicController : MonoBehaviour
     }
 
 }
-/*/
+

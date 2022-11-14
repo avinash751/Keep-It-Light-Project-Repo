@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 1000
+  throwObject: 0
 --- !u!114 &1698333037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +96,7 @@ MonoBehaviour:
   yoyoShot: 0
   maxDistance: 5
   shootingSpeed: 3
+  maxSpeed: 0
 --- !u!114 &640475470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,10 +360,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPostionHolderDirection: {fileID: 7839685641083197724}
-  moveMaxSpeed: 10
-  moveSpeed: 4
+  moveMaxSpeed: 14
+  moveSpeed: 5.5
   slowDownMultiplier: 0.6
-  SpeedToStartSlwoingDown: 9.5
+  SpeedToStartSlwoingDown: 13
 --- !u!114 &1366726073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,9 +390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337c62f467499a84cba656175f61b7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 15
+  jumpForce: 20
   onGround: 0
-  GravityMultiplier: 0.25
+  GravityMultiplier: 0.4
 --- !u!1 &7839685641083197723
 GameObject:
   m_ObjectHideFlags: 0

@@ -1186,12 +1186,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!4 &714842475 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7839685641083197724, guid: b565683b051279248a9c20a18c4e46f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1384278820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &762037183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,14 +2065,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 429201242, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
-      propertyPath: jumpForce
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 429201242, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
-      propertyPath: GravityMultiplier
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 640475470, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
       propertyPath: AmmoText
       value: 
@@ -2138,36 +2124,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7839685640456747523, guid: b565683b051279248a9c20a18c4e46f3,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7839685640456747523, guid: b565683b051279248a9c20a18c4e46f3,
-        type: 3}
-      propertyPath: moveMaxSpeed
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7839685640456747523, guid: b565683b051279248a9c20a18c4e46f3,
-        type: 3}
-      propertyPath: slowDownMultiplier
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7839685640456747523, guid: b565683b051279248a9c20a18c4e46f3,
-        type: 3}
-      propertyPath: SpeedToStartSlwoingDown
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7839685640456747523, guid: b565683b051279248a9c20a18c4e46f3,
-        type: 3}
-      propertyPath: increaseSpeedMultiplier
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7839685640456747523, guid: b565683b051279248a9c20a18c4e46f3,
-        type: 3}
-      propertyPath: cameraPostionHolderDirection
-      value: 
-      objectReference: {fileID: 714842475}
     - target: {fileID: 7839685640456747532, guid: b565683b051279248a9c20a18c4e46f3,
         type: 3}
       propertyPath: m_Name

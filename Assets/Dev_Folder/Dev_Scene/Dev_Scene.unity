@@ -219,9 +219,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 640475470, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1698333037, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
       propertyPath: maxSpeed
-      value: 8
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698333037, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
+      propertyPath: maxDistance
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1698333037, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
       propertyPath: shootingSpeed
@@ -977,6 +985,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61eb822eee5359449faec8bb54f50d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRadius: 2
+--- !u!135 &1636411343
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636411337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.01
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!1001 &1770780638
 PrefabInstance:
   m_ObjectHideFlags: 0

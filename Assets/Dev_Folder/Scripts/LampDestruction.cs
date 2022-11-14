@@ -7,8 +7,11 @@ public class LampDestruction : MonoBehaviour
 	Rigidbody rb;
 	bool hitByOrb = false;
 	bool hitOnGround = false;
+	SphereCollider sphereCollider;
+	[SerializeField] float maxRadius;
 	void Start()
 	{
+		sphereCollider = GetComponent<SphereCollider>();
 		rb = GetComponent<Rigidbody>();
 	}
 
@@ -20,7 +23,15 @@ public class LampDestruction : MonoBehaviour
 		}
 		if (hitOnGround)
 		{
-			Destroy(this.gameObject, 0.25f);
+			sphereCollider.radius += Time.deltaTime;
+			if (sphereCollider.radius > maxRadius)
+			{
+				sphereCollider.radius = maxRadius;
+			}
+			for (int i = 0; i < transform.childCount; i++)
+			{
+				transform.GetChild(i).gameObject.SetActive(false);
+			}
 		}
 	}
 

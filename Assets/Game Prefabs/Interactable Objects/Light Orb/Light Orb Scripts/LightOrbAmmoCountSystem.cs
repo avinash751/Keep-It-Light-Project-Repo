@@ -4,79 +4,81 @@ using UnityEngine;
 
 public class LightOrbAmmoCountSystem : MonoBehaviour
 {
-    private PickUpObjectTrigger pickUp;
-    private YoYoMechanic yoyo;
-    private GameObject lightOrbInUse;
-    public GameObject AmmoText;
+    [SerializeField, HideInInspector] DarkOrbDestroyer LightOrb;
+    [SerializeField, HideInInspector] AmmoColorLerper lerpColor;
     [SerializeField] Value lightOrbsDestroyed;
-
     [SerializeField] Value maxAmmo;
-    public  Value currentAmmo;
+    public  int  currentAmmo;
+    public  int ammoUsedWhenThrown;
+    public int ammoUsedWhenYoyoyShot;
+    bool destroyOnce;
+
+
    
     void Start()
     {
-        pickUp = GetComponent<PickUpObjectTrigger>();
-        yoyo = GetComponent<YoYoMechanic>();
-        ResetAmmo();
-        AmmoText.SetActive(false);
+        lerpColor = GetComponent<AmmoColorLerper>();
+       LightOrb = FindObjectOfType<DarkOrbDestroyer>();
+       ResetAmmo();
     }
 
     
     void Update()
     {
+        if(LightOrb.trigger.orbObject == gameObject  )
+        {
+            DestroyLightOrbWhenAmmoZeroThrown();
+            DestroyLightOrbWhenAmmoZeroYoyoShot();
+        }   
+    }
+
+   
+    public  void DecreaseLightOrbAmmo(int amount)
+    {
+        if(currentAmmo>0)
+        {
+            currentAmmo -= amount;
+            currentAmmo = Mathf.Clamp(currentAmmo, 0, 100);
+            lerpColor.reduceColorLerpIndex(amount);
+            Debug.Log("Ammo" + currentAmmo);
+        }
+    }
        
-    }
 
-    public void DecreaseAmmoWhenShot(int amount)
+    void DestroyLightOrb()
     {
-        if(currentAmmo.value > 0 )
+        if(currentAmmo<=0 &&!destroyOnce)
         {
-            currentAmmo.value-=amount;
-            currentAmmo.value = Mathf.Clamp(currentAmmo.value, 0, 100);
+            Destroy(gameObject);
+            lightOrbsDestroyed.value++;
+            destroyOnce = true;
         }
     }
 
-    public IEnumerator KillOrbWhenAmmoZeroAndShot(float delay,GameObject orbToDestroy)
+
+    void DestroyLightOrbWhenAmmoZeroYoyoShot()
     {
-        if(currentAmmo.value<=0 )
+        if(currentAmmo<=0 && LightOrb.IsPickedUp)
         {
-            yield return new WaitForSeconds(delay);
-
-            IncrementTheNumberOflightOrbsDestroyed();
-            Destroy(orbToDestroy);
-
-            if(lightOrbInUse!=orbToDestroy && pickUp.isPickedUp)
-            {
-                AmmoText.SetActive(true);
-            }
-            else if(lightOrbInUse == orbToDestroy && pickUp.isPickedUp)
-            {
-                AmmoText.SetActive(false);
-                pickUp.DropObject();
-            }
+            LightOrb.trigger.DropObject();
+            Invoke(nameof(DestroyLightOrb),4f);
         }
     }
 
-    void IncrementTheNumberOflightOrbsDestroyed()
+    void DestroyLightOrbWhenAmmoZeroThrown()
     {
-        lightOrbsDestroyed.value++;
-    }
-
-    void ResetAmmo()
-    {
-        currentAmmo.value = maxAmmo.value;
-    }
-
-    public void AssignLightOrbAndResetAmmo(GameObject newlightOrb)
-    {
-        if (newlightOrb != lightOrbInUse || lightOrbInUse==null)
+        if(currentAmmo<=0 && LightOrb.IsThrown)
         {
-            ResetAmmo();
-            lightOrbInUse = newlightOrb;
-            AmmoText.SetActive(true);
+            Invoke(nameof(DestroyLightOrb), 4f);
         }
     }
 
+    public void ResetAmmo()
+    {
+        currentAmmo = maxAmmo.value;
+    }
+
+ 
 
     
 }

@@ -16,7 +16,6 @@ public class ThrowObject : MonoBehaviour
 	void Start()
 	{
 		pickUpTrigger = GetComponent<PickUpObjectTrigger>();
-		orbAmmo = GetComponent<LightOrbAmmoCountSystem>();
 	}
 	void Update()
 	{
@@ -28,15 +27,15 @@ public class ThrowObject : MonoBehaviour
 		if (Input.GetMouseButtonDown(0) && pickUpTrigger.isPickedUp)
 		{
 			ReferenceLightOrb();
-            orbAmmo.DecreaseAmmoWhenShot(2);
-            StartCoroutine(orbAmmo.KillOrbWhenAmmoZeroAndShot(3.5f,pickUpObject));
             ThrowOrb();
+			orbAmmo.DecreaseLightOrbAmmo(orbAmmo.ammoUsedWhenThrown);
 		}
 	}
 	void ReferenceLightOrb()
 	{
 		pickUpObject = pickUpTrigger.orbObject;
 		objectRb = pickUpTrigger.objectRb;
+		orbAmmo = pickUpTrigger.OrbAmmo;
 	}
 	void ThrowOrb()
 	{

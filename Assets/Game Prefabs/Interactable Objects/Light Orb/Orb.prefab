@@ -16,7 +16,11 @@ GameObject:
   - component: {fileID: 1479248683}
   - component: {fileID: 3799380462947611170}
   - component: {fileID: 4295692542924950507}
-  m_Layer: 0
+  - component: {fileID: 421219194720202945}
+  - component: {fileID: 4558831789485455039}
+  - component: {fileID: 6725573340077858534}
+  - component: {fileID: -2672572647781742111}
+  m_Layer: 3
   m_Name: Orb
   m_TagString: Light Orb
   m_Icon: {fileID: 0}
@@ -31,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7521034891785767652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9154067, y: 1.088, z: 6.5722213}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.34593, y: 0.34593, z: 0.34593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,6 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DarkOrbsDestroyed: {fileID: 11400000, guid: 1e95db1be1de30b409a821836f1769b7, type: 2}
+  trigger: {fileID: 0}
+  YoYo: {fileID: 0}
+  throwOrb: {fileID: 0}
 --- !u!114 &3799380462947611170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +167,204 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmountOfDamage: 1
   DoMoreOnCollsion: 0
+--- !u!114 &421219194720202945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e91b674c36599408dd73b1320a432b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightOrb: {fileID: 0}
+  lerpColor: {fileID: 0}
+  lightOrbsDestroyed: {fileID: 11400000, guid: 21bdabdd29af16849bd483cfa96c93c4, type: 2}
+  maxAmmo: {fileID: 11400000, guid: 2e69a32ceded5d548848e863c213a3c8, type: 2}
+  currentAmmo: 0
+  ammoUsedWhenThrown: 2
+  ammoUsedWhenYoyoyShot: 1
+--- !u!96 &4558831789485455039
+TrailRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Time: 0.35
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016788483
+        value: 0.24860175
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.2917258
+        value: 0.2293396
+        inSlope: -0.20041613
+        outSlope: -0.20041613
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.30522504
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5228871
+        value: 0.20727283
+        inSlope: -0.17936969
+        outSlope: -0.17936969
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7518637
+        value: 0.14680481
+        inSlope: -0.21845993
+        outSlope: -0.21845993
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.5595356
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 1, g: 0.7624252, b: 0.48235297, a: 0.74369466}
+      key2: {r: 1, g: 0.96576023, b: 0, a: 0.77254903}
+      key3: {r: 0, g: 0, b: 0, a: 1}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 26214
+      ctime2: 65535
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 26985
+      atime2: 48380
+      atime3: 65535
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 3
+      m_NumAlphaKeys: 4
+    numCornerVertices: 5
+    numCapVertices: 30
+    alignment: 0
+    textureMode: 3
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0
+  m_Autodestruct: 0
+  m_Emitting: 1
+--- !u!114 &6725573340077858534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b3d5a64d3a780429bb96ccfa8d4f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightOrb: {fileID: 0}
+  orbAmmo: {fileID: 0}
+  maxAmmo: {fileID: 11400000, guid: 2e69a32ceded5d548848e863c213a3c8, type: 2}
+  colorsToLerp:
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0.23584908, g: 0.16224843, b: 0.009789951, a: 1}
+  - {r: 0.2924528, g: 0.17635329, b: 0.003862569, a: 1}
+  - {r: 0.4433962, g: 0.28300905, b: 0.018405106, a: 1}
+  - {r: 0.5754717, g: 0.38316953, b: 0.018458487, a: 1}
+  - {r: 0.6698113, g: 0.47964796, b: 0.034122407, a: 1}
+  - {r: 0.8396226, g: 0.6096882, b: 0.03485222, a: 1}
+  - {r: 1, g: 0.75950825, b: 0, a: 1}
+  colorToLerpIndex: 0
+  mesh: {fileID: 7521034891785767654}
+  lerpTime: 3.3
+  glowColor: {r: 1, g: 0.3180786, b: 0, a: 0}
+  intesnsity: 0
+--- !u!114 &-2672572647781742111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebfb85a8f6510204f9b7e47fb64f9beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightOrb: {fileID: 0}
+  orbAmmo: {fileID: 0}
+  blinkAmplitude: 1
+  blinkFrequency: 18
+  mesh: {fileID: 7521034891785767654}
+  ColorToBlink: {r: 1, g: 0.45834383, b: 0, a: 1}

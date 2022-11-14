@@ -6,18 +6,23 @@ public class PickUpObjectTrigger : MonoBehaviour
 {
 	[HideInInspector]
 	public GameObject orbObject;
-	LightOrbAmmoCountSystem orbAmmo;
 	[HideInInspector]
 	public Rigidbody objectRb;
 	public bool hasClicked = false;
 	[HideInInspector]
 	public bool isPickedUp = false;
-	bool throwObject = false;
 	[SerializeField] Transform holdTransform;
+    [HideInInspector] public  LightOrbAmmoCountSystem OrbAmmo;
+	[SerializeField, HideInInspector]
+	ThrowObject throwOrb;
 
 	private void Start()
 	{
 		orbAmmo = GetComponent<LightOrbAmmoCountSystem>();
+	private void Start()
+	{
+		throwOrb = GetComponent<ThrowObject>();
+		
 	}
 	void Update()
 	{
@@ -28,6 +33,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.E) && hasClicked == true && !isPickedUp)
 		{
+			throwOrb.throwObject = false;
 			PickUpObject();
 		}
 		else if (Input.GetKeyDown(KeyCode.E) && isPickedUp)
@@ -42,8 +48,8 @@ public class PickUpObjectTrigger : MonoBehaviour
 
 	public void PickUpObject()
 	{
-		orbAmmo.AssignLightOrbAndResetAmmo(orbObject);
-		Debug.Log("Picked up item");
+		orbObject.GetComponent<TrailRenderer>().time = 0;
+		//Debug.Log("Picked up item");
 		orbObject.transform.position = holdTransform.position;
 		orbObject.transform.SetParent(this.transform);
 		objectRb.useGravity = false;
@@ -53,11 +59,13 @@ public class PickUpObjectTrigger : MonoBehaviour
 
 	public void DropObject()
 	{
-		Debug.Log("Dropped Item");
-		hasClicked = false;
+        orbObject.GetComponent<TrailRenderer>().time = 0.35f;
+        //Debug.Log("Dropped Item");
+        hasClicked = false;
 		objectRb.useGravity = true;
 		isPickedUp = false;
 		orbObject.transform.SetParent(null);
+		OrbAmmo = null;
 		objectRb.constraints = RigidbodyConstraints.None;
 	}
 
@@ -67,6 +75,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 		{
 			orbObject = other.gameObject;
 			objectRb = orbObject.GetComponent<Rigidbody>();
+			OrbAmmo = orbObject.GetComponent<LightOrbAmmoCountSystem>();
 			hasClicked = true;
 		}
 

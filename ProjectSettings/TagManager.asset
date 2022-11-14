@@ -7,11 +7,12 @@ TagManager:
   - Ground
   - Light Orb
   - PickUpRange
+  - Dark Orb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Light Orb
   - Water
   - UI
   - 

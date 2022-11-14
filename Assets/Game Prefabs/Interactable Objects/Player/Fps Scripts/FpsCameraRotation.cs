@@ -9,7 +9,7 @@ public class FpsCameraRotation : MonoBehaviour
     [SerializeField] float MouseAxisX;
     [SerializeField] float MouseAxisY;
     [SerializeField] Transform CameraPositionHolder;
-    [Range(0,100)][SerializeField] float CameraSensetivity;
+    [Range(0,200)][SerializeField] float CameraSensetivity;
 
 
 

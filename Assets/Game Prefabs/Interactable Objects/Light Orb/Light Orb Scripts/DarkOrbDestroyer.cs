@@ -6,9 +6,12 @@ using UnityEngine;
 public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
 {
    [SerializeField] Value DarkOrbsDestroyed;
-    PickUpObjectTrigger trigger;
-    YoYoMechanic YoYo;
-    LightOrbAmmoCountSystem orbAmmo;
+    [HideInInspector]
+    public PickUpObjectTrigger trigger;
+    [HideInInspector]
+    public YoYoMechanic YoYo;
+    [HideInInspector]
+    public ThrowObject throwOrb;
     bool collided;
 
     public bool IsPickedUp
@@ -21,19 +24,26 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
         get { return YoYo.yoyoShot;}
     }
 
+    public bool IsThrown
+    {
+        get { return throwOrb.throwObject;}
+    }
+
+    private void Awake()
+    {
+        throwOrb = FindObjectOfType<ThrowObject>();
+        trigger = FindObjectOfType<PickUpObjectTrigger>();
+        YoYo = FindObjectOfType<YoYoMechanic>();
+    }
 
     public virtual void  DestroyObject() /// destroyes the light orb 
     {
-        IncrementTheNumberOfDarkOrbsDestroyed(1);
-        orbAmmo.AmmoText.SetActive(false);
         Destroy(gameObject);
     }
     void Start()
     {
 
-        orbAmmo = FindObjectOfType<LightOrbAmmoCountSystem>();
-        trigger = FindObjectOfType<PickUpObjectTrigger>();
-        YoYo = FindObjectOfType<YoYoMechanic>();
+      
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -41,10 +51,10 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
         if(collision.gameObject.GetComponent<IDestroyable>() != null && collision.gameObject.GetComponent<LightOrbDestroyer>() != null)
         {
             IDestroyable destroyable = collision.gameObject.GetComponent<IDestroyable>();
-            
-
+           
             if (!IsPickedUp && !collided && !YoyoShot)
             {
+                IncrementTheNumberOfDarkOrbsDestroyed(1);
                 collided = true;
                 destroyable.DestroyObject();
             }

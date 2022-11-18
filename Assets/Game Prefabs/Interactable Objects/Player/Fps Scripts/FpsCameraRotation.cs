@@ -16,9 +16,13 @@ public class FpsCameraRotation : MonoBehaviour
     void Start()
     {
        Cursor.lockState = CursorLockMode.Locked;
+        MouseAxisX = FpsCamera.transform.rotation.eulerAngles.x;
+        MouseAxisY = FpsCamera.transform.rotation.eulerAngles.y;
+
+
     }
 
-    
+
     void Update()
     {
        RotateCameraPsoitionHolderForMovemntDirection();

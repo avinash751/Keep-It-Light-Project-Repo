@@ -6,14 +6,20 @@ using UnityEngine;
 public class Enemy_Spawn : MonoBehaviour
 {
 
-    public GameObject SpawnEnemy;
-    [Range(1, 10)][SerializeField] float SpawnRate;
+    public GameObject SpawnEnemy1;
+
+    public GameObject SpawnEnemy2;
+    public  float SpawnRateEnemy1;
+    public float SpawnRateEnemy2;
     public int SpawnRadius;
 
     // all spawn objects  that are part of the spawner
-    private Transform SpawnDome;
-    private Transform DarknessVolume;
-    private Transform DarkFog;
+    [HideInInspector]
+    public Transform SpawnDome;
+    [HideInInspector]
+    public Transform DarknessVolume;
+    [HideInInspector]
+    public Transform DarkFog;
 
     // Start is called before the first frame update
 
@@ -24,28 +30,49 @@ public class Enemy_Spawn : MonoBehaviour
     }
     void Start()
     {
-        InstantiateEnemy ();
+        InstantiateEnemy1 ();
+        InvokeRepeating(nameof(InstantiateEnemy2), SpawnRateEnemy2, SpawnRateEnemy2);
     }
 
-    void InstantiateEnemy()
+    private void Update()
+    {
+        InitialiseAllSpawnValues ();
+    }
+
+    void InstantiateEnemy1()
     {
         Vector3 SpawnPosition = transform.position;
 
-        GameObject GO_Current = (GameObject)Instantiate(SpawnEnemy);
+        GameObject GO_Current = (GameObject)Instantiate(SpawnEnemy1);
         Vector2 CircleRadius =  Random.insideUnitCircle * SpawnRadius;
         GO_Current.transform.position = new Vector3( transform.position.x +CircleRadius.x,transform.position.y, transform.position.z + CircleRadius.y);
 
         StartCoroutine("waitForFewSeconds");
     }
 
+    void InstantiateEnemy2()
+    {
+        Vector3 SpawnPosition = transform.position;
+
+        GameObject Enemy2 = (GameObject)Instantiate(SpawnEnemy2);
+        Vector2 CircleRadius = Random.insideUnitCircle * SpawnRadius;
+        Enemy2.transform.position = new Vector3(transform.position.x + CircleRadius.x, transform.position.y, transform.position.z + CircleRadius.y);
+        Enemy2.GetComponent<Revolve>().targetToRevolveAround = transform;
+    }
+
     IEnumerator waitForFewSeconds()
     {
-        yield return new WaitForSeconds(SpawnRate);
-        InstantiateEnemy();
+        yield return new WaitForSeconds(SpawnRateEnemy1);
+        InstantiateEnemy1();
     }
 
 
+
+
+
     // debug drawing editor code 
+
+#if  UNITY_EDITOR
     private void OnDrawGizmos()
     {
         UnityEditor.Handles.color = new Color(0, 0, 0, 0.15f);
@@ -76,6 +103,7 @@ public class Enemy_Spawn : MonoBehaviour
         UnityEditor.Handles.Label(transform.position + new Vector3(0, 2, 0), gameObject.name, Bold);
     }
 
+#endif
     void InitialiseAllSpawnValues()
     {
         SpawnDome.localScale = Vector3.one* (SpawnRadius * 2);

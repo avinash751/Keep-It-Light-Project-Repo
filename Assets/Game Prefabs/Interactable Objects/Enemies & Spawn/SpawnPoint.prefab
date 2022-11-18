@@ -60,9 +60,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
   priority: 1
-  blendDistance: 5
+  blendDistance: 4
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 5ec8240f1e45f864e81f314193ec4e1b, type: 2}
+  sharedProfile: {fileID: 11400000, guid: b6577692d6dc297479449e7d1a474168, type: 2}
 --- !u!1 &2326748647298299666
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,14 +90,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2326748647298299666}
-  m_LocalRotation: {x: -0, y: 0.98538834, z: -0, w: 0.17032267}
+  m_LocalRotation: {x: 0.6903831, y: 0.7031085, z: 0.119331434, w: 0.12153106}
   m_LocalPosition: {x: 0, y: -0.40268454, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 79244610062290848}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 160.387, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 160.387, z: 88.954}
 --- !u!33 &2326748647298299657
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 0.049645424, b: 1, a: 1}
-  m_Intensity: 30
+  m_Intensity: 3
   m_Range: 1.8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -401,8 +401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightOrbsDestroyed: {fileID: 11400000, guid: 21bdabdd29af16849bd483cfa96c93c4, type: 2}
-  lightOrbsNotDestroyed: {fileID: 11400000, guid: e6a03e416fe966c42b73368038f7d20a,
-    type: 2}
 --- !u!1 &2326748647881293992
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2326748647881293992}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.74, y: -0.13, z: -0.06}
+  m_LocalPosition: {x: -0.74, y: 1.19, z: -0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5225,6 +5223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 79244610062290848}
   - component: {fileID: 79244610062290851}
+  - component: {fileID: 4303377673167356356}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -5263,7 +5262,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd82d9103796f8c43bb83fb765859983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnEnemy: {fileID: 6098041655973682497, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+  SpawnEnemy1: {fileID: 6098041655973682497, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
     type: 3}
-  SpawnRate: 7.16
+  SpawnEnemy2: {fileID: 5991116350677986251, guid: 94784a31810708c4ca69c36c4105df35,
+    type: 3}
+  SpawnRateEnemy1: 0.01
+  SpawnRateEnemy2: 0.5
   SpawnRadius: 10
+  SpawnDome: {fileID: 2326748647298299661}
+  DarknessVolume: {fileID: 2326748646776930470}
+  DarkFog: {fileID: 2326748647881293995}
+--- !u!114 &4303377673167356356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326748647972983442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4cfba3b0128d84986e68ed0cda4634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkSpawn: {fileID: 79244610062290851}
+  darkOrb: {fileID: 2326748647752241199}
+  fogstartingrate: 50
+  fogIncreaterate: 15
+  glowRateIntensity: 1
+  RateOfGrowing: 20

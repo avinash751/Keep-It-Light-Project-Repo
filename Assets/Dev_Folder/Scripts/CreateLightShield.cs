@@ -20,12 +20,12 @@ public class CreateLightShield : MonoBehaviour
 	}
 	void ActivateShieldWhenPlayerPicksUpOrb()
 	{
-		if (Input.GetKeyDown(KeyCode.E) && pickUpTrigger.hasClicked == true && !pickUpTrigger.isPickedUp)
+		if (pickUpTrigger.isPickedUp)
 		{
 			shieldCapsule.radius = shieldRadius;
 			Debug.Log("ACTIVATING SHIELD");
 		}
-        else if(Input.GetKeyDown(KeyCode.E) && pickUpTrigger.isPickedUp)
+        else if(!pickUpTrigger.isPickedUp)
         {
            shieldCapsule.radius = 0.1f;
         }

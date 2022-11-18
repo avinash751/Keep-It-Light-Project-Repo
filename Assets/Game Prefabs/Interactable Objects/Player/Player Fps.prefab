@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 742959538}
   - component: {fileID: 1698333036}
   - component: {fileID: 1698333037}
+  - component: {fileID: 1024445317}
+  - component: {fileID: 1024445316}
   m_Layer: 0
   m_Name: Hold_Area
   m_TagString: Untagged
@@ -96,9 +98,36 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   orbAmmo: {fileID: 0}
   yoyoShot: 0
-  maxDistance: 5
-  shootingSpeed: 20
-  maxSpeed: 40
+  maxDistance: 3
+  shootingSpeed: 2
+  maxSpeed: 20
+--- !u!136 &1024445317
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547674557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 1.54
+  m_Direction: 1
+  m_Center: {x: -0.5, y: -0.35, z: -1.3}
+--- !u!114 &1024445316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547674557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a46024c6470dd043b6c0dd00111c84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldRadius: 3
 --- !u!1 &1131399956
 GameObject:
   m_ObjectHideFlags: 0

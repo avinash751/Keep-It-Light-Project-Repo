@@ -9,7 +9,6 @@ public class PickUpObjectTrigger : MonoBehaviour
 	[HideInInspector]
 	public Rigidbody objectRb;
 	public bool hasClicked = false;
-	[HideInInspector]
 	public bool isPickedUp = false;
 	[SerializeField] Transform holdTransform;
     [HideInInspector] public  LightOrbAmmoCountSystem OrbAmmo;

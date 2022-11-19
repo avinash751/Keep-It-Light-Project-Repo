@@ -143,7 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e559ede0b4ccd84cbdfac96cf79d4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panicSystem: {fileID: 0}
+  currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
+  maxPanic: {fileID: 11400000, guid: 1555d28490284dd47833351f7874482f, type: 2}
+  RotationSpeed: 2
+  MoveSpeed: 0.1
   targetVelocity: 10
   numberOfRays: 19
   angle: 90

@@ -6,18 +6,21 @@ using UnityEngine.UI;
 public class PanicBar : MonoBehaviour
 {
     private Image panicBar;
-    public float curPanic;
-    private float minPanic = 100f;
+    [SerializeField] Value curentPanic;
+    [SerializeField] Value maxPanic;
     PanicSystem panic;
 
     private void Start()
     {
         panicBar = GetComponent<Image>();
-        panic = FindObjectOfType<PanicSystem>();
     }
     private void Update()
     {
-        curPanic = panic.curPanic;
-        panicBar.fillAmount = curPanic / minPanic;
+        UpdatePanicBarValue();
+    }
+
+    void UpdatePanicBarValue()
+    {
+        panicBar.fillAmount = curentPanic.value / 100f;
     }
 }

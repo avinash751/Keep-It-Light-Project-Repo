@@ -29,7 +29,7 @@ public class GrowSpawnBehaviour : ISpawnBehaviour
     void ChangingSpawnerRelatedsettings()
     {
         darkSpawner.SpawnRadius += 5;
-        darkSpawner.SpawnRateEnemy1 -= darkSpawner.SpawnRateEnemy1 > 0.5 ? 0.3f : 0;
+        darkSpawner.startSpawnRateEnemy1 -= darkSpawner.startSpawnRateEnemy1 > 0.5 ? SpawnBehaviour.enemy1SpawnRateRateAddon : 0;
     }
 
     void ChangingSpawnerColors()

@@ -5,26 +5,26 @@ using UnityEngine;
 public class Enemy_AI : MonoBehaviour
 {
     float dist;
-    public PanicSystem panicSystem;
+    [SerializeField] Value currentPanic;
+    [SerializeField] Value maxPanic;
     bool adding;
 
 
     Transform TF_Player;
-    float RotationSpeed = 3.0f;
-    float MoveSpeed = 3.0f;
+    [ Header("Enemy Movment Settings")]
+    [SerializeField]public  float RotationSpeed  = 3.0f;
+    [SerializeField]public float MoveSpeed  = 3.0f;
 
+    [Header("Enemy Obstacle avoidance seettings")]
     public float targetVelocity = 10.0f;
     public int numberOfRays = 19;
     public float angle = 90;
-
     public float rayRange = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
-        panicSystem = FindObjectOfType<PanicSystem>();
         TF_Player = GameObject.FindGameObjectWithTag("Player").transform;
-
     }
 
     // Update is called once per frame
@@ -61,14 +61,15 @@ public class Enemy_AI : MonoBehaviour
         this.transform.position += deltaPosition * Time.deltaTime;
 
         dist = Vector3.Distance(transform.position, TF_Player.transform.position);
-        if(dist < 5 &! adding)
+        if(dist < 5 &&!adding)
         {
-            panicSystem.curPanic += 1;
+            currentPanic.value += 2;
             adding = true;
             Debug.Log("adding");
         }
-        else if(dist > 5)
+        else if(dist > 5 && adding)
         {
+            currentPanic.value -= 1;
             adding = false;
         }
     }

@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51795dac40c766443b979752278d24b7, type: 3}
-  m_Name: Game Manager Data
+  m_Script: {fileID: 11500000, guid: 3f8be88653c0352449593598dcd79904, type: 3}
+  m_Name: maxPanic
   m_EditorClassIdentifier: 
-  currentState: 0
-  resetStates: 0
-  startScene: 0
-  mainGameScene: 1
-  currentScene: 0
+  Valuename: maxpanic
+  value: 100

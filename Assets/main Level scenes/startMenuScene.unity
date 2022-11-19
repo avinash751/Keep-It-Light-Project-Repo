@@ -220,6 +220,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4735668}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &129703051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8446410132401328194, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+    type: 3}
+  m_PrefabInstance: {fileID: 1430383049968719318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &161702292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,6 +2355,8 @@ MonoBehaviour:
   hasClicked: 0
   isPickedUp: 0
   holdTransform: {fileID: 195709262288520731}
+  OrbAmmo: {fileID: 0}
+  throwOrb: {fileID: 0}
 --- !u!114 &195709262942827275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2390,9 +2398,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUp: {fileID: 0}
+  orbAmmo: {fileID: 0}
   yoyoShot: 0
   maxDistance: 5
   shootingSpeed: 3
+  maxSpeed: 0
 --- !u!114 &195709263403310793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,6 +2416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 1000
+  throwObject: 0
 --- !u!4 &195709263903790256
 Transform:
   m_ObjectHideFlags: 0
@@ -2535,6 +2546,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 1375058296181452719, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1430383051107189548, guid: 0389da8fbdbfa3b49a5a6113ab075373,
         type: 3}
       propertyPath: m_RootOrder
@@ -2590,6 +2606,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1430383051107189549, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: winMenu
+      value: 
+      objectReference: {fileID: 129703051}
+    - target: {fileID: 1430383051107189549, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: maxPanic
+      value: 
+      objectReference: {fileID: 11400000, guid: 1555d28490284dd47833351f7874482f,
+        type: 2}
+    - target: {fileID: 1430383051107189549, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: startmenu
+      value: 
+      objectReference: {fileID: 1039086877}
+    - target: {fileID: 1430383051107189549, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: currentPanic
+      value: 
+      objectReference: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4,
+        type: 2}
     - target: {fileID: 1430383051107189551, guid: 0389da8fbdbfa3b49a5a6113ab075373,
         type: 3}
       propertyPath: m_Name

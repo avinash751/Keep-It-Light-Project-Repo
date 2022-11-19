@@ -12,6 +12,7 @@ public class SpawnBehaviour : MonoBehaviour
     public int fogstartingrate;
     public int fogIncreaterate;
     public int glowRateIntensity;
+    public float  enemy1SpawnRateRateAddon;
 
     [SerializeField] float RateOfGrowing;
     // Start is called before the first frame update

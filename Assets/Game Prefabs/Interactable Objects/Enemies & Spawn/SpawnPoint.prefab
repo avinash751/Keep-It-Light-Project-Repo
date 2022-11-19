@@ -5266,8 +5266,8 @@ MonoBehaviour:
     type: 3}
   SpawnEnemy2: {fileID: 5991116350677986251, guid: 94784a31810708c4ca69c36c4105df35,
     type: 3}
-  SpawnRateEnemy1: 0.01
-  SpawnRateEnemy2: 0.5
+  startSpawnRateEnemy1: 1
+  startSpawnRateEnemy2: 1
   SpawnRadius: 10
   SpawnDome: {fileID: 2326748647298299661}
   DarknessVolume: {fileID: 2326748646776930470}
@@ -5289,4 +5289,5 @@ MonoBehaviour:
   fogstartingrate: 50
   fogIncreaterate: 15
   glowRateIntensity: 1
-  RateOfGrowing: 20
+  enemy1SpawnRateRateAddon: 0.3
+  RateOfGrowing: 10

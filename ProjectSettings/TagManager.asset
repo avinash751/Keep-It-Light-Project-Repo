@@ -8,6 +8,7 @@ TagManager:
   - Light Orb
   - PickUpRange
   - Dark Orb
+  - Trap Door
   layers:
   - Default
   - TransparentFX

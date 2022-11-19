@@ -9,14 +9,18 @@ public class LampDestruction : MonoBehaviour
 	bool hitOnGround = false;
 	SphereCollider sphereCollider;
 	[SerializeField] float maxRadius;
+	public ParticleSystem particle;
 	void Start()
 	{
 		sphereCollider = GetComponent<SphereCollider>();
 		rb = GetComponent<Rigidbody>();
+		particle = GetComponentInChildren<ParticleSystem>();
+		particle.Stop();
 	}
 
 	void Update()
 	{
+
 		if (hitByOrb)
 		{
 			rb.useGravity = true;
@@ -27,11 +31,12 @@ public class LampDestruction : MonoBehaviour
 			if (sphereCollider.radius > maxRadius)
 			{
 				sphereCollider.radius = maxRadius;
+				particle.Play();
 			}
-			for (int i = 0; i < transform.childCount; i++)
+			/* for (int i = 0; i < transform.childCount; i++)
 			{
 				transform.GetChild(i).gameObject.SetActive(false);
-			}
+			} */
 		}
 	}
 

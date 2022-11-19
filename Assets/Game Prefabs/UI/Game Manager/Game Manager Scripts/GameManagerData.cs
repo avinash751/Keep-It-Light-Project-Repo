@@ -52,9 +52,14 @@ public class GameManagerData : ScriptableObject
             giveAGameOverFunctionToCall();  
         }
     }
+
+    public void TransitionToGameOverState(StateFunction giveALoseFunction)
+    {
+        giveALoseFunction();
+    }
     public void SetGameToStart()
     {
-        if(!resetStates)
+        if(!resetStates && currentState != GameStates.Play)
         {
             currentState = GameStates.Start;
             resetStates=true;

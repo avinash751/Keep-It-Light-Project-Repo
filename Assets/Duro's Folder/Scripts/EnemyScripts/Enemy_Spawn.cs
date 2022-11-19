@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class Enemy_Spawn : MonoBehaviour
 {
-
+    [Header("Enemy Prefabs to spawn")]
     public GameObject SpawnEnemy1;
-
     public GameObject SpawnEnemy2;
-    public  float SpawnRateEnemy1;
-    public float SpawnRateEnemy2;
+
+    [Header("Spawn Related Settings")]
+    public  float startSpawnRateEnemy1;
+    public float startSpawnRateEnemy2;
     public int SpawnRadius;
 
     // all spawn objects  that are part of the spawner
@@ -31,7 +32,7 @@ public class Enemy_Spawn : MonoBehaviour
     void Start()
     {
         InstantiateEnemy1 ();
-        InvokeRepeating(nameof(InstantiateEnemy2), SpawnRateEnemy2, SpawnRateEnemy2);
+        InvokeRepeating(nameof(InstantiateEnemy2), startSpawnRateEnemy2, startSpawnRateEnemy2);
     }
 
     private void Update()
@@ -62,7 +63,7 @@ public class Enemy_Spawn : MonoBehaviour
 
     IEnumerator waitForFewSeconds()
     {
-        yield return new WaitForSeconds(SpawnRateEnemy1);
+        yield return new WaitForSeconds(startSpawnRateEnemy1);
         InstantiateEnemy1();
     }
 

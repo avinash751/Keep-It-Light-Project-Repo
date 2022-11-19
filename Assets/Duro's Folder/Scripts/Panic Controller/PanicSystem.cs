@@ -4,42 +4,38 @@ using UnityEngine;
 
 public class PanicSystem: MonoBehaviour
 {
-    public int curPanic;
-    private int panicMax;
 
-    public PanicSystem (int panicMax)
+    [SerializeField] Value currentPanic;
+    [SerializeField] Value maxPanic;
+
+    private void Start()
     {
-        this.panicMax = panicMax;
-        curPanic = panicMax;
+        currentPanic.value = 0;
     }
-
     public int GetPanic()
     {
-        return curPanic;
+        return currentPanic.value;
     }
 
-    public void Damage(int damageAmout)
+    public  void IncreasePanic(int panicAmount)
     {
-        curPanic += damageAmout;
-        if (curPanic > 100)
-        {
-            curPanic = 100;
-        }
+        currentPanic.value += panicAmount;
+        ClampPanicValue();
     }
 
     public void Heal(int healAmount)
     {
-        curPanic -= healAmount;
-        if (curPanic <= 0)
-        {
-            curPanic = 0;
-        }
+        currentPanic.value -= healAmount;
+        ClampPanicValue();
     }
+
+    void ClampPanicValue()
+    {
+        currentPanic.value = Mathf.Clamp(currentPanic.value, 0, maxPanic.value);
+    }
+
     private void Update()
     {
-        if (curPanic >= 100)
-        {
-            curPanic = 100;
-        }
+        ClampPanicValue();
     }
 }

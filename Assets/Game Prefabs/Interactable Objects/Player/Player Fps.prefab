@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 7839685640456747523}
   - component: {fileID: 1366726073}
   - component: {fileID: 429201242}
+  - component: {fileID: 1604306558}
   m_Layer: 0
   m_Name: Player Fps
   m_TagString: Player
@@ -343,7 +344,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7839685640456747522
 MonoBehaviour:
@@ -377,7 +378,7 @@ MonoBehaviour:
   cameraPostionHolderDirection: {fileID: 7839685641083197724}
   moveMaxSpeed: 14
   moveSpeed: 5.5
-  slowDownMultiplier: 0.6
+  slowDownMultiplier: 0.55
   SpeedToStartSlwoingDown: 13
 --- !u!114 &1366726073
 MonoBehaviour:
@@ -405,9 +406,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337c62f467499a84cba656175f61b7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 20
+  jumpForce: 15
   onGround: 0
-  GravityMultiplier: 0.4
+  GravityMultiplier: 0.25
+--- !u!114 &1604306558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839685640456747532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02660fae2e12c74fb2998a1a9e65d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curPanic: 0
+  currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
+  maxPanic: {fileID: 11400000, guid: 1555d28490284dd47833351f7874482f, type: 2}
 --- !u!1 &7839685641083197723
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7839685641593133937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.014, y: 0.192, z: 0.457}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

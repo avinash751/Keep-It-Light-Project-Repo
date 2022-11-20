@@ -2536,7 +2536,7 @@ GameObject:
   - component: {fileID: 8958058}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22034,7 +22034,7 @@ GameObject:
   - component: {fileID: 368186423}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60012,7 +60012,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1756509116}
+  m_Mesh: {fileID: 1855073276}
 --- !u!33 &1264237633
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -60020,7 +60020,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264237631}
-  m_Mesh: {fileID: 1756509116}
+  m_Mesh: {fileID: 1855073276}
 --- !u!23 &1264237634
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60301,8 +60301,8 @@ MonoBehaviour:
     m_AreaError: 15
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
-  m_Mesh: {fileID: 1756509116}
-  m_VersionIndex: 4130
+  m_Mesh: {fileID: 1855073276}
+  m_VersionIndex: 4133
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -89322,6 +89322,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1266203300}
     m_Modifications:
+    - target: {fileID: 1375058296181452719, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1430383051107189548, guid: 0389da8fbdbfa3b49a5a6113ab075373,
         type: 3}
       propertyPath: m_RootOrder

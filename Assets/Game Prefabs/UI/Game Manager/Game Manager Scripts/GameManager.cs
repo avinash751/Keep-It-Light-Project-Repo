@@ -33,12 +33,14 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
-        gameData.SetGameToStart();
+        darkOrbsDestroyed.value = 0;
+        currentPanic.value = 0;
+        Time.timeScale = 1;
         gameData.RunStartState(StartGameFunction);
     }
     public void Update()
     {
-        gameData.TransitionToPlayState(PlayGameFunction);
+     
         gameData.TransitionToWinState(WinGameFunction);
         gameData.TransitionToGameOverState(LoseGameFunction);
     }
@@ -47,17 +49,18 @@ public class GameManager : MonoBehaviour
     // State based Functions
     public void StartGameFunction()
     {
-        darkOrbsDestroyed.value = 0;
-        currentPanic.value = 0;
-        SetCursorState(CursorLockMode.None);
-        Time.timeScale = 1;
-        startmenu.SetActive(true);
-        winMenu.SetActive(false);
-        gameOverMenu.SetActive(false);
-
-
+        var currScene = SceneManager.GetActiveScene().buildIndex;
+        if(currScene == 0)
+        {
+            SetCursorState(CursorLockMode.None);
+            Time.timeScale = 1;
+            startmenu.SetActive(true);
+            winMenu.SetActive(false);
+            gameOverMenu.SetActive(false);
+            gameData.currentState = GameManagerData.GameStates.Start;
+        }
     }
-    void PlayGameFunction()
+    public void PlayGameFunction()
     {
         LoadScene(gameData.mainGameScene);
         startmenu.SetActive(false);
@@ -92,8 +95,8 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGameFunction()
     {
-        SetGameState("Start");
         LoadScene(gameData.startScene);
+        SetGameState("Start");
         Time.timeScale = 1;
     }
 

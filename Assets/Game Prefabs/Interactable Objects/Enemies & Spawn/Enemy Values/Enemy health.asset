@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Enemy health
   m_EditorClassIdentifier: 
   Valuename: Current Enemy Health
-  value: 2
+  value: 0

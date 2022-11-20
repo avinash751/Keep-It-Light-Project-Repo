@@ -9,6 +9,7 @@ TagManager:
   - PickUpRange
   - Dark Orb
   - Trap Door
+  - Enemy
   layers:
   - Default
   - TransparentFX

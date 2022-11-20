@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmountOfDamage: 1
-  DoMoreOnCollsion: 0
+  collisionTag: Enemy
 --- !u!114 &421219194720202945
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,11 +29,8 @@ public class GameManagerData : ScriptableObject
  
     public void RunStartState(StateFunction giveAStartFunctionToCall)
     {
-        if(currentState == GameStates.Start)
-        {
             giveAStartFunctionToCall();
             currentScene = startScene;
-        }
     }
 
     public void TransitionToPlayState(StateFunction giveAPlayFunctionToCall)
@@ -57,19 +54,7 @@ public class GameManagerData : ScriptableObject
     {
         giveALoseFunction();
     }
-    public void SetGameToStart()
-    {
-        if(!resetStates && currentState != GameStates.Play)
-        {
-            currentState = GameStates.Start;
-            resetStates=true;
-        }
-
-        if (resetStates && currentState == GameStates.Play)
-        {
-            resetStates = false;
-        }
-    }
+   
 
  
 

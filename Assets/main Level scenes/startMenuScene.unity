@@ -2515,20 +2515,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195709263903790257}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &195709264137046556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7961066735043700137}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0c69f38930ac548ab49db809962c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: {fileID: 11400000, guid: 434e351342904bf4995446b5982fc3d1, type: 2}
-  MaxHealth: {fileID: 11400000, guid: 06dd488ade84101469671eff52e42580, type: 2}
 --- !u!1001 &1430383049968719318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2662,6 +2648,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566085907023136387, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566085907023136387, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayGameFunction
       objectReference: {fileID: 0}
     - target: {fileID: 5230593461478956061, guid: 0389da8fbdbfa3b49a5a6113ab075373,
         type: 3}
@@ -2821,7 +2817,6 @@ GameObject:
   - component: {fileID: 7961066735043700136}
   - component: {fileID: 7961066735043700135}
   - component: {fileID: 7961066735043700134}
-  - component: {fileID: 195709264137046556}
   - component: {fileID: 195709263208237311}
   m_Layer: 0
   m_Name: Player Fps

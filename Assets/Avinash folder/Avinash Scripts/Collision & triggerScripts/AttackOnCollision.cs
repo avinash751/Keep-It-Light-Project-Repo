@@ -5,10 +5,10 @@ using UnityEngine;
 public class AttackOnCollision : MonoBehaviour
 {
     [SerializeField] int AmountOfDamage;
-    public bool DoMoreOnCollsion;
+    public string collisionTag;
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<IDamagable>() != null)
+        if(collision.gameObject.GetComponent<IDamagable>() != null && collision.gameObject.CompareTag(collisionTag))
         {
             IDamagable DamagableObject = collision.gameObject.GetComponent<IDamagable>();
             DamagableObject.TakeDamage(AmountOfDamage);

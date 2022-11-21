@@ -48,8 +48,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7388376, y: 0.88563746, z: 0.9695945}
-  m_Center: {x: -0.019288674, y: -0.37, z: -0.05098008}
+  m_Size: {x: 1.3045294, y: 2.024413, z: 2.3631303}
+  m_Center: {x: -0.30213463, y: -0.33593917, z: -0.5544232}
 --- !u!114 &742959538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   orbAmmo: {fileID: 0}
   yoyoShot: 0
-  maxDistance: 3
-  shootingSpeed: 2
-  maxSpeed: 20
+  maxDistance: 4
+  shootingSpeed: 25
+  maxSpeed: 15
 --- !u!136 &1024445317
 CapsuleCollider:
   m_ObjectHideFlags: 0

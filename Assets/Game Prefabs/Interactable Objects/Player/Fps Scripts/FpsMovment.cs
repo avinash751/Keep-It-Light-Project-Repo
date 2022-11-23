@@ -10,10 +10,7 @@ public class FpsMovment : MonoBehaviour
     Rigidbody rb;
     [SerializeField] Transform cameraPostionHolderDirection;
     [Range(0,30)][SerializeField] float moveMaxSpeed;
-    [Range(0,30)][SerializeField] float moveSpeed;
-    [Range(0, 2)][SerializeField] float slowDownMultiplier;
-    [Range(0, 30)][SerializeField] float SpeedToStartSlwoingDown;
-    
+    [Range(0,30)][SerializeField] float moveSpeed;  
     Jump Jump;
 
 
@@ -37,8 +34,8 @@ public class FpsMovment : MonoBehaviour
         var normalisedDirection = GetHorizontalAndVerticalDirectionForMoving();
         rb.velocity += (cameraPostionHolderDirection.right * normalisedDirection.x + cameraPostionHolderDirection.forward * normalisedDirection.z) * moveSpeed ;
 
-        TruncateVelocity(rb.velocity.magnitude > moveMaxSpeed ? moveMaxSpeed : rb.velocity.magnitude);
-        ReduceVeclocityGraduallyWhenACertainSpeedIsMet(SpeedToStartSlwoingDown);
+        TruncateVelocity(rb.velocity.magnitude > moveMaxSpeed && Jump.OnGround ? moveMaxSpeed : rb.velocity.magnitude);
+      
 
     }
 
@@ -56,15 +53,5 @@ public class FpsMovment : MonoBehaviour
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
     }
 
-    void ReduceVeclocityGraduallyWhenACertainSpeedIsMet(float SpeedrequiredToStartSlowingDown)
-    {
-        if(rb.velocity.magnitude<= SpeedrequiredToStartSlowingDown)
-        {
-            if(Jump.OnGround && rb.velocity.y<=0 && rb.velocity.y>-0.8f)
-            {
-                rb.velocity *= slowDownMultiplier;
-                //Debug.Log("reducing speed;");
-            }
-        }
-    }
+   
 }

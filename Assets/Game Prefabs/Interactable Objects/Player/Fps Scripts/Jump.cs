@@ -6,6 +6,8 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     [Range(0,100)][SerializeField] float jumpForce;
+    [Range(0, 10)][SerializeField] float dragMultiplier;
+  
     public float  JumpForce
     {
         get { return jumpForce; }
@@ -41,6 +43,7 @@ public class Jump : MonoBehaviour
         {
             onGround = false;
             JustJump();
+            Rb.drag = 0;
         }
     }
 
@@ -52,11 +55,18 @@ public class Jump : MonoBehaviour
 
     void  ComeDownTogroundWhenJumped()
     {
-        if( Rb.velocity.y!=0)
+        if ( Rb.velocity.y != 0 )
         {
-            Rb.velocity += -transform.up * GravityMultiplier;
+            Rb.velocity +=-GravityMultiplier * Vector3.up;
+          
         }
-        
+     
+
+        if(Rb.drag!=15)
+        {
+            Rb.drag = Mathf.Lerp(Rb.drag, 15, Time.deltaTime * dragMultiplier);
+        }
+   
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -66,4 +76,6 @@ public class Jump : MonoBehaviour
             onGround = true;
         }
     }
+   
+
 }

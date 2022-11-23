@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class TrapTrigger : MonoBehaviour
 {
-	public PickUpObjectTrigger triggerTrap;
-    bool orbIsPlaced;
-    Animator playDoor;
+	PickUpObjectTrigger triggerTrap;
+	bool orbIsPlaced;
+	Animator playDoor;
+	[SerializeField] string trapDoor;
 	void Start()
 	{
 		triggerTrap = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PickUpObjectTrigger>();
-        playDoor = GameObject.FindGameObjectWithTag("Trap Door").GetComponent<Animator>();
+		playDoor = GameObject.FindGameObjectWithTag(trapDoor).GetComponent<Animator>();
 	}
 
 	void Update()
 	{
 		if (!triggerTrap.isPickedUp && orbIsPlaced)
 		{
-            Debug.Log("Activating Door");
-            playDoor.SetTrigger("Door Open");
+			playDoor.SetTrigger("Door Open");
 		}
 	}
 	void OnTriggerEnter(Collider other)
 	{
-        if(other.gameObject.tag == "Light Orb")
-        {
-            orbIsPlaced = true;
-        }
+		if (other.gameObject.tag == "Light Orb")
+		{
+			orbIsPlaced = true;
+		}
 	}
 }

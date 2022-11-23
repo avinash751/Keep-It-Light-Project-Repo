@@ -2969,12 +2969,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Fps
       objectReference: {fileID: 0}
-    - target: {fileID: 7839685640456747534, guid: b565683b051279248a9c20a18c4e46f3,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 3624e8c546cee3f469a6365757ecf95a,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
 --- !u!1 &10790504
@@ -6744,7 +6738,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41384
+  m_Name: pb_Mesh32062
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15409,7 +15403,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh281054
+  m_Name: pb_Mesh38276
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28545,22 +28539,27 @@ PrefabInstance:
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.ctime1
-      value: 39707
+      value: 32382
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.ctime2
-      value: 59753
+      value: 43176
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.ctime3
+      value: 61680
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
+        type: 3}
+      propertyPath: panicGradient.ctime4
       value: 65535
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.key0.b
-      value: 0.13177848
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
@@ -28570,7 +28569,7 @@ PrefabInstance:
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.key0.r
-      value: 0
+      value: 0.0068565607
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
@@ -28580,32 +28579,57 @@ PrefabInstance:
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.key1.g
-      value: 0.9991259
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.key1.r
-      value: 1
+      value: 0.8460033
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.key2.g
-      value: 0.64832187
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key2.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
+      propertyPath: panicGradient.key2.r
+      value: 0.95258594
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
+        type: 3}
+      propertyPath: panicGradient.key3.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
+        type: 3}
+      propertyPath: panicGradient.key3.g
+      value: 0.5650224
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
+        type: 3}
       propertyPath: panicGradient.key3.r
-      value: 0.6320754
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
+        type: 3}
+      propertyPath: panicGradient.key4.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
+        type: 3}
+      propertyPath: panicGradient.key4.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
+        type: 3}
+      propertyPath: panicGradient.key4.r
+      value: 0.6792453
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: panicGradient.m_NumColorKeys
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612419, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
@@ -39932,7 +39956,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh280004
+  m_Name: pb_Mesh37226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -57079,7 +57103,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh279782
+  m_Name: pb_Mesh37004
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

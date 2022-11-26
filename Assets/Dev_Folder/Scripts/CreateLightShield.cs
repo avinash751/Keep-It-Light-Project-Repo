@@ -7,6 +7,9 @@ public class CreateLightShield : MonoBehaviour
 	CapsuleCollider shieldCapsule;
 	PickUpObjectTrigger pickUpTrigger;
 	[SerializeField] float shieldRadius;
+	[SerializeField] GameObject shieldAura;
+	[SerializeField] Transform playerPos;
+	bool isShielded = false;
 
 	void Start()
 	{
@@ -18,12 +21,15 @@ public class CreateLightShield : MonoBehaviour
 	{
 		ActivateShieldWhenPlayerPicksUpOrb();
 	}
+
 	void ActivateShieldWhenPlayerPicksUpOrb()
 	{
-		if (pickUpTrigger.isPickedUp)
+		if (pickUpTrigger.isPickedUp && !isShielded)
 		{
 			shieldCapsule.radius = shieldRadius;
-			Debug.Log("ACTIVATING SHIELD");
+			Instantiate(shieldAura, playerPos.transform.position, transform.rotation);
+			shieldAura.transform.position = playerPos.position;
+			isShielded = true;
 		}
         else if(!pickUpTrigger.isPickedUp)
         {

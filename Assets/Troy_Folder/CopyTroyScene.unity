@@ -2909,6 +2909,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 429201242, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 429201242, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
+      propertyPath: GravityMultiplier
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 7839685640456747521, guid: b565683b051279248a9c20a18c4e46f3,
         type: 3}
       propertyPath: m_RootOrder
@@ -2969,12 +2977,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Fps
       objectReference: {fileID: 0}
-    - target: {fileID: 7839685640456747534, guid: b565683b051279248a9c20a18c4e46f3,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 3624e8c546cee3f469a6365757ecf95a,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
 --- !u!1 &10790504
@@ -6744,7 +6746,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41384
+  m_Name: pb_Mesh300514
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28542,71 +28544,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4,
         type: 2}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.ctime1
-      value: 39707
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.ctime2
-      value: 59753
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.ctime3
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key0.b
-      value: 0.13177848
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key0.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key0.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key1.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key1.g
-      value: 0.9991259
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key1.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key2.g
-      value: 0.64832187
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key2.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.key3.r
-      value: 0.6320754
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195445150406612417, guid: c31919115e14d7a458d3f69a6d1eab10,
-        type: 3}
-      propertyPath: panicGradient.m_NumColorKeys
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5195445150406612419, guid: c31919115e14d7a458d3f69a6d1eab10,
         type: 3}
       propertyPath: m_FillAmount
@@ -51917,6 +51854,26 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1773188193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7839685640456747532, guid: b565683b051279248a9c20a18c4e46f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 9018920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773188194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773188193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02660fae2e12c74fb2998a1a9e65d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
+  maxPanic: {fileID: 11400000, guid: 1555d28490284dd47833351f7874482f, type: 2}
 --- !u!43 &1776257621
 Mesh:
   m_ObjectHideFlags: 0

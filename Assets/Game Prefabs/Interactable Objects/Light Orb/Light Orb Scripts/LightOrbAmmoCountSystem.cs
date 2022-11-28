@@ -40,7 +40,7 @@ public class LightOrbAmmoCountSystem : MonoBehaviour
             currentAmmo -= amount;
             currentAmmo = Mathf.Clamp(currentAmmo, 0, 100);
             lerpColor.reduceColorLerpIndex(amount);
-            Debug.Log("Ammo" + currentAmmo);
+           /*  Debug.Log("Ammo" + currentAmmo); */
         }
     }
        

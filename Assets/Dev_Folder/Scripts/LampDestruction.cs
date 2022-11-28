@@ -31,12 +31,12 @@ public class LampDestruction : MonoBehaviour
 			if (sphereCollider.radius > maxRadius)
 			{
 				sphereCollider.radius = maxRadius;
-				particle.Play();
+
 			}
-			/* for (int i = 0; i < transform.childCount; i++)
+			for (int i = 0; i < transform.childCount; i++)
 			{
 				transform.GetChild(i).gameObject.SetActive(false);
-			} */
+			}
 		}
 	}
 
@@ -50,6 +50,7 @@ public class LampDestruction : MonoBehaviour
 		if (other.gameObject.tag == "Ground")
 		{
 			hitOnGround = true;
+			particle.Play();
 		}
 	}
 }

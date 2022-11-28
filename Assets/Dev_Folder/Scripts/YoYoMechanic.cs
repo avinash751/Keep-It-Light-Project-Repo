@@ -14,6 +14,9 @@ public class YoYoMechanic : MonoBehaviour
 	[SerializeField] float shootingSpeed;
 	[SerializeField] float maxSpeed;
 
+	
+
+
 	void Start()
 	{
 		pickUp = GetComponent<PickUpObjectTrigger>();
@@ -32,7 +35,7 @@ public class YoYoMechanic : MonoBehaviour
 			ReferenceLightOrb();
 			ShootOrb();
 			orbAmmo.DecreaseLightOrbAmmo(orbAmmo.ammoUsedWhenYoyoyShot);
-			
+			/* StartCoroutine(nameof(ReturnOrbToOriginalPosition)); */
 		}
 
 	}
@@ -55,12 +58,14 @@ public class YoYoMechanic : MonoBehaviour
 		if (yoyoShot == true && distanceFromOrb > maxDistance)
 		{
 
-			objectRb.velocity += ((this.transform.position - objectRb.transform.position) * maxSpeed).normalized;
+			objectRb.velocity += ((this.transform.position - objectRb.transform.position).normalized * maxSpeed);
 			if (objectRb.velocity.magnitude > maxSpeed)
 			{
 				objectRb.velocity = (this.transform.position - objectRb.transform.position).normalized * shootingSpeed;
+
 			}
 			Debug.Log("Returning");
+
 		}
 	}
 
@@ -91,4 +96,11 @@ public class YoYoMechanic : MonoBehaviour
 			yoyoShot = false;
 		}
 	}
+
+	/* IEnumerator ReturnOrbToOriginalPosition()
+	{
+		yield return new WaitForSeconds(3);
+		objectRb.transform.position = transform.position;
+	} */
+
 }

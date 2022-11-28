@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Max Enemy Health
   m_EditorClassIdentifier: 
   Valuename: Max Enemy Health
-  value: 1
+  value: 20

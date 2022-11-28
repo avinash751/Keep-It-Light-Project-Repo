@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/main Level scenes/startMenuScene.unity
     guid: 0fbfa623d51dadb4b817817deacc5b0e
   - enabled: 1
-    path: Assets/Troy_Folder/CopyTroyScene.unity
+    path: Assets/Troy_Folder/BackUpScene.unity
     guid: c27558e3b1e7fdc4b846ce664c020ee0
   m_configObjects: {}

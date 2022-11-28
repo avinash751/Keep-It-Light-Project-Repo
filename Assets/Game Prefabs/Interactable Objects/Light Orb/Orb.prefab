@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4558831789485455039}
   - component: {fileID: 6725573340077858534}
   - component: {fileID: -2672572647781742111}
+  - component: {fileID: 1258206392}
   m_Layer: 3
   m_Name: Orb
   m_TagString: Light Orb
@@ -368,3 +369,18 @@ MonoBehaviour:
   blinkFrequency: 18
   mesh: {fileID: 7521034891785767654}
   ColorToBlink: {r: 1, g: 0.45834383, b: 0, a: 1}
+--- !u!114 &1258206392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c02bef165ad4d4682ae7ef9e9fc9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 105786, guid: 39f6811bb68df1c42a48b76fff02d3d1, type: 3}
+  radius: 148.18
+  explosionForce: 36.2

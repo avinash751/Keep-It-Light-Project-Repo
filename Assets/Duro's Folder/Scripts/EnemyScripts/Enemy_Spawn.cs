@@ -9,6 +9,9 @@ public class Enemy_Spawn : MonoBehaviour
     public GameObject SpawnEnemy1;
     public GameObject SpawnEnemy2;
 
+    //public GameObject SpawnEnemy;
+    public int spawnAmount;
+
     [Header("Spawn Related Settings")]
     public  float startSpawnRateEnemy1;
     public float startSpawnRateEnemy2;
@@ -31,7 +34,11 @@ public class Enemy_Spawn : MonoBehaviour
     }
     void Start()
     {
-        InstantiateEnemy1 ();
+        for (int i = 0; i < spawnAmount; i++)
+        {
+            InstantiateEnemy1();
+        }
+        //InstantiateEnemy1 ();
         InvokeRepeating(nameof(InstantiateEnemy2), startSpawnRateEnemy2, startSpawnRateEnemy2);
     }
 
@@ -42,6 +49,7 @@ public class Enemy_Spawn : MonoBehaviour
 
     void InstantiateEnemy1()
     {
+        
         Vector3 SpawnPosition = transform.position;
 
         GameObject GO_Current = (GameObject)Instantiate(SpawnEnemy1);
@@ -49,6 +57,14 @@ public class Enemy_Spawn : MonoBehaviour
         GO_Current.transform.position = new Vector3( transform.position.x +CircleRadius.x,transform.position.y, transform.position.z + CircleRadius.y);
 
         StartCoroutine("waitForFewSeconds");
+
+        /*
+        GameObject GO_Current = (GameObject)Instantiate(SpawnEnemy);
+        Vector3 position = transform.position + Random.insideUnitSphere * 7f;
+        GO_Current.transform.position = position;
+
+        StartCoroutine("waitForFewSeconds");
+        */
     }
 
     void InstantiateEnemy2()

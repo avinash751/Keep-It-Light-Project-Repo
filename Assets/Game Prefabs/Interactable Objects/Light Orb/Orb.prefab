@@ -382,5 +382,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 105786, guid: 39f6811bb68df1c42a48b76fff02d3d1, type: 3}
-  radius: 148.18
+  radius: 3.7
   explosionForce: 36.2

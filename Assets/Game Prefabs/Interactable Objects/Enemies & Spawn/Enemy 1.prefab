@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8806225208790329955}
   - component: {fileID: 1478946873189571688}
   - component: {fileID: 6105086349326559897}
+  - component: {fileID: 884034210131764876}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -151,3 +152,16 @@ MonoBehaviour:
   Health: {fileID: 11400000, guid: 8f29bc5574a70db4785d7336234a325d, type: 2}
   MaxHealth: {fileID: 11400000, guid: 4d0731a20051a1f4780bb1a9e5df4f53, type: 2}
   explode: {fileID: 1830303490652605800, guid: e688cd637eaf8004387b16b43adc17dc, type: 3}
+--- !u!114 &884034210131764876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098041655973682497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29be3e7e7c8761d44b1ca94380603a3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 19871526, guid: 39f6811bb68df1c42a48b76fff02d3d1, type: 3}

@@ -35,7 +35,7 @@ public class YoYoMechanic : MonoBehaviour
 			ReferenceLightOrb();
 			ShootOrb();
 			orbAmmo.DecreaseLightOrbAmmo(orbAmmo.ammoUsedWhenYoyoyShot);
-			/* StartCoroutine(nameof(ReturnOrbToOriginalPosition)); */
+			pickUp.isPickedUp = true;
 		}
 
 	}
@@ -48,7 +48,6 @@ public class YoYoMechanic : MonoBehaviour
 			yoyoShot = true;
 			objectRb.useGravity = false;
 			objectRb.AddForce(transform.forward * 100, ForceMode.Impulse);
-			Debug.Log("Shot Orb");
 		}
 	}
 
@@ -64,7 +63,6 @@ public class YoYoMechanic : MonoBehaviour
 				objectRb.velocity = (this.transform.position - objectRb.transform.position).normalized * shootingSpeed;
 
 			}
-			Debug.Log("Returning");
 
 		}
 	}

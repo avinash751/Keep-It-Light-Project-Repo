@@ -9,19 +9,21 @@ public class PickUpObjectTrigger : MonoBehaviour
 	[HideInInspector]
 	public Rigidbody objectRb;
 	public bool hasClicked = false;
+
+	
 	public bool isPickedUp = false;
 	[SerializeField] Transform holdTransform;
-    [HideInInspector] public  LightOrbAmmoCountSystem OrbAmmo;
+	[HideInInspector] public LightOrbAmmoCountSystem OrbAmmo;
 	[SerializeField, HideInInspector]
 	ThrowObject throwOrb;
 
-	
+
 	private void Start()
 	{
 		throwOrb = GetComponent<ThrowObject>();
-        OrbAmmo = GetComponent<LightOrbAmmoCountSystem>();
+		OrbAmmo = GetComponent<LightOrbAmmoCountSystem>();
 
-    }
+	}
 	void Update()
 	{
 		Inputs();
@@ -57,9 +59,8 @@ public class PickUpObjectTrigger : MonoBehaviour
 
 	public void DropObject()
 	{
-        orbObject.GetComponent<TrailRenderer>().time = 0.35f;
-        //Debug.Log("Dropped Item");
-        hasClicked = false;
+		orbObject.GetComponent<TrailRenderer>().time = 0.35f;
+		hasClicked = false;
 		objectRb.useGravity = true;
 		isPickedUp = false;
 		orbObject.transform.SetParent(null);
@@ -76,7 +77,6 @@ public class PickUpObjectTrigger : MonoBehaviour
 			OrbAmmo = orbObject.GetComponent<LightOrbAmmoCountSystem>();
 			hasClicked = true;
 		}
-
 	}
 
 	void OnTriggerExit(Collider other)

@@ -27,11 +27,15 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: jumpForce
-    value: 15
+    value: 20
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: dragMultiplier
-    value: 2.5
+    propertyPath: StartGravity
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gravityTimer
+    value: 0.2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: onGround
@@ -39,6 +43,6 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: GravityMultiplier
-    value: 0.45
+    value: 0.35
     objectReference: {fileID: 0}
   m_ExcludedProperties: []

@@ -24,6 +24,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.11
       objectReference: {fileID: 0}
@@ -75,7 +90,18 @@ PrefabInstance:
     - target: {fileID: 6098041655973682497, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: m_Name
-      value: enemy 2
+      value: enemy 2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: explode
+      value: 
+      objectReference: {fileID: 7077434097967044194, guid: 631116f9c739ac24aaa181a44aef7fa3,
+        type: 3}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: amountOfPanicToreduce
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9143350191682808955, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
@@ -92,6 +118,46 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 541593073586189962}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &326780103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991116350677986251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38f3482b909b2947ace57d12ccc9eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollsionTag: Player
+  doSomethingOnCollsion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5998161074335554579}
+        m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
+        m_MethodName: IncreasePanic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5998161074335554579}
+        m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1566677093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +176,15 @@ MonoBehaviour:
   moveFrequency: 25
   moveAmplitude: 10
   moveRadius: 10
+--- !u!114 &5998161074335554579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+    type: 3}
+  m_PrefabInstance: {fileID: 541593073586189962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991116350677986251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db875330cc8099f43bc091db7a4bef64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

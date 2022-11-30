@@ -6,13 +6,13 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     [Range(0,100)][SerializeField] float jumpForce;
-    [Range(0, 10)][SerializeField] float dragMultiplier;
-  
+    FpsMovment move;
+    [SerializeField] bool StartGravity;
+    [Range(0, 1)][SerializeField] float gravityTimer;
+
     public float  JumpForce
     {
         get { return jumpForce; }
-
-        
     }
 
     [SerializeField]  bool  onGround;
@@ -21,7 +21,7 @@ public class Jump : MonoBehaviour
         get { return onGround; }
     } 
 
-    [Range(0, 2)][SerializeField] float  GravityMultiplier;
+    [Range(0, 5)][SerializeField] float  GravityMultiplier;
      Rigidbody Rb;
 
     private void Start()
@@ -32,41 +32,60 @@ public class Jump : MonoBehaviour
     private void Update()
     {
         InputToJump();
-        ComeDownTogroundWhenJumped();   
+        ComeDownTogroundWhenJumped();
+        GravityOnGround();
     }
-   
-
-
+  
     void InputToJump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             onGround = false;
             JustJump();
-            Rb.drag = 0;
+            resetingDragSpeed(0);
+            Invoke(nameof(EnableGravity), gravityTimer); 
         }
+    }
+
+    void resetingDragSpeed(float amount)
+    {
+        Rb.drag = amount;
+   
     }
 
 
     void JustJump()
     {
-        Rb.velocity = Rb.velocity + (Vector3.up  * jumpForce);
+      
+        Rb.velocity +=   (Vector3.up  * jumpForce);
     }
 
     void  ComeDownTogroundWhenJumped()
     {
-        if ( Rb.velocity.y != 0 )
+        if ( Rb.velocity.y !=0 && StartGravity)
         {
             Rb.velocity +=-GravityMultiplier * Vector3.up;
           
         }
-     
-
-        if(Rb.drag!=15)
+        if(onGround)
         {
-            Rb.drag = Mathf.Lerp(Rb.drag, 15, Time.deltaTime * dragMultiplier);
+            StartGravity = false;
         }
-   
+     
+    }
+
+    void EnableGravity()
+    {
+        StartGravity = true;
+    }
+
+    void GravityOnGround()
+    {
+        if(onGround && Rb.velocity.y<-0.1f)
+        {
+            Rb.velocity -= Vector3.up * 3.5f;
+        }
+       
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -74,6 +93,7 @@ public class Jump : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             onGround = true;
+            resetingDragSpeed(10);
         }
     }
    

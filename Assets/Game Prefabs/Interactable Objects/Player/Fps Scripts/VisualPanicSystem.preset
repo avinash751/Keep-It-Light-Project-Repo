@@ -28,11 +28,13 @@ Preset:
   - target: {fileID: 0}
     propertyPath: meduimModePanic
     value: 
-    objectReference: {fileID: 0}
+    objectReference: {fileID: 1932603163, guid: b565683b051279248a9c20a18c4e46f3,
+      type: 3}
   - target: {fileID: 0}
     propertyPath: maxModePanic
     value: 
-    objectReference: {fileID: 0}
+    objectReference: {fileID: 1086128063, guid: b565683b051279248a9c20a18c4e46f3,
+      type: 3}
   - target: {fileID: 0}
     propertyPath: currentPanic
     value: 
@@ -40,10 +42,11 @@ Preset:
   - target: {fileID: 0}
     propertyPath: camShake
     value: 
-    objectReference: {fileID: 0}
+    objectReference: {fileID: 1448649794, guid: b565683b051279248a9c20a18c4e46f3,
+      type: 3}
   - target: {fileID: 0}
     propertyPath: lerpTime
-    value: 1
+    value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: thresholdForMeduimPanic
@@ -59,10 +62,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: thresholdForHighPanic
-    value: 75
+    value: 70
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: heartBeat
     value: 
-    objectReference: {fileID: 0}
+    objectReference: {fileID: 85098692, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
   m_ExcludedProperties: []

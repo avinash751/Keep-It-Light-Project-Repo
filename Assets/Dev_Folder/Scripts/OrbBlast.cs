@@ -7,7 +7,7 @@ public class OrbBlast : MonoBehaviour
 	YoYoMechanic orb;
 	bool hitEnemy = false;
 	bool hasKnockedEnemies = false;
-	[SerializeField] GameObject explosionEffect;
+
 	[SerializeField] float radius;
 	[SerializeField] float explosionForce;
 
@@ -32,13 +32,12 @@ public class OrbBlast : MonoBehaviour
 
 	void BlastEffect()
 	{
-		Instantiate(explosionEffect, transform.position, transform.rotation);
 		Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
 		foreach (Collider nearbyObject in colliders)
 		{
 			Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-			if(rb != null)
+			if (rb != null)
 			{
 				rb.AddExplosionForce(explosionForce, transform.position, radius);
 			}
@@ -49,8 +48,12 @@ public class OrbBlast : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Enemy")
 		{
-			explosionEffect.GetComponentInChildren<ParticleSystem>().Play();
 			hitEnemy = true;
 		}
+	}
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.blue;
+		Gizmos.DrawWireSphere(transform.position, radius);
 	}
 }

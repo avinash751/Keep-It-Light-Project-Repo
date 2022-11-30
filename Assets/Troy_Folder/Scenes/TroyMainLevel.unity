@@ -15,11 +15,11 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_FogColor: {r: 0.51216125, g: 0, b: 0.6698113, a: 1}
+  m_FogMode: 2
+  m_FogDensity: 0.09
+  m_LinearFogStart: 1
+  m_LinearFogEnd: 20
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -4573,7 +4573,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 429201242, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 429201242, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
       propertyPath: dragMultiplier
@@ -4581,7 +4581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 429201242, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
       propertyPath: GravityMultiplier
-      value: 0.45
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 1698333037, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
       propertyPath: maxDistance
@@ -4646,6 +4646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player Fps
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839685641593133939, guid: b565683b051279248a9c20a18c4e46f3,
+        type: 3}
+      propertyPath: far clip plane
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
@@ -55725,7 +55730,7 @@ PrefabInstance:
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
@@ -67781,7 +67786,7 @@ PrefabInstance:
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}

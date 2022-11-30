@@ -41,7 +41,7 @@ public class VisualPanicSystem : MonoBehaviour
         if(currentPanic.value>= thresholdForMeduimPanic && currentPanic.value<thresholdForHighPanic)
         {
             LerpPanicVolume(1, meduimModePanic);
-            camShake.SetCameraShakeValues(30, 0.005f, 0);
+            camShake.SetCameraShakeValues(30, 0.0015f, 0);
             camShake.EnableCamersShake(true,true);
         }
 
@@ -60,7 +60,7 @@ public class VisualPanicSystem : MonoBehaviour
             SinLerpPanicVolume(0.6f,1, maxModePanic);
             PlayAudio(heartBeat);
 
-            camShake.SetCameraShakeValues(40, 0.01f, 0);
+            camShake.SetCameraShakeValues(40, 0.002f, 0);
             camShake.EnableCamersShake(true, true);
         }
         else

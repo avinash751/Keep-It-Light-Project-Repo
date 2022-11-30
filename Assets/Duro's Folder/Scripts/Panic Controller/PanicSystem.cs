@@ -20,8 +20,10 @@ public class PanicSystem: MonoBehaviour
     public  void IncreasePanic(int panicAmount)
     {
         currentPanic.value += panicAmount;
+        Debug.Log(currentPanic);
         ClampPanicValue();
     }
+
 
     public void Heal(int healAmount)
     {
@@ -31,11 +33,12 @@ public class PanicSystem: MonoBehaviour
 
     void ClampPanicValue()
     {
-        currentPanic.value = Mathf.Clamp(currentPanic.value, 0, maxPanic.value);
+        //currentPanic.value = Mathf.Clamp(currentPanic.value, 0, maxPanic.value);
     }
 
     private void Update()
     {
         ClampPanicValue();
     }
+    
 }

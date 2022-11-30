@@ -9,8 +9,9 @@ public class FpsMovment : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] Transform cameraPostionHolderDirection;
-    [Range(0,30)][SerializeField] float moveMaxSpeed;
-    [Range(0,30)][SerializeField] float moveSpeed;  
+    [Range(0,30)][SerializeField] public float moveMaxSpeed;
+    [Range(0,30)][SerializeField] float moveSpeed;
+    [Range(0, 10)][SerializeField] float slowDownTime;
     Jump Jump;
 
 
@@ -33,9 +34,11 @@ public class FpsMovment : MonoBehaviour
     {
         var normalisedDirection = GetHorizontalAndVerticalDirectionForMoving();
         rb.velocity += (cameraPostionHolderDirection.right * normalisedDirection.x + cameraPostionHolderDirection.forward * normalisedDirection.z) * moveSpeed ;
+        
 
         TruncateVelocity(rb.velocity.magnitude > moveMaxSpeed && Jump.OnGround ? moveMaxSpeed : rb.velocity.magnitude);
-      
+        TruncateVelocityWhenNotOnGround(moveMaxSpeed);
+        SlowDown();
 
     }
 
@@ -51,6 +54,20 @@ public class FpsMovment : MonoBehaviour
     void TruncateVelocity(float maxSpeed)
     {
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+    }
+
+    void TruncateVelocityWhenNotOnGround(float maxSpeed)
+    {
+        if (!Jump.OnGround)
+        {
+            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxSpeed / 1.3f, maxSpeed / 1.3f), rb.velocity.y, Mathf.Clamp(rb.velocity.z, -maxSpeed / 1.3f, maxSpeed / 1.3f));
+        }
+    }
+
+
+    void SlowDown()
+    {
+        rb.velocity = Vector3.Lerp(rb.velocity,Vector3.zero, Time.deltaTime * slowDownTime);
     }
 
    

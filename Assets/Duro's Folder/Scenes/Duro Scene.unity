@@ -487,6 +487,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1155108314 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2326748647752241199, guid: 820282476b6743744be52bbb53fc3c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 2927020796286467050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1180837197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,6 +500,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8806225208790329955, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     - target: {fileID: 1478946873189571688, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: angle
@@ -503,6 +514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rayRange
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478946873189571688, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: MoveSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1478946873189571688, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
@@ -581,6 +597,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2, type: 3}
+--- !u!114 &1363402526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 2927020796286467050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd82d9103796f8c43bb83fb765859983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1710763454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 7839685640456747521, guid: b565683b051279248a9c20a18c4e46f3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 117.2
+      value: 167.6
       objectReference: {fileID: 0}
     - target: {fileID: 7839685640456747521, guid: b565683b051279248a9c20a18c4e46f3,
         type: 3}
@@ -908,6 +936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 60.74577
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734649621464597515, guid: d66e90f94d7377b4ea5a19eeae0656c9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.3
       objectReference: {fileID: 0}
     - target: {fileID: 5734649621464597515, guid: d66e90f94d7377b4ea5a19eeae0656c9,
         type: 3}
@@ -1005,6 +1038,11 @@ PrefabInstance:
       objectReference: {fileID: 927927958}
     - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
+      propertyPath: SpawnRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
       propertyPath: spawnAmount
       value: 10
       objectReference: {fileID: 0}
@@ -1026,7 +1064,7 @@ PrefabInstance:
     - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: startSpawnRateEnemy2
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2326748646776930470, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
@@ -1138,6 +1176,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 4303377673167356356, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: darkOrb
+      value: 
+      objectReference: {fileID: 1155108314}
+    - target: {fileID: 4303377673167356356, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: darkSpawn
+      value: 
+      objectReference: {fileID: 1363402526}
     - target: {fileID: 4303377673167356356, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: RateOfGrowing
@@ -1271,6 +1319,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195445150260358377, guid: c31919115e14d7a458d3f69a6d1eab10,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c31919115e14d7a458d3f69a6d1eab10, type: 3}

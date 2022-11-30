@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ObjectHealth : MonoBehaviour,IDamagable,IDestroyable
 {
-    public Value Health, MaxHealth;
+    public Value  MaxHealth;
+    public  float currentHealth;
    
     void Start()
     {
@@ -13,10 +14,10 @@ public class ObjectHealth : MonoBehaviour,IDamagable,IDestroyable
 
     public void TakeDamage(int Amount)
     {
-        Health.value = Mathf.Clamp(Health.value, 1, MaxHealth.value);
-        Health.value -= Amount;
+        currentHealth = Mathf.Clamp(currentHealth, 1, MaxHealth.value);
+        currentHealth -= Amount;
         
-        if(Health.value <=0)
+        if(currentHealth <=0)
         {
             DestroyObject();
         }
@@ -30,7 +31,7 @@ public class ObjectHealth : MonoBehaviour,IDamagable,IDestroyable
 
     void InitialisingValues()
     {
-        Health.value = 0;
-        Health.value = MaxHealth.value;
+        currentHealth = 0;
+        currentHealth = MaxHealth.value;
     }
 }

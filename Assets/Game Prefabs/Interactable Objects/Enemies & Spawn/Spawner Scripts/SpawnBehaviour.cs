@@ -13,6 +13,7 @@ public class SpawnBehaviour : MonoBehaviour
     public int fogIncreaterate;
     public int glowRateIntensity;
     public float  enemy1SpawnRateRateAddon;
+    [SerializeField] AudioSource soundWhenGrown;
 
     [SerializeField] float RateOfGrowing;
     // Start is called before the first frame update
@@ -31,5 +32,7 @@ public class SpawnBehaviour : MonoBehaviour
     {
         spawnBehaviour = new GrowSpawnBehaviour(darkSpawn, darkSpawn.DarkFog.GetComponent<ParticleSystem>(), darkSpawn.SpawnDome.GetComponent<MeshRenderer>(), darkOrb,this);
         spawnBehaviour.RunSpawnBehaviour();
+        soundWhenGrown.pitch = Random.Range(0.9f,1.2f);
+        soundWhenGrown.Play();
     }
 }

@@ -59,7 +59,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 
 	public void DropObject()
 	{
-		orbObject.GetComponent<TrailRenderer>().time = 0.35f;
+		orbObject.GetComponent<TrailRenderer>().time = 0.35f;                    
 		hasClicked = false;
 		objectRb.useGravity = true;
 		isPickedUp = false;
@@ -76,6 +76,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 			objectRb = orbObject.GetComponent<Rigidbody>();
 			OrbAmmo = orbObject.GetComponent<LightOrbAmmoCountSystem>();
 			hasClicked = true;
+			
 		}
 	}
 

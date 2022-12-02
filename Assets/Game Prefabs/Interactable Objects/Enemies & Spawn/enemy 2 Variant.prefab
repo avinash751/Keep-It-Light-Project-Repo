@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.11
+      value: 45.35
       objectReference: {fileID: 0}
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
@@ -50,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 77.05
+      value: -47.57
       objectReference: {fileID: 0}
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
@@ -98,6 +98,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7077434097967044194, guid: 631116f9c739ac24aaa181a44aef7fa3,
         type: 3}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: soundVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: currentPanic
+      value: 
+      objectReference: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4,
+        type: 2}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: soundOnDestroy
+      value: 
+      objectReference: {fileID: 8300000, guid: 06bf8ab0de9847a4db76be679e1f003d, type: 3}
     - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: amountOfPanicToreduce

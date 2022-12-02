@@ -7,12 +7,19 @@ public class EnemyHealth:ObjectHealth,IDestroyable
    [SerializeField] ParticleSystem explode;
    [SerializeField] Value currentPanic;
    [SerializeField] int amountOfPanicToreduce;
+   [SerializeField] AudioClip soundOnDestroy;
+   [SerializeField] float soundVolume;
+
     public override void DestroyObject()
     {
         spawnParticleSystem();
-        Destroy(gameObject);
+        
         ReducePanic();
-       
+        
+        AudioSource.PlayClipAtPoint(soundOnDestroy, transform.position, soundVolume);
+        
+        Destroy(gameObject);
+
 
     }
 

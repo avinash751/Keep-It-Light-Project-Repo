@@ -9,6 +9,7 @@ public class Jump : MonoBehaviour
     FpsMovment move;
     [SerializeField] bool StartGravity;
     [Range(0, 1)][SerializeField] float gravityTimer;
+    [SerializeField] AudioSource jumpSound;
 
     public float  JumpForce
     {
@@ -57,14 +58,14 @@ public class Jump : MonoBehaviour
     void JustJump()
     {
       
-        Rb.velocity +=   (Vector3.up  * jumpForce);
+        Rb.velocity +=   (Vector3.up  * jumpForce) ;
     }
 
     void  ComeDownTogroundWhenJumped()
     {
         if ( Rb.velocity.y !=0 && StartGravity)
         {
-            Rb.velocity +=-GravityMultiplier * Vector3.up;
+            Rb.velocity +=-GravityMultiplier * Vector3.up *50 * Time.deltaTime;
           
         }
         if(onGround)
@@ -83,7 +84,7 @@ public class Jump : MonoBehaviour
     {
         if(onGround && Rb.velocity.y<-0.1f)
         {
-            Rb.velocity -= Vector3.up * 3.5f;
+            Rb.velocity -= Vector3.up * 300f * Time.deltaTime;
         }
        
     }
@@ -92,8 +93,14 @@ public class Jump : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         {
-            onGround = true;
-            resetingDragSpeed(10);
+            if(!OnGround)
+            {
+                onGround = true;
+                resetingDragSpeed(10);
+                jumpSound.pitch = Random.Range(1.3f, 1.8f);
+                jumpSound.Play();
+            }
+           
         }
     }
    

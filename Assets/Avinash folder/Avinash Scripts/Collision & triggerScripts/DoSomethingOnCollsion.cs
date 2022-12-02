@@ -15,7 +15,7 @@ public class DoSomethingOnCollsion : MonoBehaviour
     {
         if(collision.gameObject.tag == CollsionTag)
         {
-        
+         doSomethingOnCollsion.Invoke();
             
         }
     }

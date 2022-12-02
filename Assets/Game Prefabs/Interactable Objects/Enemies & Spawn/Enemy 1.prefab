@@ -129,14 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e559ede0b4ccd84cbdfac96cf79d4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
-  maxPanic: {fileID: 11400000, guid: 1555d28490284dd47833351f7874482f, type: 2}
-  RotationSpeed: 2
   MoveSpeed: 0.1
-  targetVelocity: 10
-  numberOfRays: 19
-  angle: 90
-  rayRange: 2
 --- !u!114 &6105086349326559897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +145,10 @@ MonoBehaviour:
   MaxHealth: {fileID: 11400000, guid: 4d0731a20051a1f4780bb1a9e5df4f53, type: 2}
   currentHealth: 0
   explode: {fileID: 1830303490652605800, guid: e688cd637eaf8004387b16b43adc17dc, type: 3}
+  currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
+  amountOfPanicToreduce: 0
+  soundOnDestroy: {fileID: 8300000, guid: 7de47a698bc16b644b7e3daf5006cd17, type: 3}
+  soundVolume: 0.2
 --- !u!114 &884034210131764876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,5 +162,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 19871526, guid: 39f6811bb68df1c42a48b76fff02d3d1, type: 3}
-  currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
-  amountOfPanicToreduce: 7

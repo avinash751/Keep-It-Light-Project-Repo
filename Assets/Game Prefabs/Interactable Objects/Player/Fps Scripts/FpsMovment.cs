@@ -12,7 +12,9 @@ public class FpsMovment : MonoBehaviour
     [Range(0,30)][SerializeField] public float moveMaxSpeed;
     [Range(0,30)][SerializeField] float moveSpeed;
     [Range(0, 10)][SerializeField] float slowDownTime;
+    [SerializeField] AudioSource walkingSound;
     Jump Jump;
+    bool walking;
 
 
 
@@ -28,6 +30,7 @@ public class FpsMovment : MonoBehaviour
     void FixedUpdate()
     {
         Movment();
+        PlayWalkingSound();
     }
 
     void Movment()
@@ -68,6 +71,25 @@ public class FpsMovment : MonoBehaviour
     void SlowDown()
     {
         rb.velocity = Vector3.Lerp(rb.velocity,Vector3.zero, Time.deltaTime * slowDownTime);
+    }
+
+    void PlayWalkingSound()
+    {
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && Jump.OnGround)
+        {
+            
+            walkingSound.enabled = true;
+        }
+        else if(!Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.D))
+        {
+            walkingSound.enabled = false;
+            walkingSound.pitch = Random.Range(0.7f, 1.1f);
+        }
+
+        if(!Jump.OnGround)
+        {
+            walkingSound.enabled = false;
+        }
     }
 
    

@@ -168,6 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmountOfDamage: 1
   collisionTag: Enemy
+  DoExtraOnCollsion:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &421219194720202945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +391,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c02bef165ad4d4682ae7ef9e9fc9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionEffect: {fileID: 105786, guid: 39f6811bb68df1c42a48b76fff02d3d1, type: 3}
-  radius: 3.7
-  explosionForce: 36.2
+  radius: 1.33
+  explosionForce: 5.18

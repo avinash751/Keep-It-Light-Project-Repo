@@ -66,7 +66,6 @@ public class Jump : MonoBehaviour
         if ( Rb.velocity.y !=0 && StartGravity)
         {
             Rb.velocity +=-GravityMultiplier * Vector3.up *50 * Time.deltaTime;
-          
         }
         if(onGround)
         {

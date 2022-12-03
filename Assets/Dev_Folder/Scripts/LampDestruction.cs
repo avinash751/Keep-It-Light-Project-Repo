@@ -33,7 +33,7 @@ public class LampDestruction : MonoBehaviour
 				sphereCollider.radius = maxRadius;
 
 			}
-			for (int i = 0; i < transform.childCount; i++)
+			for (int i = 0; i < transform.childCount - 1; i++)
 			{
 				transform.GetChild(i).gameObject.SetActive(false);
 			}
@@ -50,7 +50,7 @@ public class LampDestruction : MonoBehaviour
 		if (other.gameObject.tag == "Ground")
 		{
 			hitOnGround = true;
-			particle.Play();
+			var particleExplode = Instantiate(particle, transform.position, Quaternion.identity);
 		}
 	}
 }

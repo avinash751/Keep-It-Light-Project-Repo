@@ -75,54 +75,7 @@ MonoBehaviour:
   - {fileID: 7614683229299452056}
   - {fileID: 6881707834453384519}
   - {fileID: -537904439696037896}
-  - {fileID: 2178599546354928513}
   - {fileID: -3692771725549126317}
---- !u!114 &2178599546354928513
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
-  m_Name: DepthOfField
-  m_EditorClassIdentifier: 
-  active: 0
-  mode:
-    m_OverrideState: 1
-    m_Value: 2
-  gaussianStart:
-    m_OverrideState: 1
-    m_Value: 0.15
-  gaussianEnd:
-    m_OverrideState: 1
-    m_Value: 3.84
-  gaussianMaxRadius:
-    m_OverrideState: 1
-    m_Value: 0.721
-  highQualitySampling:
-    m_OverrideState: 0
-    m_Value: 0
-  focusDistance:
-    m_OverrideState: 1
-    m_Value: 4.3
-  aperture:
-    m_OverrideState: 1
-    m_Value: 2.54
-  focalLength:
-    m_OverrideState: 1
-    m_Value: 51.8
-  bladeCount:
-    m_OverrideState: 1
-    m_Value: 3
-  bladeCurvature:
-    m_OverrideState: 1
-    m_Value: 1
-  bladeRotation:
-    m_OverrideState: 1
-    m_Value: -139
 --- !u!114 &3036467743429273856
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -138,7 +91,7 @@ MonoBehaviour:
   active: 1
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.735849, g: 0.33668566, b: 0.33668566, a: 1}
+    m_Value: {r: 0.8301887, g: 0.32424346, b: 0.32424346, a: 1}
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
@@ -166,7 +119,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.639
+    m_Value: 0.7
   xMultiplier:
     m_OverrideState: 1
     m_Value: 0.432
@@ -194,7 +147,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.443
+    m_Value: 0.5
 --- !u!114 &7568295570463338396
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -251,7 +204,7 @@ MonoBehaviour:
   active: 1
   distance:
     m_OverrideState: 1
-    m_Value: 0.141
+    m_Value: 0.2
   cropToFit:
     m_OverrideState: 1
     m_Value: 0.479

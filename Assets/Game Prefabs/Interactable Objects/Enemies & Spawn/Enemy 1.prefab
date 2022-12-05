@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 1478946873189571688}
   - component: {fileID: 6105086349326559897}
   - component: {fileID: 884034210131764876}
+  - component: {fileID: 1975122684760358823}
+  - component: {fileID: 1083292964625788575}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -162,3 +164,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 19871526, guid: 39f6811bb68df1c42a48b76fff02d3d1, type: 3}
+--- !u!114 &1975122684760358823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098041655973682497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997cfb358112ff9428fb81fa7af665f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radiusExpansion: 20
+  startRadius: 0.01
+  maxRadius: 5
+--- !u!135 &1083292964625788575
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098041655973682497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.3
+  m_Center: {x: 0, y: 0, z: 0}

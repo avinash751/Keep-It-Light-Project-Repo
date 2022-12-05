@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyHealth:ObjectHealth,IDestroyable
 {
    [SerializeField] ParticleSystem explode;
-   [SerializeField] Value currentPanic;
-   [SerializeField] int amountOfPanicToreduce;
+   public Value currentPanic;
+   [SerializeField] int PanicToreduceOnDestroy;
    [SerializeField] AudioClip soundOnDestroy;
    [SerializeField] float soundVolume;
 
@@ -14,7 +14,7 @@ public class EnemyHealth:ObjectHealth,IDestroyable
     {
         spawnParticleSystem();
         
-        ReducePanic();
+        ReducePanic(PanicToreduceOnDestroy);
         
         AudioSource.PlayClipAtPoint(soundOnDestroy, transform.position, soundVolume);
         
@@ -29,17 +29,20 @@ public class EnemyHealth:ObjectHealth,IDestroyable
         Destroy(particle,3f);
     }
 
-    void ReducePanic()
+
+    // panic code 
+
+    public void ReducePanic(int amount)
     {
         if(currentHealth <=0)
         {
-            currentPanic.value -= amountOfPanicToreduce;
+            currentPanic.value -= amount;
         }
        
     }
 
-    public void IncreasePanic()
+    public void IncreasePanic(int amount)
     {
-        currentPanic.value += 2;
+        currentPanic.value += amount;
     }
 }

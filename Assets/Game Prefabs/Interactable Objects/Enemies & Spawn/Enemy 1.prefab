@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1478946873189571688}
   - component: {fileID: 6105086349326559897}
   - component: {fileID: 884034210131764876}
+  - component: {fileID: 2226625791255017785}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -146,7 +147,7 @@ MonoBehaviour:
   currentHealth: 0
   explode: {fileID: 1830303490652605800, guid: e688cd637eaf8004387b16b43adc17dc, type: 3}
   currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
-  amountOfPanicToreduce: 0
+  PanicToreduceOnDestroy: 0
   soundOnDestroy: {fileID: 8300000, guid: 7de47a698bc16b644b7e3daf5006cd17, type: 3}
   soundVolume: 0.2
 --- !u!114 &884034210131764876
@@ -162,3 +163,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 19871526, guid: 39f6811bb68df1c42a48b76fff02d3d1, type: 3}
+--- !u!114 &2226625791255017785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098041655973682497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a8bcee14d6253445b4d01849d410d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanceThresholdToIncreasePanic: 4
+  PanicToIncrease: 2
+  PanicToDecrease: 1

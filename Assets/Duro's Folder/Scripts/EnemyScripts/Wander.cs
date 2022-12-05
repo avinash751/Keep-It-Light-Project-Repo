@@ -5,9 +5,15 @@ using UnityEngine;
 public class Wander : MonoBehaviour
 {
     Rigidbody rb;
+    public Transform TF_Player;
+
     [SerializeField] float speed = 5f;
     [SerializeField] Vector3 SetDirectionToMove;
     [SerializeField] float maxSpeed;
+    bool chasing;
+
+
+    float distanceToPlayer; 
 
 
 
@@ -29,7 +35,17 @@ public class Wander : MonoBehaviour
     }
     private void Update()
     {
-        WanderToDirection();
+        distanceToPlayer = Vector3.Distance(transform.position, TF_Player.transform.position);
+
+        if (distanceToPlayer <= 10)
+        {
+            Debug.Log("close to player");
+            ChasePlayer();
+        }
+        else
+        {
+            WanderToDirection();
+        }
     }
 
     void AfterCertainTimeChangeDirection()
@@ -40,5 +56,10 @@ public class Wander : MonoBehaviour
     void TruncateVelocity()
     {
         rb.velocity = Vector3.ClampMagnitude(rb.velocity,maxSpeed);
+    }
+
+    void ChasePlayer()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, TF_Player.transform.position, speed * Time.deltaTime);
     }
 }

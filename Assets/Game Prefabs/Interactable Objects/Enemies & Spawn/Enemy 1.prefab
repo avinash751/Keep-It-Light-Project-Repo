@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1478946873189571688}
   - component: {fileID: 6105086349326559897}
   - component: {fileID: 884034210131764876}
+  - component: {fileID: 7430241748810123407}
   - component: {fileID: 1975122684760358823}
   - component: {fileID: 1083292964625788575}
   m_Layer: 0
@@ -117,7 +118,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1478946873189571688
 MonoBehaviour:
@@ -126,7 +127,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6098041655973682497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e559ede0b4ccd84cbdfac96cf79d4e5, type: 3}
   m_Name: 
@@ -164,6 +165,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 19871526, guid: 39f6811bb68df1c42a48b76fff02d3d1, type: 3}
+--- !u!114 &7430241748810123407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098041655973682497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb79bede0a5f1b489190d79017590be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TF_Player: {fileID: 7839685640456747521, guid: b565683b051279248a9c20a18c4e46f3,
+    type: 3}
+  speed: 5
+  SetDirectionToMove: {x: 0, y: 0, z: 0}
+  maxSpeed: 5
 --- !u!114 &1975122684760358823
 MonoBehaviour:
   m_ObjectHideFlags: 0

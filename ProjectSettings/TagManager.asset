@@ -12,6 +12,8 @@ TagManager:
   - Enemy
   - Trap Door 2
   - Blast
+  - Path
+  - Lamp
   layers:
   - Default
   - TransparentFX

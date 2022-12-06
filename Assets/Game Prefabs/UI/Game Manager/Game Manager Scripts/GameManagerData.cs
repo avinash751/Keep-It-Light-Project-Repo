@@ -52,6 +52,7 @@ public class GameManagerData : ScriptableObject
 
     public void TransitionToGameOverState(StateFunction giveALoseFunction)
     {
+
         giveALoseFunction();
     }
    

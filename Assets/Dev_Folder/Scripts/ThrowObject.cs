@@ -13,6 +13,8 @@ public class ThrowObject : MonoBehaviour
 	bool hasClicked = false;
 	[HideInInspector]
 	public bool throwObject = false;
+
+	[SerializeField] AudioSource SoundOnThrow;
 	void Start()
 	{
 		pickUpTrigger = GetComponent<PickUpObjectTrigger>();
@@ -28,6 +30,7 @@ public class ThrowObject : MonoBehaviour
 		{
 			ReferenceLightOrb();
             ThrowOrb();
+			SoundOnThrow.Play();
 			orbAmmo.DecreaseLightOrbAmmo(orbAmmo.ammoUsedWhenThrown);
 		}
 	}

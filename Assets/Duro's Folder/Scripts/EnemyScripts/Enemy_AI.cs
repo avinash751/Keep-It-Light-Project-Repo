@@ -26,8 +26,6 @@ public class Enemy_AI : MonoBehaviour
         TF_Player = GameObject.FindGameObjectWithTag("Player").transform;
         TF_Path = GameObject.FindGameObjectWithTag("Path").transform;
         rb = GetComponent<Rigidbody>();
-
-        StartCoroutine(Wander());
     }
 
 
@@ -36,9 +34,9 @@ public class Enemy_AI : MonoBehaviour
     void Update() //look and then move to direction of player
     {
 
-        Vector3 Randomdirection = Random.insideUnitSphere * 4;
-        Randomdirection += transform.position;
-        rb.velocity = Vector3.MoveTowards(transform.position, Randomdirection, 5 * Time.deltaTime);
+        //Vector3 Randomdirection = Random.insideUnitSphere * 4;
+        //Randomdirection += transform.position;
+        //rb.velocity = Vector3.MoveTowards(transform.position, Randomdirection, 10 * Time.deltaTime);
         dist = Vector3.Distance(transform.position, TF_Player.transform.position);
         
 
@@ -51,39 +49,31 @@ public class Enemy_AI : MonoBehaviour
         if (isRotateRight == true)
         {
             transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
-            //rb.rotation = Quaternion.Euler(transform.up * Time.deltaTime * rotSpeed);
         }
         if (isRotatingLeft == true)
         {
             transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
-            //rb.rotation = Quaternion.Euler(transform.up * Time.deltaTime * -rotSpeed);
         }
         if(isWalking == true)
         {
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-            //rb.velocity += transform.forward * MoveSpeed * Time.deltaTime;
         }
 
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, MoveSpeed);
+        //.velocity = Vector3.ClampMagnitude(rb.velocity, MoveSpeed);
 
-        
+        /*
         if (dist < 5)
         {
-            close = true;
-            StopCoroutine(Wander());
-            if(dist < 3)
-            {
-                transform.position -= transform.forward * MoveSpeed * Time.deltaTime;
-            }
+            
         }
-        /*
-        else if (dist >= 7)
+       
+        else if (dist > 7)
         {
             close = false;
             StartCoroutine(Wander());
             // GetComponent<Flee>().enabled = false;
         }
-        */
+        
         if (!close)
         {
             transform.rotation =
@@ -96,26 +86,28 @@ public class Enemy_AI : MonoBehaviour
         {
             //GetComponent<Flee>().enabled = true;
         }
-        
+        */
 
-        float targetRange = 20f;
-        if (dist <= targetRange)
-        {
 
-            transform.rotation =
-                    Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(TF_Player.position - transform.position),
-                    rotSpeed * Time.deltaTime);
 
-            rb.velocity += transform.forward * MoveSpeed * Time.deltaTime;
-        }
-        else
-        {
-            transform.rotation =
-                    Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(TF_Path.position - transform.position),
-                    rotSpeed * Time.deltaTime);
+        //float targetRange = 20f;
+        //if (dist <= targetRange)
+        //{
 
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-        }
+        //    transform.rotation =
+        //            Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(TF_Player.position - transform.position),
+        //            rotSpeed * Time.deltaTime);
+
+        //    rb.velocity += transform.forward * MoveSpeed * Time.deltaTime;
+        //}
+        //else
+        //{
+        //    transform.rotation =
+        //            Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(TF_Path.position - transform.position),
+        //            rotSpeed * Time.deltaTime);
+
+        //    transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        //}
         
 
     }
@@ -123,10 +115,10 @@ public class Enemy_AI : MonoBehaviour
     IEnumerator Wander()
     {
         int rotTime = Random.Range(1, 3);
-        int rotateWait = Random.Range(1, 3);
+        int rotateWait = Random.Range(1, 4);
         int rotateLeftorRight = Random.Range(0, 3);
-        int walkWait = Random.Range(1, 3);
-        int walkTime = Random.Range(1, 4);
+        int walkWait = Random.Range(1, 4);
+        int walkTime = Random.Range(1, 5);
 
         isWandering = true;
 
@@ -147,7 +139,7 @@ public class Enemy_AI : MonoBehaviour
             yield return new WaitForSeconds(rotTime);
             isRotateRight = false;
         }
-        //isWandering = false;
+        isWandering = false;
 
     }
 

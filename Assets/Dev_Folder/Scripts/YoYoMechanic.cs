@@ -14,6 +14,8 @@ public class YoYoMechanic : MonoBehaviour
 	[SerializeField] float shootingSpeed;
 	[SerializeField] float maxSpeed;
 
+	[Header("sounds")]
+	[SerializeField]AudioSource pushSound;
 	
 
 
@@ -33,11 +35,21 @@ public class YoYoMechanic : MonoBehaviour
 		if (Input.GetMouseButtonDown(1) && pickUp.isPickedUp)
 		{
 			ReferenceLightOrb();
-			ShootOrb();
+            PlayYoyoPushSound();
+            pickUpObject.transform.GetChild(0).transform.GetChild(0).GetComponent<AudioSource>().Play();
+            ShootOrb();
 			orbAmmo.DecreaseLightOrbAmmo(orbAmmo.ammoUsedWhenYoyoyShot);
 			pickUp.isPickedUp = true;
+			
 		}
 
+	}
+
+	void PlayYoyoPushSound()
+	{
+		pushSound.pitch = Random.Range(0.75f, 1.5f);
+		pushSound.Play();
+			
 	}
 
 	void ShootOrb()
@@ -61,8 +73,8 @@ public class YoYoMechanic : MonoBehaviour
 			if (objectRb.velocity.magnitude > maxSpeed)
 			{
 				objectRb.velocity = (this.transform.position - objectRb.transform.position).normalized * shootingSpeed;
-
-			}
+               
+            }
 
 		}
 	}
@@ -91,7 +103,8 @@ public class YoYoMechanic : MonoBehaviour
 		if (other.gameObject.tag == "Light Orb" && yoyoShot)
 		{
 			pickUp.PickUpObject();
-			yoyoShot = false;
+            pickUpObject.transform.GetChild(0).transform.GetChild(0).GetComponent<AudioSource>().Stop();
+            yoyoShot = false;
 		}
 	}
 

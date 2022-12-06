@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.11
+      value: 45.35
       objectReference: {fileID: 0}
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
@@ -50,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 77.05
+      value: -47.57
       objectReference: {fileID: 0}
     - target: {fileID: 4050763075396213483, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
@@ -100,8 +100,29 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
+      propertyPath: soundVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: currentPanic
+      value: 
+      objectReference: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4,
+        type: 2}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: soundOnDestroy
+      value: 
+      objectReference: {fileID: 8300000, guid: 06bf8ab0de9847a4db76be679e1f003d, type: 3}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
       propertyPath: amountOfPanicToreduce
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105086349326559897, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
+        type: 3}
+      propertyPath: PanicToreduceOnDestroy
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9143350191682808955, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2,
         type: 3}
@@ -111,6 +132,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1478946873189571688, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2, type: 3}
     - {fileID: 1453238167960118764, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2, type: 3}
+    - {fileID: 2226625791255017785, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b5dfd9f9269dfa4fb0d6bc54ea1daf2, type: 3}
 --- !u!1 &5991116350677986251 stripped
 GameObject:
@@ -137,11 +159,11 @@ MonoBehaviour:
       - m_Target: {fileID: 5998161074335554579}
         m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
         m_MethodName: IncreasePanic
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

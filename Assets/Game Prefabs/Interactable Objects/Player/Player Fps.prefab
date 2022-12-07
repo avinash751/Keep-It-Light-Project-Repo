@@ -42,10 +42,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 403f4ad6e7c3e234ab7148c2fe843c9f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dd285f82931a3da48af2e28075c3804b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.218
-  m_Pitch: 1
+  m_Volume: 1
+  m_Pitch: 1.3
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -438,10 +438,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUp: {fileID: 0}
   orbAmmo: {fileID: 0}
-  yoyoShot: 0
   maxDistance: 7
   shootingSpeed: 50
-  maxSpeed: 15
+  maxSpeed: 20
+  returnTimer: 2
+  yoyoShot: 0
+  returnNow: 0
   pushSound: {fileID: 1484714881}
 --- !u!136 &1024445317
 CapsuleCollider:
@@ -1043,7 +1045,7 @@ GameObject:
   - component: {fileID: 67883390}
   m_Layer: 0
   m_Name: Player Fps
-  m_TagString: Player
+  m_TagString: hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1421,7 +1423,7 @@ GameObject:
   - component: {fileID: 598844724}
   m_Layer: 0
   m_Name: hand holder
-  m_TagString: Untagged
+  m_TagString: hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

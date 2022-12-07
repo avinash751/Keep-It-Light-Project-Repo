@@ -6,17 +6,24 @@ public class YoYoMechanic : MonoBehaviour
 {
 	[SerializeField] PickUpObjectTrigger pickUp;
 	[SerializeField] LightOrbAmmoCountSystem orbAmmo;
+
 	GameObject pickUpObject;
 	Rigidbody objectRb;
-	[HideInInspector]
-	public bool yoyoShot = false;
+
+
 	[SerializeField] float maxDistance;
 	[SerializeField] float shootingSpeed;
 	[SerializeField] float maxSpeed;
+	[SerializeField] float returnTimer;
+
+	[HideInInspector]
+	public bool yoyoShot = false;
+	bool returnNow = false;
+
 
 	[Header("sounds")]
-	[SerializeField]AudioSource pushSound;
-	
+	[SerializeField] AudioSource pushSound;
+
 
 
 	void Start()
@@ -28,6 +35,7 @@ public class YoYoMechanic : MonoBehaviour
 	{
 		Inputs();
 		RetrunOrb();
+		ReturnOrbInstantly();
 	}
 
 	void Inputs()
@@ -35,12 +43,13 @@ public class YoYoMechanic : MonoBehaviour
 		if (Input.GetMouseButtonDown(1) && pickUp.isPickedUp)
 		{
 			ReferenceLightOrb();
-            PlayYoyoPushSound();
-            pickUpObject.transform.GetChild(0).transform.GetChild(0).GetComponent<AudioSource>().Play();
-            ShootOrb();
+			PlayYoyoPushSound();
+
+			pickUpObject.transform.GetChild(0).transform.GetChild(0).GetComponent<AudioSource>().Play();
+			ShootOrb();
+			StartCoroutine(ReturnOrbToPlayerPosition());
 			orbAmmo.DecreaseLightOrbAmmo(orbAmmo.ammoUsedWhenYoyoyShot);
 			pickUp.isPickedUp = true;
-			
 		}
 
 	}
@@ -49,7 +58,6 @@ public class YoYoMechanic : MonoBehaviour
 	{
 		pushSound.pitch = Random.Range(0.75f, 1.5f);
 		pushSound.Play();
-			
 	}
 
 	void ShootOrb()
@@ -66,16 +74,27 @@ public class YoYoMechanic : MonoBehaviour
 	void RetrunOrb()
 	{
 		float distanceFromOrb = CalculateDistanceBetweenPlayerAndOrb();
-		if (yoyoShot == true && distanceFromOrb > maxDistance)
+		if (yoyoShot && distanceFromOrb > maxDistance && !returnNow)
 		{
 
 			objectRb.velocity += ((this.transform.position - objectRb.transform.position).normalized * maxSpeed);
 			if (objectRb.velocity.magnitude > maxSpeed)
 			{
 				objectRb.velocity = (this.transform.position - objectRb.transform.position).normalized * shootingSpeed;
-               
-            }
+			}
 
+		}
+	}
+
+	void ReturnOrbInstantly()
+	{
+		if (returnNow)
+		{
+			objectRb.velocity += ((this.transform.position - objectRb.transform.position).normalized * maxSpeed);
+			if (objectRb.velocity.magnitude > maxSpeed)
+			{
+				objectRb.velocity = (this.transform.position - objectRb.transform.position).normalized * shootingSpeed;
+			}
 		}
 	}
 
@@ -103,15 +122,20 @@ public class YoYoMechanic : MonoBehaviour
 		if (other.gameObject.tag == "Light Orb" && yoyoShot)
 		{
 			pickUp.PickUpObject();
-            pickUpObject.transform.GetChild(0).transform.GetChild(0).GetComponent<AudioSource>().Stop();
-            yoyoShot = false;
+			pickUpObject.transform.GetChild(0).transform.GetChild(0).GetComponent<AudioSource>().Stop();
+			yoyoShot = false;
+			returnNow = false;
 		}
 	}
 
-	/* IEnumerator ReturnOrbToOriginalPosition()
+	IEnumerator ReturnOrbToPlayerPosition()
 	{
-		yield return new WaitForSeconds(3);
-		objectRb.transform.position = transform.position;
-	} */
+		yield return new WaitForSeconds(returnTimer);
+		if (yoyoShot)
+		{
+			returnNow = true;
+			Debug.Log("Going Back to player position right now");
+		}
+	}
 
 }

@@ -12,7 +12,7 @@ public class TrapTrigger : MonoBehaviour
 	void Start()
 	{
 		collider = GetComponent<BoxCollider>();
-		triggerTrap = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PickUpObjectTrigger>();
+		triggerTrap = FindObjectOfType<PickUpObjectTrigger>();
 		playDoor = GameObject.FindGameObjectWithTag(trapDoor).GetComponent<Animator>();
 	}
 
@@ -39,7 +39,8 @@ public class TrapTrigger : MonoBehaviour
 	{
 		if (triggerTrap.orbObject == null && other.gameObject.tag == "Light Orb")
 		{
-			other.transform.SetParent(collider.gameObject.transform);	
+			other.transform.SetParent(collider.gameObject.transform);
+			other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 		}
 	}
 }

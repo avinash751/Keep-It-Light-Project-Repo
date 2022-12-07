@@ -12,6 +12,8 @@ public class Wander : MonoBehaviour
     [SerializeField] float maxSpeed;
     bool chasing;
 
+    float rotSpeed = 50f;
+
 
     float distanceToPlayer; 
 
@@ -62,5 +64,13 @@ public class Wander : MonoBehaviour
     void ChasePlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, TF_Player.transform.position, speed * Time.deltaTime);
+        if(distanceToPlayer < 2)
+        {
+            transform.rotation =
+            Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(TF_Player.position - transform.position),
+            rotSpeed * Time.deltaTime);
+
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
     }
 }

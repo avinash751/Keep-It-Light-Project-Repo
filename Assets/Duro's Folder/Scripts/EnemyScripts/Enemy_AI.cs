@@ -80,8 +80,7 @@ public class Enemy_AI : MonoBehaviour
             Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(TF_Player.position - transform.position),
             rotSpeed * Time.deltaTime);
 
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-        }
+            transform.position += transform.forward * MoveSpeed * Time.deltaTime;        }
         else
         {
             //GetComponent<Flee>().enabled = true;

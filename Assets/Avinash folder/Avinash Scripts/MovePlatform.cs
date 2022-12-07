@@ -6,6 +6,7 @@ public class MovePlatform : MonoBehaviour
 {
     public bool StartMoving;
     public bool MoveOnX;
+    public bool MoveOnY;
     public bool MoveOnZ;
 
     [SerializeField,Range(-5,5)] float amplitude;
@@ -28,6 +29,7 @@ public class MovePlatform : MonoBehaviour
     {
         KeepMovingOnXaxis();
         KeepMovingOnZaxis();
+        KeepMovingOnYaxis();
     }
 
 
@@ -48,5 +50,14 @@ public class MovePlatform : MonoBehaviour
             transform.position += new Vector3(x, 0, 0);
         }
     }
-    
+
+    void KeepMovingOnYaxis()
+    {
+        if (MoveOnY && StartMoving)
+        {
+            float Y = amplitude * Mathf.Sin(Time.time * frequency);
+            transform.position += new Vector3(0, Y, 0);
+        }
+    }
+
 }

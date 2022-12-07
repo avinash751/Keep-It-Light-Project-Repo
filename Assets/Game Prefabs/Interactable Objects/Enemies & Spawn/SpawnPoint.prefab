@@ -538,6 +538,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightOrbsDestroyed: {fileID: 11400000, guid: 21bdabdd29af16849bd483cfa96c93c4, type: 2}
+  currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
+  PanicToDecreaseOnDestroy: 25
+  deathSound: {fileID: 8300000, guid: f63de7960cc41284c9b74774ca66065b, type: 3}
 --- !u!1 &2326748647881293992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5404,9 +5407,9 @@ MonoBehaviour:
     type: 3}
   SpawnEnemy2: {fileID: 5991116350677986251, guid: 94784a31810708c4ca69c36c4105df35,
     type: 3}
-  spawnAmount: 0
-  startSpawnRateEnemy1: 10
-  startSpawnRateEnemy2: 1
+  spawnAmount: 10
+  startSpawnRateEnemy1: 20
+  startSpawnRateEnemy2: 10
   SpawnRadius: 10
   SpawnDome: {fileID: 2326748647298299661}
   DarknessVolume: {fileID: 2326748646776930470}
@@ -5430,7 +5433,7 @@ MonoBehaviour:
   glowRateIntensity: 1
   enemy1SpawnRateRateAddon: 0.3
   soundWhenGrown: {fileID: 4990039433223952223}
-  RateOfGrowing: 30
+  RateOfGrowing: 5
 --- !u!1 &4144316844323233087
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,19 +55,21 @@ public class PickUpObjectTrigger : MonoBehaviour
 		objectRb.useGravity = false;
 		objectRb.constraints = RigidbodyConstraints.FreezeAll;
 		isPickedUp = true;
+		orbObject.GetComponent<DarkOrbDestroyer>().OrbEquipSound.Play();
 	}
 
 	public void DropObject()
 	{
-		orbObject.GetComponent<TrailRenderer>().time = 0.35f;                    
+		orbObject.GetComponent<TrailRenderer>().time = 0.35f;
 		hasClicked = false;
 		objectRb.useGravity = true;
 		isPickedUp = false;
 		orbObject.transform.SetParent(null);
 		OrbAmmo = null;
 		objectRb.constraints = RigidbodyConstraints.None;
-	}
+		orbObject.GetComponent<DarkOrbDestroyer>().OrbEquipSound.Stop();
 
+	}
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Light Orb" && !isPickedUp)

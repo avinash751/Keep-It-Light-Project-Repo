@@ -57,7 +57,7 @@ public class Jump : MonoBehaviour
 
     void JustJump()
     {
-      
+        Rb.velocity = new Vector3(Rb.velocity.x, 0, Rb.velocity.z);
         Rb.velocity +=   (Vector3.up  * jumpForce) ;
     }
 

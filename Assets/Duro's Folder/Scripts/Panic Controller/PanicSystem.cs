@@ -7,10 +7,13 @@ public class PanicSystem: MonoBehaviour
 
     [SerializeField] Value currentPanic;
     [SerializeField] Value maxPanic;
+    [SerializeField] int PanicToDecreaseOvertime;
+    [SerializeField]float PanicOvertimeDecreaseRate;
 
     private void Start()
     {
         currentPanic.value = 0;
+        InvokeRepeating(nameof(ReducePanicOverTime), PanicOvertimeDecreaseRate, PanicOvertimeDecreaseRate);
     }
     public int GetPanic()
     {
@@ -33,12 +36,17 @@ public class PanicSystem: MonoBehaviour
 
     void ClampPanicValue()
     {
-        //currentPanic.value = Mathf.Clamp(currentPanic.value, 0, maxPanic.value);
+        currentPanic.value = Mathf.Clamp(currentPanic.value, 0, maxPanic.value);
     }
 
     private void Update()
     {
         ClampPanicValue();
+    }
+
+    void ReducePanicOverTime()
+    {
+        currentPanic.value -= PanicToDecreaseOvertime;
     }
     
 }

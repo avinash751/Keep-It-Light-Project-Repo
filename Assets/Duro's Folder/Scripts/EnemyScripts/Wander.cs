@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wander : MonoBehaviour
 {
     Rigidbody rb;
-    public Transform TF_Player;
+    Transform TF_Player;
 
     [SerializeField] float speed = 5f;
     [SerializeField] Vector3 SetDirectionToMove;
@@ -21,6 +21,7 @@ public class Wander : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         InvokeRepeating(nameof(AfterCertainTimeChangeDirection), 3, 3);
+        TF_Player = FindObjectOfType<FpsMovment>().transform;
     }
     Vector3 SetRandomDir(float maxRangeX, float maxRangeZ)
     {

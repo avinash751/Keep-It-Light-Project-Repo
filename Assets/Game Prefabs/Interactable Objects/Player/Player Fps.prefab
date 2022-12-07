@@ -1212,6 +1212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
   maxPanic: {fileID: 11400000, guid: 1555d28490284dd47833351f7874482f, type: 2}
+  PanicToDecreaseOvertime: 2
+  PanicOvertimeDecreaseRate: 1.5
 --- !u!114 &67883390
 MonoBehaviour:
   m_ObjectHideFlags: 0

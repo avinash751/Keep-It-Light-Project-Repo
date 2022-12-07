@@ -40,7 +40,7 @@ public class FpsMovment : MonoBehaviour
         
 
         TruncateVelocity(rb.velocity.magnitude > moveMaxSpeed && Jump.OnGround ? moveMaxSpeed : rb.velocity.magnitude);
-        TruncateVelocityWhenNotOnGround(moveMaxSpeed);
+        
         SlowDown();
 
     }
@@ -63,7 +63,7 @@ public class FpsMovment : MonoBehaviour
     {
         if (!Jump.OnGround)
         {
-            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxSpeed / 1.3f, maxSpeed / 1.3f), rb.velocity.y, Mathf.Clamp(rb.velocity.z, -maxSpeed / 1.3f, maxSpeed / 1.3f));
+            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxSpeed / 1.1f, maxSpeed / 1.1f), rb.velocity.y, Mathf.Clamp(rb.velocity.z, -maxSpeed / 1.1f, maxSpeed / 1.1f));
         }
     }
 

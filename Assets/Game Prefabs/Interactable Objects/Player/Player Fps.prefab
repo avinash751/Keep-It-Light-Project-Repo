@@ -443,6 +443,7 @@ MonoBehaviour:
   maxSpeed: 20
   returnTimer: 2
   yoyoShot: 0
+  returnNow: 0
   pushSound: {fileID: 1484714881}
 --- !u!136 &1024445317
 CapsuleCollider:

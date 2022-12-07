@@ -408,6 +408,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Fps
       objectReference: {fileID: 0}
+    - target: {fileID: 7839685640456747532, guid: b565683b051279248a9c20a18c4e46f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238938971784644173, guid: b565683b051279248a9c20a18c4e46f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: hand
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b565683b051279248a9c20a18c4e46f3, type: 3}
 --- !u!1 &155265954 stripped
@@ -6537,18 +6547,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1636411340, guid: a5e4c2f418db74b49af30b21bfff1bed, type: 3}
-      propertyPath: maxLightRange
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1636411340, guid: a5e4c2f418db74b49af30b21bfff1bed, type: 3}
-      propertyPath: lightIntensity
-      value: 75.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 1636411340, guid: a5e4c2f418db74b49af30b21bfff1bed, type: 3}
-      propertyPath: lightScaleDownMultiplier
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1802602396383598469, guid: a5e4c2f418db74b49af30b21bfff1bed,
         type: 3}
       propertyPath: m_Name

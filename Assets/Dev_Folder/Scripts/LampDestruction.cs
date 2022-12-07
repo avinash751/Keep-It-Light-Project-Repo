@@ -24,6 +24,7 @@ public class LampDestruction : MonoBehaviour
 		rb = GetComponent<Rigidbody>();
 		particle = GetComponentInChildren<ParticleSystem>();
 		particle.Stop();
+		IgnorePlayerCollision();
 	}
 
 	void Update()
@@ -98,14 +99,25 @@ public class LampDestruction : MonoBehaviour
 	}
 	void OnCollisionEnter(Collision other)
 	{
-		if (other.gameObject.tag == "Light Orb")
+	 
+		if (other.gameObject.tag == "Light Orb" )
 		{
 			hitByOrb = true;
 		}
-		if (other.gameObject.tag == "Ground")
+		if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Enemy")
 		{
 			CollisionToHitTheGround();
 		}
+        
 	}
+
+	void IgnorePlayerCollision()
+	{
+		var playerCollider = FindObjectOfType<FpsMovment>().gameObject.GetComponent<Collider>();
+		var handCollider = GameObject.Find("hand holder").GetComponent<Collider>() ;
+
+        Physics.IgnoreCollision(playerCollider, gameObject.GetComponent<Collider>(), true);
+        Physics.IgnoreCollision(handCollider, gameObject.GetComponent<Collider>(), true);
+    }
 
 }

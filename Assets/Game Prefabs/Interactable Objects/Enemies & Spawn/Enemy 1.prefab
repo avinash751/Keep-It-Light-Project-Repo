@@ -118,7 +118,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &1478946873189571688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   currentHealth: 0
   explode: {fileID: 1830303490652605800, guid: e688cd637eaf8004387b16b43adc17dc, type: 3}
   currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
-  PanicToreduceOnDestroy: 0
+  PanicToreduceOnDestroy: 2
   soundOnDestroy: {fileID: 8300000, guid: 7de47a698bc16b644b7e3daf5006cd17, type: 3}
   soundVolume: 0.2
 --- !u!114 &884034210131764876
@@ -176,8 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb79bede0a5f1b489190d79017590be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TF_Player: {fileID: 7839685640456747521, guid: b565683b051279248a9c20a18c4e46f3,
-    type: 3}
   speed: 5
   SetDirectionToMove: {x: 0, y: 0, z: 0}
   maxSpeed: 5

@@ -6,6 +6,9 @@ using System;
 public class LightOrbDestroyer : MonoBehaviour,IDestroyable
 {
     [SerializeField] Value LightOrbsDestroyed;
+    [SerializeField] Value currentPanic;
+    [SerializeField] int PanicToDecreaseOnDestroy;
+    [SerializeField] AudioClip deathSound;
    
    
     // Start is called before the first frame update
@@ -20,6 +23,8 @@ public class LightOrbDestroyer : MonoBehaviour,IDestroyable
     {
         IncrementTheNumberOfLightOrbsDestroyed(1);
         Destroy(gameObject.transform.parent.gameObject);
+        currentPanic.value -= PanicToDecreaseOnDestroy;
+        AudioSource.PlayClipAtPoint(deathSound, transform.position, 3f);
         
     }
 

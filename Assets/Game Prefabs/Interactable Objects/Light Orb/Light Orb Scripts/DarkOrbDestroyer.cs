@@ -13,6 +13,7 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
     [HideInInspector]
     public ThrowObject throwOrb;
     bool collided;
+    public AudioSource OrbEquipSound;
 
     public bool IsPickedUp
     {

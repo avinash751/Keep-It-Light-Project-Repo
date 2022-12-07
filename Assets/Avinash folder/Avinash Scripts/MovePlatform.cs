@@ -14,14 +14,7 @@ public class MovePlatform : MonoBehaviour
 
     private void OnValidate()
     {
-        if(MoveOnX)
-        {
-            MoveOnZ = false;
-        }
-        else if(MoveOnZ)
-        {
-            MoveOnX = false;
-        }
+       
 
     }
 
@@ -57,6 +50,31 @@ public class MovePlatform : MonoBehaviour
         {
             float Y = amplitude * Mathf.Sin(Time.time * frequency);
             transform.position += new Vector3(0, Y, 0);
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.transform.parent = transform;
+
+            if(StartMoving)
+            {
+                collision.gameObject.GetComponent<FpsMovment>().moveMaxSpeed = 50;
+                collision.gameObject.GetComponent<FpsMovment>().moveSpeed = 20;
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.transform.parent = null;
+            collision.gameObject.GetComponent<FpsMovment>().moveMaxSpeed = 15;
+            collision.gameObject.GetComponent<FpsMovment>().moveSpeed = 6;
         }
     }
 

@@ -1192,12 +1192,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337c62f467499a84cba656175f61b7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 25
   StartGravity: 0
-  gravityTimer: 0.15
-  jumpSound: {fileID: 114494620}
   onGround: 1
-  GravityMultiplier: 1.5
+  jumpForce: 35
+  gravityTimer: 0.2
+  MomentumMultiplier: 15
+  GravityMultiplier: 2
+  jumpSound: {fileID: 114494620}
+  CamPlaceHolder: {fileID: 7839685641083197724}
 --- !u!114 &1604306558
 MonoBehaviour:
   m_ObjectHideFlags: 0

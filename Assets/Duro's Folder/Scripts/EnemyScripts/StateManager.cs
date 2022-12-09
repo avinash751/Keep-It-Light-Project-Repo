@@ -13,6 +13,19 @@ public class StateManager : MonoBehaviour
 
     public void RunStateMachine()
     {
-        currentState.DoAction();
+        StateClass nextState = currentState.DoAction();
+        if(nextState != null)
+        {
+            SwitchStates(nextState);
+        }
+    }
+    private void Update()
+    {
+        RunStateMachine();
+    }
+
+    void SwitchStates(StateClass NextState)
+    {
+        currentState = NextState;
     }
 }

@@ -7,7 +7,7 @@ public class Wander : MonoBehaviour
     Rigidbody rb;
     Transform TF_Player;
 
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed = 10f;
     [SerializeField] Vector3 SetDirectionToMove;
     [SerializeField] float maxSpeed;
     bool chasing;

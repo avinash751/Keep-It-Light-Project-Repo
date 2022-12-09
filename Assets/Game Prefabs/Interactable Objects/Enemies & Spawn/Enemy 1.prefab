@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 884034210131764876}
   - component: {fileID: 7430241748810123407}
   - component: {fileID: 2084452275}
+  - component: {fileID: 7013404598518898483}
+  - component: {fileID: 6557693913100400036}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -196,3 +198,33 @@ MonoBehaviour:
   PanicToDecrease: 1
   IncreasePanic: 0
   distnace: 0
+--- !u!114 &7013404598518898483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098041655973682497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997cfb358112ff9428fb81fa7af665f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radiusExpansion: 2.28
+  decreaseRadius: 2.09
+  startRadius: 0.18
+  maxRadius: 4
+  timer: 0.6
+--- !u!135 &6557693913100400036
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098041655973682497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}

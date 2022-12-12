@@ -12,7 +12,8 @@ public class SpawnBehaviour : MonoBehaviour
     public int fogstartingrate;
     public int fogIncreaterate;
     public int glowRateIntensity;
-    public float  enemy1SpawnRateRateAddon;
+    public float enemy1SpawnRateRateAddon;
+    [SerializeField] float maxGrowthRadius;
     [SerializeField] AudioSource soundWhenGrown;
 
     [SerializeField] float RateOfGrowing;
@@ -25,14 +26,18 @@ public class SpawnBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
     void  AfterCertainTimeLetSpawnerGrow()
     {
-        spawnBehaviour = new GrowSpawnBehaviour(darkSpawn, darkSpawn.DarkFog.GetComponent<ParticleSystem>(), darkSpawn.SpawnDome.GetComponent<MeshRenderer>(), darkOrb,this);
-        spawnBehaviour.RunSpawnBehaviour();
-        soundWhenGrown.pitch = Random.Range(0.9f,1.2f);
-        soundWhenGrown.Play();
+        
+        if(maxGrowthRadius > darkSpawn.SpawnDome.transform.localScale.x)
+        {
+            spawnBehaviour = new GrowSpawnBehaviour(darkSpawn, darkSpawn.DarkFog.GetComponent<ParticleSystem>(), darkSpawn.SpawnDome.GetComponent<MeshRenderer>(), darkOrb, this);
+            spawnBehaviour.RunSpawnBehaviour();
+            soundWhenGrown.pitch = Random.Range(0.9f, 1.2f);
+            soundWhenGrown.Play();
+        }   
     }
 }

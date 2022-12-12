@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,17 @@ public class MovePlatform : MonoBehaviour
 
     [SerializeField,Range(-5,5)] float amplitude;
     [SerializeField,Range(-5,5)] float frequency;
-
+    [SerializeField, Range(0, 10)] float maxMagnitude;
+    [SerializeField] AnimationCurve curve;
     private void OnValidate()
     {
        
 
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()
@@ -30,7 +37,9 @@ public class MovePlatform : MonoBehaviour
     {
         if(MoveOnZ && StartMoving)
         {
-            float Z =  amplitude*Mathf.Sin(Time.time * frequency);
+
+
+            float Z = amplitude * Mathf.Sin(Time.time * frequency);
             transform.position += new Vector3(0, 0, Z);
         }
     }

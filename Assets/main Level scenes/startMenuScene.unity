@@ -761,6 +761,16 @@ PrefabInstance:
       propertyPath: SpawnRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: spawnAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: startSpawnRateEnemy1
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2326748646776930470, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -865,6 +875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnPoint 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303377673167356356, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: RateOfGrowing
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6950737776860720406, guid: 820282476b6743744be52bbb53fc3c89, type: 3}
@@ -1554,6 +1569,16 @@ PrefabInstance:
       propertyPath: SpawnRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: spawnAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: startSpawnRateEnemy1
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2326748647972983442, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: m_Name
@@ -1891,6 +1916,16 @@ PrefabInstance:
       propertyPath: SpawnRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: spawnAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: startSpawnRateEnemy1
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2326748647972983442, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: m_Name
@@ -1965,6 +2000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnPoint 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303377673167356356, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: RateOfGrowing
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6950737776860720406, guid: 820282476b6743744be52bbb53fc3c89, type: 3}
@@ -2206,6 +2246,16 @@ PrefabInstance:
       propertyPath: SpawnRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: spawnAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: startSpawnRateEnemy1
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2326748647972983442, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: m_Name
@@ -2280,6 +2330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnPoint 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303377673167356356, guid: 820282476b6743744be52bbb53fc3c89,
+        type: 3}
+      propertyPath: RateOfGrowing
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6950737776860720406, guid: 820282476b6743744be52bbb53fc3c89, type: 3}
@@ -2382,9 +2437,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337c62f467499a84cba656175f61b7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 15
+  StartGravity: 0
   onGround: 0
+  jumpForce: 15
+  gravityTimer: 0
+  MomentumMultiplier: 0
   GravityMultiplier: 0.25
+  jumpSound: {fileID: 0}
+  CamPlaceHolder: {fileID: 0}
 --- !u!114 &195709263403310792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2399,10 +2459,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUp: {fileID: 0}
   orbAmmo: {fileID: 0}
-  yoyoShot: 0
   maxDistance: 5
   shootingSpeed: 3
   maxSpeed: 0
+  returnTimer: 0
+  yoyoShot: 0
+  pushSound: {fileID: 0}
 --- !u!114 &195709263403310793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,6 +2479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwForce: 1000
   throwObject: 0
+  SoundOnThrow: {fileID: 0}
 --- !u!4 &195709263903790256
 Transform:
   m_ObjectHideFlags: 0
@@ -2659,6 +2722,41 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayGameFunction
       objectReference: {fileID: 0}
+    - target: {fileID: 4930306286394979452, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930306286394979452, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930306286394979452, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1430383049968719319}
+    - target: {fileID: 4930306286394979452, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930306286394979452, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Exitgame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930306286394979452, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930306286394979452, guid: 0389da8fbdbfa3b49a5a6113ab075373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5230593461478956061, guid: 0389da8fbdbfa3b49a5a6113ab075373,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2767,8 +2865,8 @@ MonoBehaviour:
   cameraPostionHolderDirection: {fileID: 0}
   moveMaxSpeed: 10
   moveSpeed: 4
-  slowDownMultiplier: 0.6
-  SpeedToStartSlwoingDown: 9.5
+  slowDownTime: 0
+  walkingSound: {fileID: 0}
 --- !u!114 &7961066735043700135
 MonoBehaviour:
   m_ObjectHideFlags: 0

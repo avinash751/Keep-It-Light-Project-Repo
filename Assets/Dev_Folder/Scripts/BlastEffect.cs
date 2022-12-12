@@ -16,7 +16,7 @@ public class BlastEffect : MonoBehaviour
 
 	void Update()
 	{
-  
+
 		PlayBlastEffect();
 	}
 
@@ -25,7 +25,7 @@ public class BlastEffect : MonoBehaviour
 		if (hitByOrb && !playEffect)
 		{
 			playEffect = true;
-			
+
 		}
 	}
 
@@ -33,11 +33,15 @@ public class BlastEffect : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Light Orb")
 		{
-			hitByOrb = true;
-			particleSystem.Play();
-			var particleClone = Instantiate(particleSystem,transform.position, Quaternion.identity);
-			particleClone.transform.parent = transform;
-			Destroy(particleClone.gameObject, 1f);
+			var orb = other.gameObject.GetComponent<DarkOrbDestroyer>();
+			if (orb.YoyoShot || orb.IsThrown)
+			{
+				hitByOrb = true;
+				particleSystem.Play();
+				var particleClone = Instantiate(particleSystem, transform.position, Quaternion.identity);
+				particleClone.transform.parent = transform;
+				Destroy(particleClone.gameObject, 1f);
+			}
 		}
 	}
 }

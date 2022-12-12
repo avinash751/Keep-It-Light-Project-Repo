@@ -304,12 +304,12 @@ GameObject:
   - component: {fileID: 7521034891785767649}
   - component: {fileID: 1479248683}
   - component: {fileID: 3799380462947611170}
-  - component: {fileID: 4295692542924950507}
   - component: {fileID: 421219194720202945}
   - component: {fileID: 4558831789485455039}
   - component: {fileID: 6725573340077858534}
   - component: {fileID: -2672572647781742111}
   - component: {fileID: 1258206392}
+  - component: {fileID: -3564438418569122196}
   m_Layer: 3
   m_Name: Orb
   m_TagString: Light Orb
@@ -445,23 +445,6 @@ MonoBehaviour:
     type: 3}
   scaleOfSpawnedObject: 2
   positionOffsetWhenSpawned: {x: 0, y: 0.4, z: 0}
---- !u!114 &4295692542924950507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521034891785767652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3820ec00e62f3274fb9b30d6041d9172, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AmountOfDamage: 1
-  collisionTag: Enemy
-  DoExtraOnCollsion:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &421219194720202945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,5 +665,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c02bef165ad4d4682ae7ef9e9fc9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1.33
-  explosionForce: 5.18
+--- !u!114 &-3564438418569122196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521034891785767652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03bf5ba7e6ee2744dbfa77c7451d38e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountOfDamage: 1
+  collisionTag: Enemy
+  DoExtraOnCollsion:
+    m_PersistentCalls:
+      m_Calls: []
+  radius: 2.17
+  explosionForce: 13.14

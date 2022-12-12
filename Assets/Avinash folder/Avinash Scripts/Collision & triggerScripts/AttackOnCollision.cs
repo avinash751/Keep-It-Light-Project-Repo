@@ -12,11 +12,15 @@ public class AttackOnCollision : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<IDamagable>() != null && collision.gameObject.CompareTag(collisionTag))
         {
-            DoExtraOnCollsion.Invoke();
-            IDamagable DamagableObject = collision.gameObject.GetComponent<IDamagable>();
-            DamagableObject.TakeDamage(AmountOfDamage);
-           
+            Attack(collision.gameObject);
         }
+    }
+
+    public virtual void  Attack( GameObject collsionObject)
+    {
+        DoExtraOnCollsion.Invoke();
+        IDamagable DamagableObject = collsionObject.GetComponent<IDamagable>();
+        DamagableObject.TakeDamage(AmountOfDamage);
     }
 }
 

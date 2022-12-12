@@ -10,7 +10,7 @@ public class FpsMovment : MonoBehaviour
     Rigidbody rb;
     [SerializeField] Transform cameraPostionHolderDirection;
     [Range(0,30)][SerializeField] public float moveMaxSpeed;
-    [Range(0,30)][SerializeField] float moveSpeed;
+    [Range(0,30)][SerializeField] public float moveSpeed;
     [Range(0, 10)][SerializeField] float slowDownTime;
     [SerializeField] AudioSource walkingSound;
     Jump Jump;

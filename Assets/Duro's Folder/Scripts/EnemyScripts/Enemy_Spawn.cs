@@ -83,10 +83,6 @@ public class Enemy_Spawn : MonoBehaviour
         InstantiateEnemy1();
     }
 
-
-
-
-
     // debug drawing editor code 
 
 #if  UNITY_EDITOR

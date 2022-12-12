@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8bcee14d6253445b4d01849d410d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DistanceThresholdToIncreasePanic: 10
+  DistanceThresholdToIncreasePanic: 2
   PanicToIncrease: 3
   PanicToDecrease: 1
   IncreasePanic: 0

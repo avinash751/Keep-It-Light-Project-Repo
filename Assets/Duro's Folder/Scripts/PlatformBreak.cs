@@ -11,10 +11,7 @@ public class PlatformBreak : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.collider.CompareTag("Ground"))
-        {
-            Destroy(gameObject);
-        }
+       
     }
     //private void OnTriggerEnter(Collider other)
     //{

@@ -15,6 +15,7 @@ TagManager:
   - Path
   - Lamp
   - hand
+  - Trap Door 3
   layers:
   - Default
   - TransparentFX

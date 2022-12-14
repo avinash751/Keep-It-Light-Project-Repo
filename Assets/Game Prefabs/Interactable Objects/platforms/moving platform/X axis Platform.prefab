@@ -88,13 +88,9 @@ MonoBehaviour:
   MoveOnZ: 0
   amplitude: 0.011
   frequency: 1.1
-  maxMagnitude: 0
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  mesh: {fileID: 1809612111548471767}
+  glowColor: {r: 0.5283019, g: 0, b: 0, a: 0}
+  desiredIntesnsity: 1
 --- !u!1001 &4608889198039658345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,7 +517,7 @@ PrefabInstance:
     - target: {fileID: 2787445540417488896, guid: 707426567beacb74a9a2d552d01bf5be,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2787445540417488896, guid: 707426567beacb74a9a2d552d01bf5be,
         type: 3}
@@ -536,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 2787445540417488896, guid: 707426567beacb74a9a2d552d01bf5be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8199997
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 2787445540417488896, guid: 707426567beacb74a9a2d552d01bf5be,
         type: 3}
@@ -590,6 +586,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 707426567beacb74a9a2d552d01bf5be, type: 3}
+--- !u!23 &1809612111548471767 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2804362604914129724, guid: 707426567beacb74a9a2d552d01bf5be,
+    type: 3}
+  m_PrefabInstance: {fileID: 4608889199701844715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1823476128819461611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2790078573685038848, guid: 707426567beacb74a9a2d552d01bf5be,
@@ -603,7 +605,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823476128819461611}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e57f254c6e0acd74cab3a3db9ca1ebb6, type: 3}
   m_Name: 
@@ -614,13 +616,9 @@ MonoBehaviour:
   MoveOnZ: 0
   amplitude: 0.011
   frequency: 1.1
-  maxMagnitude: 0
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  mesh: {fileID: 1809612111548471767}
+  glowColor: {r: 0.5660378, g: 0, b: 0, a: 0}
+  desiredIntesnsity: 0
 --- !u!4 &1826472147468954347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2787445540417488896, guid: 707426567beacb74a9a2d552d01bf5be,

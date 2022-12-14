@@ -53,7 +53,7 @@ public class Enemy_Spawn : MonoBehaviour
         Vector3 SpawnPosition = transform.position;
 
         GameObject GO_Current = (GameObject)Instantiate(SpawnEnemy1);
-        Vector2 CircleRadius =  Random.insideUnitCircle * 7f;
+        Vector2 CircleRadius =  Random.insideUnitCircle  * SpawnRadius;
         GO_Current.transform.position = new Vector3( transform.position.x +CircleRadius.x,transform.position.y, transform.position.z + CircleRadius.y);
 
         StartCoroutine("waitForFewSeconds");
@@ -82,10 +82,6 @@ public class Enemy_Spawn : MonoBehaviour
         yield return new WaitForSeconds(startSpawnRateEnemy1);
         InstantiateEnemy1();
     }
-
-
-
-
 
     // debug drawing editor code 
 

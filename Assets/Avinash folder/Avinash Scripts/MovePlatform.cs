@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,20 @@ public class MovePlatform : MonoBehaviour
     [SerializeField,Range(-5,5)] float amplitude;
     [SerializeField,Range(-5,5)] float frequency;
 
+    [SerializeField] MeshRenderer mesh;
+    [SerializeField] Color glowColor;
+    [SerializeField] float desiredIntesnsity;
+    [SerializeField] float intesnsity;
+
     private void OnValidate()
     {
        
 
+    }
+
+    private void Start()
+    {
+       
     }
 
     private void Update()
@@ -23,6 +34,8 @@ public class MovePlatform : MonoBehaviour
         KeepMovingOnXaxis();
         KeepMovingOnZaxis();
         KeepMovingOnYaxis();
+        LerpEmmisiveIntensity(StartMoving ? desiredIntesnsity : 0);
+      
     }
 
 
@@ -30,7 +43,9 @@ public class MovePlatform : MonoBehaviour
     {
         if(MoveOnZ && StartMoving)
         {
-            float Z =  amplitude*Mathf.Sin(Time.time * frequency);
+
+
+            float Z = amplitude * Mathf.Sin(Time.time * frequency);
             transform.position += new Vector3(0, 0, Z);
         }
     }
@@ -76,6 +91,13 @@ public class MovePlatform : MonoBehaviour
             collision.gameObject.GetComponent<FpsMovment>().moveMaxSpeed = 15;
             collision.gameObject.GetComponent<FpsMovment>().moveSpeed = 6;
         }
+    }
+
+
+    void LerpEmmisiveIntensity(float EndValue)
+    {
+        intesnsity = Mathf.Lerp(intesnsity, EndValue,1.5f * Time.deltaTime);
+        mesh.material.SetColor("_EmissionColor", glowColor * intesnsity);
     }
 
 }

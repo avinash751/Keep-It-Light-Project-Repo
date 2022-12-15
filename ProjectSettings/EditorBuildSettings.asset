@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/main Level scenes/startMenuScene.unity
     guid: 0fbfa623d51dadb4b817817deacc5b0e
   - enabled: 1
     path: Assets/Avinash folder/Avinash Scenes/avinashScene2.0.unity
     guid: 245af2a744ef2bd4fb2c77e09119fe99
+  - enabled: 1
+    path: Assets/Avinash folder/Avinash Scenes/avinash main levels/Level 2.unity
+    guid: ac238c367f6325447b5f3dd084afe968
   m_configObjects: {}

@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.11311699, g: 0.0060519623, b: 0.18867922, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.045
+  m_FogDensity: 0.03
   m_LinearFogStart: -18.8
   m_LinearFogEnd: 50
   m_AmbientSkyColor: {r: 0.5137255, g: 0.52990854, b: 0.98039216, a: 1}
@@ -12014,9 +12014,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 0.71113694, g: 0.46650052, b: 0.9811321, a: 0.7058824}
-        key2: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 0.3773585, g: 0.36810255, b: 0.36810255, a: 0}
+        key1: {r: 0.0754717, g: 0.07290851, b: 0.07290851, a: 0.7058824}
+        key2: {r: 0.3490566, g: 0.34049484, b: 0.34049484, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -22869,9 +22869,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 0.71113694, g: 0.46650052, b: 0.9811321, a: 0.7058824}
-        key2: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 0.3773585, g: 0.36810255, b: 0.36810255, a: 0}
+        key1: {r: 0.0754717, g: 0.07290851, b: 0.07290851, a: 0.7058824}
+        key2: {r: 0.3490566, g: 0.34049484, b: 0.34049484, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -65502,9 +65502,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 0.71113694, g: 0.46650052, b: 0.9811321, a: 0.7058824}
-        key2: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 0.3773585, g: 0.36810255, b: 0.36810255, a: 0}
+        key1: {r: 0.0754717, g: 0.07290851, b: 0.07290851, a: 0.7058824}
+        key2: {r: 0.3490566, g: 0.34049484, b: 0.34049484, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -72544,9 +72544,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 0.71113694, g: 0.46650052, b: 0.9811321, a: 0.7058824}
-        key2: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 0.3773585, g: 0.36810255, b: 0.36810255, a: 0}
+        key1: {r: 0.0754717, g: 0.07290851, b: 0.07290851, a: 0.7058824}
+        key2: {r: 0.3490566, g: 0.34049484, b: 0.34049484, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}

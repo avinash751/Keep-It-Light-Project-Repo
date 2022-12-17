@@ -41,7 +41,7 @@ public class Wander : MonoBehaviour
     {
         distanceToPlayer = Vector3.Distance(transform.position, TF_Player.transform.position);
 
-        if (distanceToPlayer <= 10)
+        if (distanceToPlayer <= playerChaseRange)
         {
             Debug.Log("close to player");
             ChasePlayer();

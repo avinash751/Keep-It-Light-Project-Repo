@@ -38,6 +38,7 @@ public class OnTriggerFadeText : MonoBehaviour
             isInTrigger = true;
             textToFade.text = textAddon;
             Invoke(nameof(startFading),delay);
+            Invoke(nameof(startFadingOut), 5f);
         }
     }
 
@@ -59,6 +60,14 @@ public class OnTriggerFadeText : MonoBehaviour
         }
     }
 
+    void startFadingOut()
+    {
+        if (isInTrigger)
+        {
+            startfade = false;
+        }
+    }
+
 
     void FadeInText()
     {
@@ -70,7 +79,7 @@ public class OnTriggerFadeText : MonoBehaviour
 
     void FadeOutText()
     {
-        if (!isInTrigger)
+        if (!startfade)
         {
             textToFade.color = Color.Lerp(textToFade.color, Color.clear, Time.deltaTime * FadeOutSpeed);
         }

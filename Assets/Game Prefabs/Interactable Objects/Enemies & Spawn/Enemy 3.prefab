@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7013404598518898483}
   - component: {fileID: 6557693913100400036}
   m_Layer: 0
-  m_Name: Enemy 1
+  m_Name: Enemy 3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db875330cc8099f43bc091db7a4bef64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: {fileID: 11400000, guid: 4d0731a20051a1f4780bb1a9e5df4f53, type: 2}
+  MaxHealth: {fileID: 11400000, guid: d3afadbac44178b46910dac528234ae0, type: 2}
   currentHealth: 0
   explode: {fileID: 1830303490652605800, guid: e688cd637eaf8004387b16b43adc17dc, type: 3}
   currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DistanceThresholdToIncreasePanic: 4
-  PanicToIncrease: 2
+  PanicToIncrease: 5
   PanicToDecrease: 1
   IncreasePanic: 0
   distnace: 0

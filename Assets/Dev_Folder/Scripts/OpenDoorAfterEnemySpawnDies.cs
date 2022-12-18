@@ -14,7 +14,8 @@ public class OpenDoorAfterEnemySpawnDies : MonoBehaviour
 	{
 		if (enemySpawner == null)
 		{
-			openDoor.SetBool("Open Door", true);
+			openDoor.SetBool("OpenDoor", true);
+			Debug.Log("Opening door");
 		}
 	}
 }

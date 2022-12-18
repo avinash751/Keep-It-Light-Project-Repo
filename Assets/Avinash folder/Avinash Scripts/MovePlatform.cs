@@ -77,8 +77,8 @@ public class MovePlatform : MonoBehaviour
 
             if(StartMoving)
             {
-                collision.gameObject.GetComponent<FpsMovment>().moveMaxSpeed = 50;
-                collision.gameObject.GetComponent<FpsMovment>().moveSpeed = 20;
+                collision.gameObject.GetComponent<FpsMovment>().moveMaxSpeed = 25;
+                collision.gameObject.GetComponent<FpsMovment>().moveSpeed = 10;
             }
         }
     }

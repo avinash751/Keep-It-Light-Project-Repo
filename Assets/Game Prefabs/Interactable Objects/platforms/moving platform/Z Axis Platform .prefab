@@ -46,6 +46,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1180196442375071617}
   - component: {fileID: 6160541645722665086}
+  - component: {fileID: 8146580032780118735}
+  - component: {fileID: 87248326316942615}
   m_Layer: 0
   m_Name: 'Z Axis Platform '
   m_TagString: Ground
@@ -92,6 +94,31 @@ MonoBehaviour:
   glowColor: {r: 0, g: 0.3802357, b: 0.6698113, a: 0}
   desiredIntesnsity: 1
   intesnsity: 0
+--- !u!114 &8146580032780118735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180196442375071616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20253fcb5c4ce74fbe58c04f1a53029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &87248326316942615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180196442375071616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8065882, y: 4.400192, z: 2.9316158}
+  m_Center: {x: -0.1703515, y: 0.41099858, z: -0.050421715}
 --- !u!1 &3429198815955487569
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +617,6 @@ GameObject:
   - component: {fileID: 4079581781899418381}
   - component: {fileID: 4079581781899418378}
   - component: {fileID: 4079581781899418379}
-  - component: {fileID: 4079581781899418380}
   - component: {fileID: 3249904229543141631}
   m_Layer: 0
   m_Name: SM_PolygonPrototype_Buildings_Block_1x1_01P
@@ -664,19 +690,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4079581781899418380
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3429198817339220067}
-  m_Material: {fileID: 13400000, guid: 3624e8c546cee3f469a6365757ecf95a, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1.0000001, z: 1}
-  m_Center: {x: 0.50000006, y: 0.50000006, z: 0.5}
 --- !u!114 &3249904229543141631
 MonoBehaviour:
   m_ObjectHideFlags: 0

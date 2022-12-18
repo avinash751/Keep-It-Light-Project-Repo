@@ -72,7 +72,7 @@ public class Enemy_Spawn : MonoBehaviour
         Vector3 SpawnPosition = transform.position;
 
         GameObject Enemy2 = (GameObject)Instantiate(SpawnEnemy2);
-        Vector2 CircleRadius = Random.insideUnitCircle * SpawnRadius;
+        Vector2 CircleRadius = Random.insideUnitCircle ;
         Enemy2.transform.position = new Vector3(transform.position.x + CircleRadius.x, transform.position.y, transform.position.z + CircleRadius.y);
         Enemy2.GetComponent<Revolve>().targetToRevolveAround = transform;
     }

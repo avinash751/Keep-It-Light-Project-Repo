@@ -5,7 +5,10 @@ using UnityEngine;
 public class DisableOrEnableMovingPlatforms : MonoBehaviour
 {
     MovePlatform[] allPlatforms;
-   PickUpObjectTrigger player;
+    PickUpObjectTrigger player;
+    [SerializeField]bool onlyDisable;
+
+
 
     private void Start()
     {
@@ -17,14 +20,14 @@ public class DisableOrEnableMovingPlatforms : MonoBehaviour
     {
         if(other.gameObject == player.gameObject)
         {
-           EnableAllPlatforms();
            DisableAllPlatforms();
+           EnableAllPlatforms();
         }
     }
 
-    void DisableAllPlatforms()
+    void EnableAllPlatforms()
     {
-        if(player.isPickedUp)
+        if(player.isPickedUp && !onlyDisable)
         {
             foreach(MovePlatform platform in allPlatforms)
             {
@@ -33,9 +36,9 @@ public class DisableOrEnableMovingPlatforms : MonoBehaviour
         }
     }
 
-    void EnableAllPlatforms()
+    void DisableAllPlatforms()
     {
-        if (!player.isPickedUp)
+        if (!player.isPickedUp && onlyDisable)
         {
             foreach (MovePlatform platform in allPlatforms)
             {

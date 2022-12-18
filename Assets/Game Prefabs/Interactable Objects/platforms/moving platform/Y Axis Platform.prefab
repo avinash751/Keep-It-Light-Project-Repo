@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5542161341106169207}
   - component: {fileID: 8964249413287611304}
   - component: {fileID: 7373268630159580829}
+  - component: {fileID: 7383559186716028246}
   m_Layer: 0
   m_Name: SM_PolygonPrototype_Buildings_Floor_1x1_01P
   m_TagString: Ground
@@ -96,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 0.09999999, z: 1.0000002}
-  m_Center: {x: 0.5000001, y: -0.049999963, z: 0.5000001}
+  m_Size: {x: 1.2337176, y: 0.09999999, z: 1.2409173}
+  m_Center: {x: 0.4966278, y: -0.049999967, z: 0.53335685}
 --- !u!114 &7373268630159580829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +121,18 @@ MonoBehaviour:
   glowColor: {r: 0, g: 0.5377358, b: 0.06433285, a: 0}
   desiredIntesnsity: 1
   intesnsity: 0
+--- !u!114 &7383559186716028246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5542161341108435895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20253fcb5c4ce74fbe58c04f1a53029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8964249412149763074
 GameObject:
   m_ObjectHideFlags: 0

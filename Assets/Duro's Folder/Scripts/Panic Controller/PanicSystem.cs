@@ -8,7 +8,7 @@ public class PanicSystem: MonoBehaviour
     [SerializeField] Value currentPanic;
     [SerializeField] Value maxPanic;
     [SerializeField] int PanicToDecreaseOvertime;
-    [SerializeField]float PanicOvertimeDecreaseRate;
+    public float PanicOvertimeDecreaseRate;
 
     private void Start()
     {

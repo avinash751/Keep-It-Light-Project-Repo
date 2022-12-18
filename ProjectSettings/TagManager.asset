@@ -16,6 +16,8 @@ TagManager:
   - Lamp
   - hand
   - Trap Door 3
+  - Trap Door 4
+  - Trap Door 5
   layers:
   - Default
   - TransparentFX

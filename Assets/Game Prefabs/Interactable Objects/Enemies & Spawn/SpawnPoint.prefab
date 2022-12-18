@@ -263,7 +263,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b70855a1eb10534e8ea245566d05ec0, type: 2}
+  - {fileID: 2100000, guid: 6a06979bb24ca444dbbfe823252e170d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5432,6 +5432,7 @@ MonoBehaviour:
   fogIncreaterate: 15
   glowRateIntensity: 1
   enemy1SpawnRateRateAddon: 0.3
+  maxGrowthRadius: 0
   soundWhenGrown: {fileID: 4990039433223952223}
   RateOfGrowing: 5
 --- !u!1 &4144316844323233087

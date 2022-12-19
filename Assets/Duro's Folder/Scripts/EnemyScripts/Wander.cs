@@ -11,6 +11,7 @@ public class Wander : MonoBehaviour
     [SerializeField] Vector3 SetDirectionToMove;
     [SerializeField] float maxSpeed;
     [SerializeField] float playerChaseRange;
+    [SerializeField] GameObject particleSystem;
     bool chasing;
 
     float rotSpeed = 50f;
@@ -45,10 +46,13 @@ public class Wander : MonoBehaviour
         {
             Debug.Log("close to player");
             ChasePlayer();
+            if (particleSystem != null) { particleSystem.SetActive(true); }
         }
         else
         {
             WanderToDirection();
+            if(particleSystem != null) { particleSystem.SetActive(false); }
+            
         }
     }
 

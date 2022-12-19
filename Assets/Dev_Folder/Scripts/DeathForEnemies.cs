@@ -8,7 +8,7 @@ public class DeathForEnemies : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
-            Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+            Destroy(other.gameObject);
         }
     }
 }

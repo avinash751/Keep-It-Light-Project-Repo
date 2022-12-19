@@ -265,7 +265,7 @@ MonoBehaviour:
   speed: 5
   SetDirectionToMove: {x: 0, y: 0, z: 0}
   maxSpeed: 5
-  playerChaseRange: 4
+  playerChaseRange: 6
 --- !u!114 &2084452275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DistanceThresholdToIncreasePanic: 4
-  PanicToIncrease: 5
+  PanicToIncrease: 6
   PanicToDecrease: 1
   IncreasePanic: 0
   distnace: 0

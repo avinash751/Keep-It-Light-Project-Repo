@@ -6,6 +6,8 @@ public class SpawnPillarAfterDestroyingSpawner : MonoBehaviour
 {
 	[SerializeField] GameObject pillarSpawn;
 	[SerializeField] GameObject enemySpawner;
+	[SerializeField] GameObject orb;
+	[SerializeField] Transform orbTransformToSpawn;
 	bool enemySpawnerDies;
 	void Start()
 	{
@@ -23,6 +25,7 @@ public class SpawnPillarAfterDestroyingSpawner : MonoBehaviour
 		{
 			enemySpawnerDies = true;
 			Instantiate(pillarSpawn, transform.position, Quaternion.identity);
+			Instantiate(orb, orbTransformToSpawn.position, Quaternion.identity);
             this.enabled = false;
 		}
 	}

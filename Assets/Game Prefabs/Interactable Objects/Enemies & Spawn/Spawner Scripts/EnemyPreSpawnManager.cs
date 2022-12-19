@@ -6,7 +6,7 @@ public class EnemyPreSpawnManager : MonoBehaviour
 {
     [SerializeField] GameObject EnemyToSpawn;
     [SerializeField] float NumberOfEnemiesToSpawnOnceAtStart;
-    BoxCollider box;
+    [HideInInspector] public BoxCollider box;
 
 
     public virtual void Start()

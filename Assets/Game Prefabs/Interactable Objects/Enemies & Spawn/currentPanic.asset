@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: currentPanic
   m_EditorClassIdentifier: 
   Valuename: 'current panic '
-  value: 0
+  value: 90

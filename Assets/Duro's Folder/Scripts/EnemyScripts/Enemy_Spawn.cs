@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -74,7 +75,7 @@ public class Enemy_Spawn : MonoBehaviour
         GameObject Enemy2 = (GameObject)Instantiate(SpawnEnemy2);
         Vector2 CircleRadius = Random.insideUnitCircle ;
         Enemy2.transform.position = new Vector3(transform.position.x + CircleRadius.x, transform.position.y, transform.position.z + CircleRadius.y);
-        Enemy2.GetComponent<Revolve>().targetToRevolveAround = transform;
+        Enemy2.GetComponent<Revolve>().targetToRevolveAround = this.transform;
     }
 
     IEnumerator waitForFewSeconds()

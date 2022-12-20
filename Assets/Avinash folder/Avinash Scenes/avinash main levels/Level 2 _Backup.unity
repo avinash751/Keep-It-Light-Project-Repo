@@ -54223,7 +54223,7 @@ PrefabInstance:
     - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 79244610062290851, guid: 820282476b6743744be52bbb53fc3c89,
         type: 3}
@@ -63529,6 +63529,7 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 6098041655973682497, guid: 748f02d0ff2c348489dd588804d98f40,
     type: 3}
   NumberOfEnemiesToSpawnOnceAtStart: 500
+  box: {fileID: 0}
 --- !u!1001 &1918094631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73111,6 +73112,7 @@ GameObject:
   - component: {fileID: 2086028785}
   - component: {fileID: 2086028787}
   - component: {fileID: 2086028786}
+  - component: {fileID: 2086028788}
   m_Layer: 0
   m_Name: safe volume 1_1
   m_TagString: Untagged
@@ -73230,6 +73232,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086028781}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2086028788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086028781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381b834a930c48b4eb23412f543dc849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountOfDamage: 5
+  collisionTag: Enemy
 --- !u!1001 &2090533455
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/main Level scenes/startMenuScene.unity
     guid: 0fbfa623d51dadb4b817817deacc5b0e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Troy_Folder/Scenes/BackUp.unity
     guid: 61eacd359b1e1d64c8c82b668f898dc2
   - enabled: 1

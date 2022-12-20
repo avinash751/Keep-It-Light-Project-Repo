@@ -14,7 +14,7 @@ public class Revolve: MonoBehaviour
     {
         InvokeRepeating(nameof(ChangeSpeedOverTime), 2, 2);
        body = GetComponent<Rigidbody>();
-       targetToRevolveAround = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+       
     }
 
     // Update is called once per frame

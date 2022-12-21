@@ -6,7 +6,7 @@ public class ThrowObject : MonoBehaviour
 {
 	PickUpObjectTrigger pickUpTrigger;
 	LightOrbAmmoCountSystem orbAmmo;
-	GameObject pickUpObject;
+    UnityEngine.GameObject pickUpObject;
 	[Range(500, 1000)]
 	[SerializeField] float throwForce;
 	Rigidbody objectRb;

@@ -114,7 +114,7 @@ public class LampDestruction : MonoBehaviour
 	void IgnorePlayerCollision()
 	{
 		var playerCollider = FindObjectOfType<FpsMovment>().gameObject.GetComponent<Collider>();
-		var handCollider = GameObject.Find("hand holder").GetComponent<Collider>() ;
+		var handCollider = UnityEngine.GameObject.Find("hand holder").GetComponent<Collider>() ;
 
         Physics.IgnoreCollision(playerCollider, gameObject.GetComponent<Collider>(), true);
         Physics.IgnoreCollision(handCollider, gameObject.GetComponent<Collider>(), true);

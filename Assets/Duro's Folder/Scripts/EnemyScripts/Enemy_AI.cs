@@ -23,8 +23,8 @@ public class Enemy_AI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TF_Player = GameObject.FindGameObjectWithTag("Player").transform;
-        TF_Path = GameObject.FindGameObjectWithTag("Path").transform;
+        TF_Player = UnityEngine.GameObject.FindGameObjectWithTag("Player").transform;
+        TF_Path = UnityEngine.GameObject.FindGameObjectWithTag("Path").transform;
         rb = GetComponent<Rigidbody>();
     }
 

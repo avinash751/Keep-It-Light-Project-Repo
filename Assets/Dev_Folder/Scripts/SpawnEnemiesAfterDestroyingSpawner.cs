@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemiesAfterDestroyingSpawner : EnemyPreSpawnManager
 {
-	[SerializeField] GameObject enemySpawner;
+	[SerializeField] UnityEngine.GameObject enemySpawner;
 	bool spawnOnce;
 
 	public override void Start()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OpenDoorAfterEnemySpawnDies : MonoBehaviour
 {
-	[SerializeField] GameObject enemySpawner;
+	[SerializeField] UnityEngine.GameObject enemySpawner;
 	Animator openDoor;
 	void Start()
 	{

@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class SpawnObject: MonoBehaviour
 {
-    [SerializeField] GameObject objectToSpawn;
+    [SerializeField] UnityEngine.GameObject objectToSpawn;
     [SerializeField] float scaleOfSpawnedObject;
     [SerializeField] Vector3 positionOffsetWhenSpawned;
-    private GameObject SpawnedObject;
+    private UnityEngine.GameObject SpawnedObject;
     
     private void OnEnable()
     {

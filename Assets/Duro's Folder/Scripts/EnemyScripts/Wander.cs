@@ -11,7 +11,7 @@ public class Wander : MonoBehaviour
     [SerializeField] Vector3 SetDirectionToMove;
     [SerializeField] float maxSpeed;
     [SerializeField] float playerChaseRange;
-    [SerializeField] GameObject particleSystem;
+    [SerializeField] UnityEngine.GameObject particleSystem;
     bool chasing;
 
     float rotSpeed = 50f;

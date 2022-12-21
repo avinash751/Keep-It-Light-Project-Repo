@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovePlatformUpwardsToSecondFloor : MonoBehaviour
 {
-	[SerializeField] GameObject player;
+	[SerializeField] UnityEngine.GameObject player;
 	Animator movePlatform;
 	bool playerInRange = false;
 

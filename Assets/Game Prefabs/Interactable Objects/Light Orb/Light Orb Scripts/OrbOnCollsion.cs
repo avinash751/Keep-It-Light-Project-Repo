@@ -12,7 +12,7 @@ public class OrbOnCollsion :AttackOnCollision
     {
         orb = GetComponent<DarkOrbDestroyer>();
     }
-    public override void Attack(GameObject collsionObject)
+    public override void Attack(UnityEngine.GameObject collsionObject)
     {
         if(orb.trigger.orbObject == gameObject)
         {
@@ -21,7 +21,7 @@ public class OrbOnCollsion :AttackOnCollision
        
     }
 
-    void AttackEnemyWhenShotOrThrown(GameObject obj)
+    void AttackEnemyWhenShotOrThrown(UnityEngine.GameObject obj)
     {
         if (orb.YoyoShot || orb.IsThrown )
         {

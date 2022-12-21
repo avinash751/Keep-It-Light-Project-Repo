@@ -15,7 +15,7 @@ public class TrapTrigger : MonoBehaviour
 	{
 		collider = GetComponent<BoxCollider>();
 		triggerTrap = FindObjectOfType<PickUpObjectTrigger>();
-		playDoor = GameObject.FindGameObjectWithTag(trapDoor).GetComponent<Animator>();
+        playDoor = UnityEngine.GameObject.FindGameObjectWithTag(trapDoor).GetComponent<Animator>();
         DoorSound = GetComponentInChildren<AudioSource>();
     } 
 
@@ -27,7 +27,7 @@ public class TrapTrigger : MonoBehaviour
             playDoor.SetTrigger("Door Open");
             foreach (Transform child in transform)
             {
-                GameObject.Destroy(child.gameObject, 2f);
+                UnityEngine.GameObject.Destroy(child.gameObject, 2f);
             }
         }
     }

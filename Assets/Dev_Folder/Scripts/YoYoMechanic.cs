@@ -7,7 +7,7 @@ public class YoYoMechanic : MonoBehaviour
 	[SerializeField] PickUpObjectTrigger pickUp;
 	[SerializeField] LightOrbAmmoCountSystem orbAmmo;
 
-	GameObject pickUpObject;
+    UnityEngine.GameObject pickUpObject;
 	Rigidbody objectRb;
 
 

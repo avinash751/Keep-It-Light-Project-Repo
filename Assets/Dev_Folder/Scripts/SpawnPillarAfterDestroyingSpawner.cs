@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnPillarAfterDestroyingSpawner : MonoBehaviour
 {
-	[SerializeField] GameObject pillarSpawn;
-	[SerializeField] GameObject enemySpawner;
-	[SerializeField] GameObject orb;
+	[SerializeField] UnityEngine.GameObject pillarSpawn;
+	[SerializeField] UnityEngine.GameObject enemySpawner;
+	[SerializeField] UnityEngine.GameObject orb;
 	[SerializeField] Transform orbTransformToSpawn;
 	bool enemySpawnerDies;
 	void Start()

@@ -25,7 +25,7 @@ public class DisableAndEnableYPlatforms : MonoBehaviour
         }
     }
 
-    void DisableYaxisPlatfroms(GameObject gameObject)
+    void DisableYaxisPlatfroms(UnityEngine.GameObject gameObject)
     {
         if(gameObject.TryGetComponent(out PlatformTag platform))
         {

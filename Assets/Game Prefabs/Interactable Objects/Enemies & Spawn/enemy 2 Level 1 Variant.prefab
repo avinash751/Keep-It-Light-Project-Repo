@@ -103,8 +103,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.9137602, y: 1, z: 1.8040702}
+  m_Center: {x: 0.08361993, y: 0, z: 0.011040813}
 --- !u!54 &6721448716197649485
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,15 +160,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877632076727817361}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdb79bede0a5f1b489190d79017590be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0.3
   SetDirectionToMove: {x: 0, y: 0, z: 0}
   maxSpeed: 5
-  playerChaseRange: 0
+  playerChaseRange: 10
 --- !u!114 &4168643823012828899
 MonoBehaviour:
   m_ObjectHideFlags: 0

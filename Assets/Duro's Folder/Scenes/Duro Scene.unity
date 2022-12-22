@@ -548,7 +548,7 @@ MonoBehaviour:
   maxSpeed: 5
   chasing: 0
   rotSpeed: 50
-  distanceToPlayer: 0
+  distanceToPlayer: 10
   Roam: {fileID: 824088781}
 --- !u!114 &824088781
 MonoBehaviour:
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824088779}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23351ba66fe1c5143b425c357dcfe377, type: 3}
   m_Name: 
@@ -569,7 +569,7 @@ MonoBehaviour:
   maxSpeed: 5
   chasing: 0
   rotSpeed: 50
-  distanceToPlayer: 0
+  distanceToPlayer: 5
   Chase: {fileID: 824088780}
 --- !u!114 &824088782
 MonoBehaviour:
@@ -578,7 +578,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824088779}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d8235f448584404895cce3dba240016, type: 3}
   m_Name: 
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824088779}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdb79bede0a5f1b489190d79017590be, type: 3}
   m_Name: 
@@ -693,7 +693,7 @@ MonoBehaviour:
   speed: 5
   SetDirectionToMove: {x: 0, y: 0, z: 0}
   maxSpeed: 10
-  playerChaseRange: 2
+  playerChaseRange: 10
 --- !u!1 &1026189487
 GameObject:
   m_ObjectHideFlags: 0

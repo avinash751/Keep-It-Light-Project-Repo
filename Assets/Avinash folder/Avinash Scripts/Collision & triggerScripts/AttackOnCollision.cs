@@ -16,7 +16,7 @@ public class AttackOnCollision : MonoBehaviour
         }
     }
 
-    public virtual void  Attack( GameObject collsionObject)
+    public virtual void  Attack(UnityEngine.GameObject collsionObject)
     {
         DoExtraOnCollsion.Invoke();
         IDamagable DamagableObject = collsionObject.GetComponent<IDamagable>();

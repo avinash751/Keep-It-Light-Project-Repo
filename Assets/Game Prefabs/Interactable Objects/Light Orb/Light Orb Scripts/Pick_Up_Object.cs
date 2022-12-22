@@ -9,12 +9,12 @@ public class Pick_Up_Object : MonoBehaviour
 	//  start an animation if needed 
 
 	[SerializeField] Transform holdArea;
-	private GameObject heldObj;
+	private UnityEngine.GameObject heldObj;
 	Rigidbody heldObjRb;
 
 	[SerializeField] float pickupRange;
 	[SerializeField] float pickupForce;
-	GameObject pickable;
+    UnityEngine.GameObject pickable;
 
 	/* void Update()
 	{
@@ -54,7 +54,7 @@ public class Pick_Up_Object : MonoBehaviour
 		}
 	}
 
-	void PickupObject(GameObject pickObj)
+	void PickupObject(UnityEngine.GameObject pickObj)
 	{
 		if (pickObj.GetComponent<Rigidbody>())
 		{

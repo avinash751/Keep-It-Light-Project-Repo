@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] GameObject LightOrbPrefabTpSpawn;
+    [SerializeField] UnityEngine.GameObject LightOrbPrefabTpSpawn;
     [SerializeField] LightOrbsInspector lightOrbsSpawnData; // this a detaield view of how many light orbs present and its location and function to chnage its values 
     [SerializeField] int LightOrbsDestroyedToStartSpawnning;
     [SerializeField] int AmountOfLightOrbsToSpawn;
@@ -54,7 +54,7 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < AmountOfLightOrbsToSpawn; i++)
         {
-            GameObject LightOrbClone = Instantiate(LightOrbPrefabTpSpawn, AllAvailableLightOrbSpawnLocations[SelectedLocationToSpawn[i]], Quaternion.identity);
+            UnityEngine.GameObject LightOrbClone = Instantiate(LightOrbPrefabTpSpawn, AllAvailableLightOrbSpawnLocations[SelectedLocationToSpawn[i]], Quaternion.identity);
             lightOrbsSpawnData.newOrbsSpawned++;
         }
         StartSpawning = false;

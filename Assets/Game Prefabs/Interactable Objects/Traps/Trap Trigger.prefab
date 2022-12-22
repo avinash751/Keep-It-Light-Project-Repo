@@ -124,4 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc83f99facf5c14b8706e328961ab3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerTrap: {fileID: 0}
+  trapDoor: Trap Door
+  DoorSound: {fileID: 1422035012340905177, guid: 4a084099e62459244a0c5fa2e8452a9d,
+    type: 3}

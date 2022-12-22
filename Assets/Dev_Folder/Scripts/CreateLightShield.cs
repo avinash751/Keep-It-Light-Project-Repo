@@ -7,7 +7,7 @@ public class CreateLightShield : MonoBehaviour
 	CapsuleCollider shieldCapsule;
 	PickUpObjectTrigger pickUpTrigger;
 	[SerializeField] float shieldRadius;
-	[SerializeField] GameObject shieldAura;
+	[SerializeField] UnityEngine.GameObject shieldAura;
 	[SerializeField] Transform playerPos;
 	bool isShielded = false;
 

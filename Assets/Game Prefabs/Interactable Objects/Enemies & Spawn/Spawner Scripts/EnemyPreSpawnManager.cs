@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPreSpawnManager : MonoBehaviour
 {
-    [SerializeField] GameObject EnemyToSpawn;
+    [SerializeField] UnityEngine.GameObject EnemyToSpawn;
     [SerializeField] float NumberOfEnemiesToSpawnOnceAtStart;
     [HideInInspector] public BoxCollider box;
 

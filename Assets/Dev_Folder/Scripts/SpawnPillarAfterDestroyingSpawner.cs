@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SpawnPillarAfterDestroyingSpawner : MonoBehaviour
 {
-	[SerializeField] GameObject pillarSpawn;
-	[SerializeField] GameObject enemySpawner;
+	[SerializeField] UnityEngine.GameObject pillarSpawn;
+	[SerializeField] UnityEngine.GameObject enemySpawner;
+	[SerializeField] UnityEngine.GameObject orb;
+	[SerializeField] Transform orbTransformToSpawn;
 	bool enemySpawnerDies;
 	void Start()
 	{
@@ -23,6 +25,7 @@ public class SpawnPillarAfterDestroyingSpawner : MonoBehaviour
 		{
 			enemySpawnerDies = true;
 			Instantiate(pillarSpawn, transform.position, Quaternion.identity);
+			Instantiate(orb, orbTransformToSpawn.position, Quaternion.identity);
             this.enabled = false;
 		}
 	}

@@ -13,7 +13,7 @@ public class OrbBlast : MonoBehaviour
 
 	void Start()
 	{
-		orb = GameObject.FindObjectOfType<YoYoMechanic>();
+        orb = UnityEngine.GameObject.FindObjectOfType<YoYoMechanic>();
 	}
 
 	void Update()

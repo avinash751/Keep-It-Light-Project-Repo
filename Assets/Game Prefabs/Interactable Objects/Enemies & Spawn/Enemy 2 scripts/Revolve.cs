@@ -14,6 +14,7 @@ public class Revolve: MonoBehaviour
     {
         InvokeRepeating(nameof(ChangeSpeedOverTime), 2, 2);
        body = GetComponent<Rigidbody>();
+       
     }
 
     // Update is called once per frame

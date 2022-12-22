@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,8 +7,8 @@ using UnityEngine;
 public class Enemy_Spawn : MonoBehaviour
 {
     [Header("Enemy Prefabs to spawn")]
-    public GameObject SpawnEnemy1;
-    public GameObject SpawnEnemy2;
+    public UnityEngine.GameObject SpawnEnemy1;
+    public UnityEngine.GameObject SpawnEnemy2;
 
     //public GameObject SpawnEnemy;
     public int spawnAmount;
@@ -52,7 +53,7 @@ public class Enemy_Spawn : MonoBehaviour
         
         Vector3 SpawnPosition = transform.position;
 
-        GameObject GO_Current = (GameObject)Instantiate(SpawnEnemy1);
+        UnityEngine.GameObject GO_Current = (UnityEngine.GameObject)Instantiate(SpawnEnemy1);
         Vector2 CircleRadius =  Random.insideUnitCircle  * SpawnRadius;
         GO_Current.transform.position = new Vector3( transform.position.x +CircleRadius.x,transform.position.y, transform.position.z + CircleRadius.y);
 
@@ -71,10 +72,10 @@ public class Enemy_Spawn : MonoBehaviour
     {
         Vector3 SpawnPosition = transform.position;
 
-        GameObject Enemy2 = (GameObject)Instantiate(SpawnEnemy2);
+        UnityEngine.GameObject Enemy2 = (UnityEngine.GameObject)Instantiate(SpawnEnemy2);
         Vector2 CircleRadius = Random.insideUnitCircle ;
         Enemy2.transform.position = new Vector3(transform.position.x + CircleRadius.x, transform.position.y, transform.position.z + CircleRadius.y);
-        Enemy2.GetComponent<Revolve>().targetToRevolveAround = transform;
+        Enemy2.GetComponent<Revolve>().targetToRevolveAround = this.transform;
     }
 
     IEnumerator waitForFewSeconds()

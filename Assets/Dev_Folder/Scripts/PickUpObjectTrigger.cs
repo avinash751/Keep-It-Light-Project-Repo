@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUpObjectTrigger : MonoBehaviour
 {
 	[HideInInspector]
-	public GameObject orbObject;
+	public UnityEngine.GameObject orbObject;
 	[HideInInspector]
 	public Rigidbody objectRb;
 	public bool hasClicked = false;

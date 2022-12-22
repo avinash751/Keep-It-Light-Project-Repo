@@ -15,13 +15,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] int amountOfOrbsRequiredToWin;
 
     [Header("Game Menues")]
-    [SerializeField] GameObject startmenu;
-    [SerializeField] GameObject pauseMenu;
-    [SerializeField] GameObject winMenu;
-    [SerializeField] GameObject gameOverMenu;
+    [SerializeField] UnityEngine.GameObject startmenu;
+    [SerializeField] UnityEngine.GameObject pauseMenu;
+    [SerializeField] UnityEngine.GameObject winMenu;
+    [SerializeField] UnityEngine.GameObject gameOverMenu;
 
     [Header("PlayerUI")]
-    [SerializeField] GameObject playerPanic;
+    [SerializeField] UnityEngine.GameObject playerPanic;
 
 
 
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGameFunction()
     {
-        LoadScene(gameData.startScene);
+        LoadScene(SceneManager.GetActiveScene().buildIndex);
         SetGameState("Start");
         Time.timeScale = 1;
     }

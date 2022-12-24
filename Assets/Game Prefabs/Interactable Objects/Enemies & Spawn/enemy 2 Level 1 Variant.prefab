@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db875330cc8099f43bc091db7a4bef64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: {fileID: 11400000, guid: 4d0731a20051a1f4780bb1a9e5df4f53, type: 2}
+  MaxHealth: {fileID: 11400000, guid: af8677c64adb0e74c892ad833c845471, type: 2}
   currentHealth: 0
   explode: {fileID: 7077434097967044194, guid: 631116f9c739ac24aaa181a44aef7fa3, type: 3}
   currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
@@ -169,6 +169,7 @@ MonoBehaviour:
   SetDirectionToMove: {x: 0, y: 0, z: 0}
   maxSpeed: 5
   playerChaseRange: 10
+  particleSystem: {fileID: 0}
 --- !u!114 &4168643823012828899
 MonoBehaviour:
   m_ObjectHideFlags: 0

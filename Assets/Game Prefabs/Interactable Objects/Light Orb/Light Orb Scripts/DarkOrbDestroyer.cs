@@ -6,6 +6,7 @@ using UnityEngine;
 public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
 {
    [SerializeField] Value DarkOrbsDestroyed;
+    [SerializeField] Value lightOrbDestroyed;
     [HideInInspector]
     public PickUpObjectTrigger trigger;
     [HideInInspector]
@@ -40,6 +41,7 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
     public virtual void  DestroyObject() /// destroyes the light orb 
     {
         Destroy(gameObject);
+        lightOrbDestroyed.value++;
     }
     void Start()
     {

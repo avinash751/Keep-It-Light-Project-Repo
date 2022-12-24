@@ -13,9 +13,6 @@ public class WhenSpawnersDestroyedEnableTransitionTriggers : MonoBehaviour
     {
         EnableTriggerWhenSpawnerNull();
 
-       
-
-      
     }
 
 

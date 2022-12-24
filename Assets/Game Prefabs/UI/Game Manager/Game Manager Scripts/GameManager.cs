@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
      
         gameData.TransitionToWinState(WinGameFunction);
         gameData.TransitionToGameOverState(LoseGameFunction);
+        ResetToHub();
     }
 
 
@@ -125,5 +126,14 @@ public class GameManager : MonoBehaviour
     {
         gameData.currentState = (GameManagerData.GameStates)System.Enum.Parse(typeof(GameManagerData.GameStates),state);
         Debug.Log(gameData.currentState);
+    }
+
+
+    void ResetToHub()
+    {
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            LoadScene(5);
+        }
     }
 }

@@ -39872,6 +39872,21 @@ PrefabInstance:
       propertyPath: maxDistance
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5435670919236598473, guid: b565683b051279248a9c20a18c4e46f3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435670919236598473, guid: b565683b051279248a9c20a18c4e46f3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435670919236598473, guid: b565683b051279248a9c20a18c4e46f3,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 7839685640456747521, guid: b565683b051279248a9c20a18c4e46f3,
         type: 3}
       propertyPath: m_RootOrder
@@ -39996,6 +40011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067842104951478746, guid: b565683b051279248a9c20a18c4e46f3,
+        type: 3}
+      propertyPath: triggerscale
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1024445317, guid: b565683b051279248a9c20a18c4e46f3, type: 3}

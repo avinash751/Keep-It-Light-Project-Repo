@@ -90,16 +90,21 @@ public class Enemy_Spawn : MonoBehaviour
     private void OnDrawGizmos()
     {
         UnityEditor.Handles.color = new Color(0, 0, 0, 0.15f);
+        DrawDisc();
+    }
+
+    private void DrawDisc()
+    {
         UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.up, SpawnRadius);
 
         UnityEditor.Handles.color = Color.white;
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.down, SpawnRadius,2.5f);
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.down, SpawnRadius, 2.5f);
 
         GUIStyle Bold = new GUIStyle();
         Bold.richText = true;
         Bold.fontStyle = FontStyle.Bold;
         Bold.normal.textColor = Color.white;
-        UnityEditor.Handles.Label(transform.position + new Vector3(0, 2, 0), gameObject.name,Bold);
+        UnityEditor.Handles.Label(transform.position + new Vector3(0, 2, 0), gameObject.name, Bold);
     }
 
     private void OnDrawGizmosSelected()

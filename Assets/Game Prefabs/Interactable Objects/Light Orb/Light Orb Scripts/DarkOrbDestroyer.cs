@@ -49,10 +49,10 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<IDestroyable>() != null && collision.gameObject.GetComponent<LightOrbDestroyer>() != null)
+        IDestroyable destroyable = collision.gameObject.GetComponent<LightOrbDestroyer>();
+        if (destroyable != null)
         {
-            IDestroyable destroyable = collision.gameObject.GetComponent<IDestroyable>();
-           
+            
             if (!IsPickedUp && !collided && !YoyoShot)
             {
                 IncrementTheNumberOfDarkOrbsDestroyed(1);

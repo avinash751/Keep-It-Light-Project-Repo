@@ -361,7 +361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f1e1f86bb028024f9d6420da2ae155b, type: 2}
+  - {fileID: 2100000, guid: 9348ac34c5bed894b9c3b026481d4ce1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DarkOrbsDestroyed: {fileID: 11400000, guid: 1e95db1be1de30b409a821836f1769b7, type: 2}
+  lightOrbDestroyed: {fileID: 0}
   trigger: {fileID: 0}
   YoYo: {fileID: 0}
   throwOrb: {fileID: 0}

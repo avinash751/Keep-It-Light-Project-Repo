@@ -41,10 +41,11 @@ public class RoamBehaviour : StateClass
             Debug.Log("close to player");
             return Chase;
         }
-        else
+        else if(distanceToPlayer > 5)
         {
-            return this;
+            WanderToDirection();
         }
+            return this;
     }
 
 }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveAndLoad : MonoBehaviour
-{
+{ 
     public void Save()
     {
         BinaryFormatter Translate = new BinaryFormatter();

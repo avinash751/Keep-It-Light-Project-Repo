@@ -13,8 +13,10 @@ public class PickUpObjectTrigger : MonoBehaviour
 	
 	public bool isPickedUp = false;
 	[SerializeField] Transform holdTransform;
+	[SerializeField] public YoYoMechanic yoyoShot;
 	[HideInInspector] public LightOrbAmmoCountSystem OrbAmmo;
-	[SerializeField, HideInInspector]
+	[HideInInspector] public AmmoColorLerper orbColor;
+    [SerializeField, HideInInspector]
 	ThrowObject throwOrb;
 
 
@@ -22,6 +24,7 @@ public class PickUpObjectTrigger : MonoBehaviour
 	{
 		throwOrb = GetComponent<ThrowObject>();
 		OrbAmmo = GetComponent<LightOrbAmmoCountSystem>();
+		yoyoShot = GetComponent<YoYoMechanic>();
 
 	}
 	void Update()
@@ -54,8 +57,10 @@ public class PickUpObjectTrigger : MonoBehaviour
 		orbObject.transform.SetParent(this.transform);
 		objectRb.useGravity = false;
 		objectRb.constraints = RigidbodyConstraints.FreezeAll;
-		isPickedUp = true;
+		objectRb.mass = 1;
+        isPickedUp = true;
 		orbObject.GetComponent<DarkOrbDestroyer>().OrbEquipSound.Play();
+		orbColor.StopGlowOrb();
 	}
 
 	public void DropObject()
@@ -64,21 +69,35 @@ public class PickUpObjectTrigger : MonoBehaviour
 		hasClicked = false;
 		objectRb.useGravity = true;
 		isPickedUp = false;
-		orbObject.transform.SetParent(null);
+		orbColor.PlayLightOrbAnimations(true, false);
+        objectRb.constraints = RigidbodyConstraints.None;
+        orbObject.GetComponent<DarkOrbDestroyer>().OrbEquipSound.Stop();
+        objectRb.mass = 1250;
+        orbObject.transform.SetParent(null);
 		OrbAmmo = null;
-		objectRb.constraints = RigidbodyConstraints.None;
-		orbObject.GetComponent<DarkOrbDestroyer>().OrbEquipSound.Stop();
+		orbColor = null;
+		orbObject = null;
+	
 
 	}
-	void OnTriggerEnter(Collider other)
+	public void DropObjectWhenYoyo()
 	{
-		if (other.gameObject.tag == "Light Orb" && !isPickedUp)
+        orbObject.GetComponent<TrailRenderer>().time = 0.35f;
+        objectRb.useGravity = true;
+        isPickedUp = false;
+        orbObject.transform.SetParent(null);
+        objectRb.constraints = RigidbodyConstraints.None;
+        orbObject.GetComponent<DarkOrbDestroyer>().OrbEquipSound.Stop();
+    }
+	void OnTriggerStay(Collider other)
+	{
+		if (other.gameObject.tag == "Light Orb" && !isPickedUp && !yoyoShot.yoyoShot && !hasClicked)
 		{
-			orbObject = other.gameObject;
-			objectRb = orbObject.GetComponent<Rigidbody>();
-			OrbAmmo = orbObject.GetComponent<LightOrbAmmoCountSystem>();
-			hasClicked = true;
+			ReferencePartsOfTheLightOrb(other.gameObject);
 			
+			hasClicked = true;
+			LightOrbAnimationOntrigger();
+               
 		}
 	}
 
@@ -87,6 +106,47 @@ public class PickUpObjectTrigger : MonoBehaviour
 		if (other.gameObject.tag == "Light Orb" && !isPickedUp)
 		{
 			hasClicked = false;
-		}
+
+			LightOrbAnimationOnTriggerExit();
+          
+        }
 	}
+
+	void ReferencePartsOfTheLightOrb(GameObject lightOrbInTrigger)
+	{
+        orbObject = lightOrbInTrigger.gameObject;
+        objectRb = orbObject.GetComponent<Rigidbody>();
+        OrbAmmo = orbObject.GetComponent<LightOrbAmmoCountSystem>();
+        orbColor = orbObject.GetComponent<AmmoColorLerper>();
+    }
+
+	void LightOrbAnimationOntrigger()
+	{
+        if (!OrbAmmo.IsAmmoZero() && orbColor!=null)
+        {
+            orbColor.PlayLightOrbAnimations(false, true);
+        }
+        else
+        {
+            orbColor.PlayLightOrbAnimations(false, false);
+            
+        }
+    }
+
+	void LightOrbAnimationOnTriggerExit()
+	{
+        if (!OrbAmmo.IsAmmoZero() && orbColor != null)
+        {
+            orbColor?.PlayLightOrbAnimations(true, false);
+        }
+        else
+        {
+            orbColor.PlayLightOrbAnimations(false, false);
+
+        }
+    }
+
+
+
+	
 }

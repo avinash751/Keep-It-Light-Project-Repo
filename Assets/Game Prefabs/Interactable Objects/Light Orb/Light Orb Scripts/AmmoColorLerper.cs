@@ -13,12 +13,17 @@ public class AmmoColorLerper : MonoBehaviour
     [SerializeField] float lerpTime;
     [SerializeField] Color glowColor;
     [SerializeField]float intesnsity;
+  
+    [SerializeField] public Animation orbAnimator;
+    [SerializeField] AnimationClip NotInRangeNotPickedUPAnim;
+    bool playONce;
     void Start()
     {
-
+        gloworb();
         lightOrb = GetComponent<DarkOrbDestroyer>();
         orbAmmo = GetComponent<LightOrbAmmoCountSystem>();
         colorToLerpIndex = maxAmmo.value -1;
+        orbAnimator = GetComponent<Animation>();
     }
 
   
@@ -29,11 +34,11 @@ public class AmmoColorLerper : MonoBehaviour
         if (lightOrb.trigger.orbObject ==this.gameObject)
         {
             LerpOrbColorWhenPickedUp();
-            LerpOrbColorWhenNotPickedUp();
+            LerpOrbColorWhenShot();
         }
     }
 
-    void LerpOrbColorWhenNotPickedUp()
+    void LerpOrbColorWhenShot()
     {
         if(!lightOrb.IsPickedUp && !lightOrb.IsThrown && lightOrb.YoyoShot)
         {
@@ -43,6 +48,38 @@ public class AmmoColorLerper : MonoBehaviour
             LerpOrbEmisionColor(glowColor,Color.black);
         }
     }
+
+
+  
+
+    public void gloworb()
+    {
+        orbAnimator["notPickedNotInRange"].speed = 2f;
+        orbAnimator.Play("notPickedNotInRange");
+    }
+
+    public void StopGlowOrb()
+    {
+        orbAnimator["notPickedNotInRange_Reversed"].speed = 5f;
+        orbAnimator.Play("notPickedNotInRange_Reversed");
+    }
+
+    public void PingPongGlow()
+    {
+        orbAnimator["PingPongGlow"].speed = 2f;
+        orbAnimator.Play("PingPongGlow");
+
+
+
+    }
+
+    public void StopPingPongGlow()
+    {
+        orbAnimator.Stop("PingPongGlow");
+
+    }
+
+
 
     void LerpOrbColorWhenPickedUp()
     {
@@ -101,5 +138,22 @@ public class AmmoColorLerper : MonoBehaviour
         LerpOrbColorWhenThrown();
     }
 
+
+    public void PlayLightOrbAnimations(bool glow, bool pingPongGlow)
+    {
+        if (lightOrb.trigger.orbObject != this.gameObject && !orbAnimator.enabled)
+        {
+            return;
+
+        }
+        else
+        {
+            if (glow) {gloworb();}
+            else {StopGlowOrb();}
+
+            if (pingPongGlow) {PingPongGlow();}
+            else {StopPingPongGlow();} 
+        }
+    }
 
 }

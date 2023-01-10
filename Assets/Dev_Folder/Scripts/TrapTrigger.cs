@@ -10,6 +10,12 @@ public class TrapTrigger : MonoBehaviour
     [SerializeField] string trapDoor;
     BoxCollider collider;
     public AudioSource DoorSound;
+    public Transform CenterPlaceHolder;
+    bool startScallingOrb;
+    GameObject orbOntrigger;
+    public MeshRenderer mesh;
+    float pedestalGlowIntensity;
+    Color emmisiveColor = Color.black;
 
     void Start() 
 	{
@@ -17,36 +23,113 @@ public class TrapTrigger : MonoBehaviour
 		triggerTrap = FindObjectOfType<PickUpObjectTrigger>();
         playDoor = UnityEngine.GameObject.FindGameObjectWithTag(trapDoor).GetComponent<Animator>();
         DoorSound = GetComponentInChildren<AudioSource>();
-    } 
+        mesh.material.SetColor("_EmissionColor",emmisiveColor*0);
+    }
 
-    
-    void Update()
+
+    private void Update()
     {
-        if (triggerTrap.orbObject == null && orbIsPlaced)
+        ScaleLighOrbWhenOnlyOnTrigger();
+        LerpPedestalEmisionColor();
+
+      
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Light Orb")
         {
-            playDoor.SetTrigger("Door Open");
-            foreach (Transform child in transform)
+
+            if (!triggerTrap.isPickedUp  && !orbIsPlaced && !triggerTrap.yoyoShot.yoyoShot)
             {
-                UnityEngine.GameObject.Destroy(child.gameObject, 2f);
-            }
+                SetLightOrbPositionOnTriggerPedestal(other.gameObject);
+                Invoke(nameof(PlayDoorSoundAndAnimation),0.5f);
+                other.transform.GetChild(1).gameObject.SetActive(false);
+
+                Invoke(nameof(StartScalingDownLightOrb), 0.5f);
+                Invoke(nameof(EnablePlayerCollider), 2f);
+                Destroy(other.gameObject, 2.5f);
+                
+            } 
+        }
+         
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.TryGetComponent( out FpsMovment player))
+        {
+            triggerTrap.GetComponent<BoxCollider>().enabled = true;
         }
     }
-    void OnTriggerEnter(Collider other)
+    void SetLightOrbPositionOnTriggerPedestal(GameObject orb)
     {
-        if (other.gameObject.tag == "Light Orb")
+        RemoveLightOrbTransformConstraints(orb.gameObject);
+        SetLightOrbToCenter(orb.transform);
+        makeSureOrbStaysOnPedestal(orb);
+        orbOntrigger = orb;
+    }
+
+    void ScaleOrbToNothingness(Transform orb)
+    {
+        if (startScallingOrb)
         {
-           
-            orbIsPlaced = true;
+            orb.localScale = Vector3.Lerp(orb.localScale, Vector3.zero, Time.deltaTime * 3f);
         }
     }
 
-    void OnCollisionEnter(Collision other)
+
+    void SetLightOrbToCenter(Transform orb)
     {
-        if (triggerTrap.orbObject == null && other.gameObject.tag == "Light Orb")
+        orb.position = CenterPlaceHolder.position;
+    }
+
+    void makeSureOrbStaysOnPedestal(GameObject orb)
+    {
+        orb.GetComponent<SphereCollider>().enabled = false;
+        orbIsPlaced = true;
+        triggerTrap.GetComponent<BoxCollider>().enabled = false;
+        triggerTrap.hasClicked = false;
+    
+    }
+    void RemoveLightOrbTransformConstraints(GameObject orb)
+    {
+        orb.transform.parent = null;
+        orb.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+    }
+    void PlayDoorSoundAndAnimation()
+    {
+        DoorSound.Play();
+        playDoor.SetTrigger("Door Open");
+    }
+
+    void StartScalingDownLightOrb()
+    {
+        startScallingOrb = true;
+    }
+
+    void ScaleLighOrbWhenOnlyOnTrigger()
+    {
+        if (orbOntrigger != null)
         {
-            other.transform.SetParent(collider.gameObject.transform);
-            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            DoorSound.Play();
+            ScaleOrbToNothingness(orbOntrigger.transform);
         }
+    }
+
+    void LerpPedestalEmisionColor()
+    {
+        if(orbIsPlaced && startScallingOrb)
+        {
+            Color targetColor = new Color(191, 39, 0);
+            emmisiveColor = Color.Lerp(emmisiveColor, targetColor, Time.deltaTime * 1f);
+
+           pedestalGlowIntensity = Mathf.Lerp(pedestalGlowIntensity, 2.5f, Time.deltaTime * 1f);
+           mesh.material.SetColor("_EmissionColor",emmisiveColor* pedestalGlowIntensity);
+        }
+    }
+    
+    void EnablePlayerCollider()
+    {
+        triggerTrap.GetComponent<BoxCollider>().enabled = true;
     }
 }

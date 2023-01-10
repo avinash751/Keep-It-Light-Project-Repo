@@ -6,6 +6,7 @@ public class DisableOrEnableMovingPlatforms : MonoBehaviour
 {
     MovePlatform[] allPlatforms;
     PickUpObjectTrigger player;
+    YoYoMechanic yoyo;
     [SerializeField]bool onlyDisable;
 
 
@@ -14,6 +15,7 @@ public class DisableOrEnableMovingPlatforms : MonoBehaviour
     {
         player = FindObjectOfType<PickUpObjectTrigger>();
         allPlatforms = FindObjectsOfType<MovePlatform>();
+        yoyo = FindObjectOfType<YoYoMechanic>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -38,7 +40,7 @@ public class DisableOrEnableMovingPlatforms : MonoBehaviour
 
     void DisableAllPlatforms()
     {
-        if (!player.isPickedUp && onlyDisable)
+        if (!player.isPickedUp && onlyDisable && !yoyo.yoyoShot)
         {
             foreach (MovePlatform platform in allPlatforms)
             {

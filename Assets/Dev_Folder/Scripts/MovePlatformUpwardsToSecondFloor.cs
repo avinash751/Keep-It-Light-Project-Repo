@@ -17,27 +17,25 @@ public class MovePlatformUpwardsToSecondFloor : MonoBehaviour
 		if (playerInRange)
 		{
 			movePlatform.SetBool("MovePlatform", true);
-            player.GetComponent<Rigidbody>().mass = 1;
 		}
-        else if(!playerInRange)
-        {
-             player.GetComponent<Rigidbody>().mass = 1000;
-        }
+	}
+
+	void DelayToMakePlayerInRangeTrue()
+	{
+		playerInRange = true;
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		player = other.gameObject;
-
 		if (player)
 		{
-			playerInRange = true;
+			Invoke(nameof(DelayToMakePlayerInRangeTrue), 1f);
 		}
 	}
     void OnTriggerExit(Collider other)
     {
-        player = other.gameObject;
         playerInRange = false;
     }
+	
 
 }

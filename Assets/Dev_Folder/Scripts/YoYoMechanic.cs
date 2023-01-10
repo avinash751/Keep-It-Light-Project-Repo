@@ -7,9 +7,6 @@ public class YoYoMechanic : MonoBehaviour
 	[SerializeField] PickUpObjectTrigger pickUp;
 	[SerializeField] LightOrbAmmoCountSystem orbAmmo;
 
-	
-
-
     UnityEngine.GameObject pickUpObject;
 	Rigidbody objectRb;
 
@@ -80,13 +77,11 @@ public class YoYoMechanic : MonoBehaviour
 		float distanceFromOrb = CalculateDistanceBetweenPlayerAndOrb();
 		if (yoyoShot && distanceFromOrb > maxDistance && !returnNow)
 		{
-
 			objectRb.velocity += ((this.transform.position - objectRb.transform.position).normalized * maxSpeed);
 			if (objectRb.velocity.magnitude > maxSpeed)
 			{
 				objectRb.velocity = (this.transform.position - objectRb.transform.position).normalized * shootingSpeed;
 			}
-
 		}
 	}
 

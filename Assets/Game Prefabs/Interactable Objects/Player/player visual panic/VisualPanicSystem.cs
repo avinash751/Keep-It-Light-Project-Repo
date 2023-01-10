@@ -15,13 +15,21 @@ public class VisualPanicSystem : MonoBehaviour
     [SerializeField] float lerpTime;
     [SerializeField] int thresholdForMeduimPanic;
 
-
     [Header("High Mode Panic Settings")]
     [SerializeField] float amplitude;
     [SerializeField] float frequency;
     [SerializeField] int thresholdForHighPanic;
     [SerializeField] AudioSource heartBeat;
-    bool playOnce;
+    [SerializeField] AudioSource PanicTrack;
+
+    [Header("High Mode Panic sound Settings")]
+    [SerializeField] float highpanicVolume;
+    [SerializeField] float highpanicPitch;
+
+    bool playHeartOnce;
+    bool playPanicOnce;
+
+
 
     void Start()
     {
@@ -41,15 +49,19 @@ public class VisualPanicSystem : MonoBehaviour
         if(currentPanic.value>= thresholdForMeduimPanic && currentPanic.value<thresholdForHighPanic)
         {
             LerpPanicVolume(1, meduimModePanic);
-            camShake.SetCameraShakeValues(30, 0.0015f, 0);
+            camShake.SetCameraShakeValues(40, 0.0025f, 0);
             camShake.EnableCamersShake(true,true);
+           
         }
 
         if( currentPanic.value< thresholdForMeduimPanic || currentPanic.value > thresholdForHighPanic)
         {
             LerpPanicVolume(0, meduimModePanic);
             camShake.EnableCamersShake(false,false);
-        }   
+            
+        }  
+        
+       
     }
 
     void LerpInAndOutOfHighModePanic()
@@ -58,16 +70,20 @@ public class VisualPanicSystem : MonoBehaviour
         {
             LerpPanicVolume(0.6f, maxModePanic);
             SinLerpPanicVolume(0.6f,1, maxModePanic);
-            PlayAudio(heartBeat);
 
-            camShake.SetCameraShakeValues(40, 0.002f, 0);
+            PlayAudio(heartBeat);
+            PlayPanicTrack();
+            camShake.SetCameraShakeValues(55, 0.0035f, 0);
             camShake.EnableCamersShake(true, true);
         }
         else
         {
             LerpPanicVolume(0, maxModePanic);
+
             makePlayOnceTrue();
             heartBeat.Stop();
+            MakePanicTrackBooltrue();
+            
         }
     }
 
@@ -82,14 +98,45 @@ public class VisualPanicSystem : MonoBehaviour
 
     void PlayAudio(AudioSource sound)
     {
-        if(playOnce)
+        if(playHeartOnce)
         {
            sound.Play();
-           playOnce = false;
+           playHeartOnce = false;
         }   
     }
     void makePlayOnceTrue()
     {
-        playOnce = true;
+        playHeartOnce = true;
     }
+
+    void PlayPanicTrack()
+    {
+        if(playPanicOnce)
+        {
+          
+            PanicTrack.Play();
+            playPanicOnce = false;
+        }
+        LerpPanicTrackVolumeAndPitch(highpanicVolume, highpanicPitch);
+    }
+
+    void SetPanicTrackPitchAndVolume(float volume, float pitch)
+    {
+        PanicTrack.pitch = pitch;
+        PanicTrack.volume = volume;
+    }
+
+    void MakePanicTrackBooltrue()
+    {
+        playPanicOnce = true;
+        LerpPanicTrackVolumeAndPitch(0.00001f, 0.00001f);
+         
+    }
+
+    void LerpPanicTrackVolumeAndPitch( float endVolume,float endPitch)
+    {
+        PanicTrack.volume = Mathf.Lerp(PanicTrack.volume, endVolume, Time.deltaTime * 1.5f);
+        PanicTrack.pitch = Mathf.Lerp(PanicTrack.pitch, endPitch, Time.deltaTime * 1);
+    }
+    
 }

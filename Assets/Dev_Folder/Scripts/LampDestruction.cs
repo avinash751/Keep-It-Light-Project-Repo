@@ -59,7 +59,7 @@ public class LampDestruction : MonoBehaviour
 
 	void DisableChildrenAfterHittingGround()
 	{
-		for (int i = 0; i < transform.childCount - 2; i++)
+		for (int i = 0; i < transform.childCount - 1; i++)
 		{
 			transform.GetChild(i).gameObject.SetActive(false);
 		}

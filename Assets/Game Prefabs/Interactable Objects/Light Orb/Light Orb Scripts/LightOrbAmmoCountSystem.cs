@@ -69,6 +69,8 @@ public class LightOrbAmmoCountSystem : MonoBehaviour
     {
         if(currentAmmo<=0 && LightOrb.IsThrown)
         {
+            lerpColor.StopGlowOrb();
+            lerpColor.orbAnimator.enabled = false;
             Invoke(nameof(DestroyLightOrb), 4f);
         }
     }
@@ -76,6 +78,15 @@ public class LightOrbAmmoCountSystem : MonoBehaviour
     public void ResetAmmo()
     {
         currentAmmo = maxAmmo.value;
+    }
+
+    public bool IsAmmoZero()
+    {
+        if(currentAmmo<=0)
+        {
+            return true;
+        }
+        return false;
     }
 
  

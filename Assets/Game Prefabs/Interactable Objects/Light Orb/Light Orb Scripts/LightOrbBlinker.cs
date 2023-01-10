@@ -11,13 +11,12 @@ public class LightOrbBlinker : MonoBehaviour
 
     [SerializeField] MeshRenderer mesh;
     [SerializeField] Color ColorToBlink;
-    // Start is called before the first frame update
     void Start()
     {
 
         lightOrb = GetComponent<DarkOrbDestroyer>();
         orbAmmo = GetComponent<LightOrbAmmoCountSystem>();
-        mesh = GetComponent<MeshRenderer>(); 
+        mesh = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -30,8 +29,9 @@ public class LightOrbBlinker : MonoBehaviour
     {
         if(orbAmmo.currentAmmo <1)
         {
+            
             mesh.material.color = Color.Lerp(Color.black, ColorToBlink, blinkAmplitude * Mathf.Sin(Time.time * blinkFrequency));
-            mesh.material.SetColor("_EmissionColor", Color.Lerp(Color.yellow * 10f, Color.red, blinkAmplitude * Mathf.Sin(Time.time * blinkFrequency)));
+            //mesh.material.SetColor("_EmissionColor", Color.Lerp(Color.blue * 10f, Color.red, blinkAmplitude * Mathf.Sin(Time.time * blinkFrequency)));
         }
     }
 }

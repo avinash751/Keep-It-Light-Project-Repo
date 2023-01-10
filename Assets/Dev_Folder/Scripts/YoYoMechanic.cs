@@ -7,16 +7,19 @@ public class YoYoMechanic : MonoBehaviour
 	[SerializeField] PickUpObjectTrigger pickUp;
 	[SerializeField] LightOrbAmmoCountSystem orbAmmo;
 
+	
+
+
     UnityEngine.GameObject pickUpObject;
 	Rigidbody objectRb;
 
 
 	[SerializeField] float maxDistance;
 	[SerializeField] float shootingSpeed;
-	[SerializeField] float maxSpeed;
+    [SerializeField] float initialPushForce;
+    [SerializeField] float maxSpeed;
 	[SerializeField] float returnTimer;
 
-	[HideInInspector]
 	public bool yoyoShot = false;
 	bool returnNow = false;
 
@@ -49,7 +52,7 @@ public class YoYoMechanic : MonoBehaviour
 			ShootOrb();
 			StartCoroutine(ReturnOrbToPlayerPosition());
 			orbAmmo.DecreaseLightOrbAmmo(orbAmmo.ammoUsedWhenYoyoyShot);
-			pickUp.isPickedUp = true;
+
 		}
 
 	}
@@ -64,10 +67,11 @@ public class YoYoMechanic : MonoBehaviour
 	{
 		if (yoyoShot == false)
 		{
-			pickUp.DropObject();
+            pickUp.orbColor.gloworb();
+			pickUp.DropObjectWhenYoyo();
 			yoyoShot = true;
 			objectRb.useGravity = false;
-			objectRb.AddForce(transform.forward * 100, ForceMode.Impulse);
+			objectRb.AddForce(transform.forward * initialPushForce, ForceMode.Impulse);
 		}
 	}
 
@@ -88,7 +92,7 @@ public class YoYoMechanic : MonoBehaviour
 
 	void ReturnOrbInstantly()
 	{
-		if (returnNow)
+        if (returnNow)
 		{
 			objectRb.velocity += ((this.transform.position - objectRb.transform.position).normalized * maxSpeed);
 			if (objectRb.velocity.magnitude > maxSpeed)
@@ -117,13 +121,15 @@ public class YoYoMechanic : MonoBehaviour
 		orbAmmo = pickUp.OrbAmmo;
 
 	}
-	void OnTriggerEnter(Collider other)
+	void OnTriggerStay(Collider other)
 	{
-		if (other.gameObject.tag == "Light Orb" && yoyoShot)
+		if (other.gameObject.tag == "Light Orb" && yoyoShot && returnNow)
 		{
 			pickUp.PickUpObject();
 			pickUpObject.transform.GetChild(0).transform.GetChild(0).GetComponent<AudioSource>().Stop();
-			yoyoShot = false;
+			pickUp.OrbAmmo = pickUp.orbObject.GetComponent<LightOrbAmmoCountSystem>();
+            pickUp.orbColor.StopGlowOrb();
+            yoyoShot = false;
 			returnNow = false;
 		}
 	}

@@ -235,7 +235,7 @@ MonoBehaviour:
   currentHealth: 0
   explode: {fileID: 1830303490652605800, guid: e688cd637eaf8004387b16b43adc17dc, type: 3}
   currentPanic: {fileID: 11400000, guid: dfb0197b1549a59408407d5ab10d58e4, type: 2}
-  PanicToreduceOnDestroy: 2
+  PanicToreduceOnDestroy: 4
   soundOnDestroy: {fileID: 8300000, guid: 7de47a698bc16b644b7e3daf5006cd17, type: 3}
   soundVolume: 0.2
 --- !u!114 &884034210131764876
@@ -265,8 +265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   SetDirectionToMove: {x: 0, y: 0, z: 0}
-  maxSpeed: 5
-  playerChaseRange: 6
+  maxSpeed: 4
+  playerChaseRange: 8
   particleSystem: {fileID: 4352156091761146663}
 --- !u!114 &2084452275
 MonoBehaviour:
@@ -280,9 +280,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8bcee14d6253445b4d01849d410d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DistanceThresholdToIncreasePanic: 4
+  DistanceThresholdToIncreasePanic: 3
   PanicToIncrease: 6
-  PanicToDecrease: 1
+  PanicToDecrease: 2
   IncreasePanic: 0
   distnace: 0
 --- !u!114 &7013404598518898483

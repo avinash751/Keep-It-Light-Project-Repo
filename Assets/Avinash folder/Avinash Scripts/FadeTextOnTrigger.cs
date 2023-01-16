@@ -14,7 +14,8 @@ public class FadeTextOnTrigger : MonoBehaviour
     private Color initialColor;
 
     // A flag indicating whether the text is currently fading in or out
-    private bool isFading;
+    private bool fadeIn;
+    private bool fadeOut;
 
     // The amount of time that has elapsed since the fade started
     private float elapsedTime;
@@ -36,14 +37,14 @@ public class FadeTextOnTrigger : MonoBehaviour
 
     void CheckWhetherToFadeOrNot()
     {
-        if (isFading)
+        if (fadeIn || fadeOut)
         {
             UpdateFade();
 
             // If the fade has completed, stop fading
             if (elapsedTime >= fadeDuration)
             {
-                isFading = false;
+                fadeIn = false;
             }
         }
     }
@@ -51,7 +52,7 @@ public class FadeTextOnTrigger : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // If the trigger has been entered and the text is not already fading in, start fading in
-        if (other.TryGetComponent(out FpsMovment player) && !isFading)
+        if (other.TryGetComponent(out FpsMovment player) )
         {
             StartFadeIn();
             Debug.Log("player has entered");
@@ -61,14 +62,16 @@ public class FadeTextOnTrigger : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // If the trigger has been exited and the text is not already fading out, start fading out
-        if (other.TryGetComponent(out FpsMovment player) && !isFading)
+        if (other.TryGetComponent(out FpsMovment player)  )
         {
+            CancelInvoke(nameof(DelayToEnableFading));
             StartFadeOut();
         }
     }
 
     void StartFadeIn()
     {
+        fadeOut = false;
         Invoke(nameof(DelayToEnableFading), DelayDurationTofadeIn);
         initialColor = text.color;
        
@@ -79,7 +82,8 @@ public class FadeTextOnTrigger : MonoBehaviour
     void StartFadeOut()
     {
         initialColor = text.color;
-        isFading = true;
+        fadeIn = false;
+        fadeOut= true;
         elapsedTime = 0f;
         targetAlpha = 0f;
     }
@@ -94,7 +98,7 @@ public class FadeTextOnTrigger : MonoBehaviour
 
     void DelayToEnableFading()
     {
-        isFading = true;
+        fadeIn = true;
     }
 
     void InitializeTextColor()

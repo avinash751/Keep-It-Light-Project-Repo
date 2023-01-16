@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 0fbfa623d51dadb4b817817deacc5b0e
   - enabled: 1
     path: Assets/Troy_Folder/Scenes/MainLevel.unity
-    guid: 620b4ddfcef9a0d4aad0fac65538a225
+    guid: 4354f59987b63f543b16a6442ddc0e49
   - enabled: 1
     path: Assets/Duro's Folder/Scenes/LevelOne.unity
     guid: 87d6dba1972e3a244ba52122c484155c
@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Dev_Folder/Dev_Scene/Level_3.unity
     guid: 92663acd91e5cdf49ad0ae018b939c02
   - enabled: 1
-    path: Assets/Troy_Folder/Scenes/mainLevelHub.unity
-    guid: 2a54316fa3f2cf64089d04da0373a3f8
+    path: Assets/Troy_Folder/Scenes/MainLevel Hub.unity
+    guid: 56b2efa2f29ab9d42b6095f541c950d3
   m_configObjects: {}

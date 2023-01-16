@@ -115,6 +115,7 @@ MonoBehaviour:
   MoveOnX: 0
   MoveOnY: 1
   MoveOnZ: 0
+  durationToLerpToOrgin: 1
   amplitude: 0.01
   frequency: 1
   mesh: {fileID: 5542161341106169207}

@@ -2290,6 +2290,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 234294310, guid: 962e43d0dfcf96e4db72d44b7a32af1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299070629, guid: 962e43d0dfcf96e4db72d44b7a32af1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299070630, guid: 962e43d0dfcf96e4db72d44b7a32af1d, type: 3}
+      propertyPath: m_Size.y
+      value: 3.1875463
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299070630, guid: 962e43d0dfcf96e4db72d44b7a32af1d, type: 3}
+      propertyPath: m_Center.x
+      value: 0.026889589
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299070630, guid: 962e43d0dfcf96e4db72d44b7a32af1d, type: 3}
+      propertyPath: m_Center.y
+      value: 1.0937718
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299070630, guid: 962e43d0dfcf96e4db72d44b7a32af1d, type: 3}
+      propertyPath: m_Center.z
+      value: -0.05101164
+      objectReference: {fileID: 0}
+    - target: {fileID: 2060229941, guid: 962e43d0dfcf96e4db72d44b7a32af1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2060229942, guid: 962e43d0dfcf96e4db72d44b7a32af1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 94895871911615231, guid: 962e43d0dfcf96e4db72d44b7a32af1d,
         type: 3}
       propertyPath: m_Name
@@ -21788,7 +21820,7 @@ MonoBehaviour:
     type: 3}
   lightOrbsSpawnData: {fileID: 11400000, guid: e6a03e416fe966c42b73368038f7d20a, type: 2}
   LightOrbsDestroyedToStartSpawnning: 1
-  AmountOfLightOrbsToSpawn: 3
+  AmountOfLightOrbsToSpawn: 1
   maxDelayTimeToSpawn: 0
   StartSpawning: 0
 --- !u!4 &2003294886

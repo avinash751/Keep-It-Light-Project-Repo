@@ -268,6 +268,7 @@ MonoBehaviour:
   maxSpeed: 4
   playerChaseRange: 8
   particleSystem: {fileID: 4352156091761146663}
+  playParticles: 1
 --- !u!114 &2084452275
 MonoBehaviour:
   m_ObjectHideFlags: 0

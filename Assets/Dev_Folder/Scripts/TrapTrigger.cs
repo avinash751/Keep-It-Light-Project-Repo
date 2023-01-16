@@ -48,11 +48,17 @@ public class TrapTrigger : MonoBehaviour
 
                 Invoke(nameof(StartScalingDownLightOrb), 0.5f);
                 Invoke(nameof(EnablePlayerCollider), 2f);
-                Destroy(other.gameObject, 2.5f);
+                StartCoroutine(DestroyLightOrb(other.gameObject,2.5f));
                 
             } 
         }
          
+    }
+
+    IEnumerator DestroyLightOrb(GameObject other,float time)
+    {
+        yield return new WaitForSeconds(time);
+        other.GetComponent<IDestroyable>().DestroyObject();
     }
 
     private void OnTriggerExit(Collider other)

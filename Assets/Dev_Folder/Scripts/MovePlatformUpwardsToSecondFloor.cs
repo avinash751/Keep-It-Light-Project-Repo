@@ -16,7 +16,7 @@ public class MovePlatformUpwardsToSecondFloor : MonoBehaviour
 	{
 		if (playerInRange)
 		{
-			movePlatform.SetBool("MovePlatform", true);
+			movePlatform.SetBool("MovePlatformInAnyOfTheThreeDirections", true);
             player.GetComponent<Rigidbody>().mass = 1;
 		}
         else if(!playerInRange)

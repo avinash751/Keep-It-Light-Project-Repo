@@ -9,6 +9,12 @@ public class MovePlatform : MonoBehaviour
     public bool MoveOnX;
     public bool MoveOnY;
     public bool MoveOnZ;
+    Vector3 startPosition;
+    float elapsedTime;
+    [SerializeField] float durationToLerpToOrgin;
+    bool allowedToMove;
+
+
 
     [SerializeField,Range(-5,5)] float amplitude;
     [SerializeField,Range(-5,5)] float frequency;
@@ -26,25 +32,84 @@ public class MovePlatform : MonoBehaviour
 
     private void Start()
     {
-       
+       startPosition = transform.position;
     }
 
     private void Update()
     {
-        KeepMovingOnXaxis();
-        KeepMovingOnZaxis();
-        KeepMovingOnYaxis();
+       
+        MovePlatformInAnyOfTheThreeDirections();
         LerpEmmisiveIntensity(StartMoving ? desiredIntesnsity : 0);
-      
+        MoveBackToOrginWhenPlatformsDeactivated();
+
+        if(!StartMoving)
+        {
+            allowedToMove = false;
+        }
     }
+
+    void MovePlatformInAnyOfTheThreeDirections()
+    {
+        if (elapsedTime==0 && StartMoving && allowedToMove)
+        {
+            KeepMovingOnXaxis();
+            KeepMovingOnZaxis();
+            KeepMovingOnYaxis();
+        } 
+    }
+
+    void MoveBackToOrginWhenPlatformsDeactivated()
+    {
+        (bool shouldPlatformMoveToOrgin,
+         bool positionIsOnOrgin,
+         bool isTimeUpToStopLerping) = CheckWhetherPlatformHasToMoveBackToOrgin();
+
+        if(shouldPlatformMoveToOrgin)
+        {
+            LerpPlatformToOrginAndUpdateElapsedTime();
+        }
+        else
+        {
+            allowedToMove = true;
+        }
+
+        ResetPlatformPositionToOrgiAndElapsedTimeWhenTimeIsUp(positionIsOnOrgin,allowedToMove); 
+    }
+
+    void ResetPlatformPositionToOrgiAndElapsedTimeWhenTimeIsUp(bool condition1, bool condition2)
+    {
+        if (condition1 && condition2)
+        {
+            elapsedTime = 0;
+            transform.position = startPosition;
+        }
+    }
+
+    (bool, bool, bool)  CheckWhetherPlatformHasToMoveBackToOrgin()
+    {
+        bool positionIsOnOrgin = transform.position == startPosition;
+        bool isTimeUpToStopLerping = elapsedTime >= durationToLerpToOrgin;
+
+        if (!allowedToMove &&!positionIsOnOrgin && !isTimeUpToStopLerping)
+        {
+            return (true,positionIsOnOrgin,isTimeUpToStopLerping);
+        }
+        return (false,positionIsOnOrgin,isTimeUpToStopLerping);
+    }
+
+    void LerpPlatformToOrginAndUpdateElapsedTime()
+    {
+        elapsedTime += Time.deltaTime;
+        var t = elapsedTime/durationToLerpToOrgin;
+        transform.position = Vector3.Lerp(transform.position, startPosition, elapsedTime);
+    }
+    
 
 
     void KeepMovingOnZaxis()
     {
         if(MoveOnZ && StartMoving)
         {
-
-
             float Z = amplitude * Mathf.Sin(Time.time * frequency);
             transform.position += new Vector3(0, 0, Z);
         }

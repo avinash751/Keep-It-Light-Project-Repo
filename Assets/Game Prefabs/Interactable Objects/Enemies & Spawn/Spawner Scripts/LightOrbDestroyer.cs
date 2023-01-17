@@ -9,6 +9,7 @@ public class LightOrbDestroyer : MonoBehaviour,IDestroyable
     [SerializeField] Value currentPanic;
     [SerializeField] int PanicToDecreaseOnDestroy;
     [SerializeField] AudioClip deathSound;
+    bool once;
    
    
     // Start is called before the first frame update
@@ -21,10 +22,15 @@ public class LightOrbDestroyer : MonoBehaviour,IDestroyable
 
     public virtual void DestroyObject() /// destroyes the dark spawner 
     {
-        IncrementTheNumberOfLightOrbsDestroyed(1);
-        Destroy(gameObject.transform.parent.gameObject);
-        currentPanic.value -= PanicToDecreaseOnDestroy;
-        AudioSource.PlayClipAtPoint(deathSound, transform.position, 3f);
+        if(!once)
+        {
+            IncrementTheNumberOfLightOrbsDestroyed(1);
+            Destroy(gameObject.transform.parent.gameObject);
+            currentPanic.value -= PanicToDecreaseOnDestroy;
+            AudioSource.PlayClipAtPoint(deathSound, transform.position, 3f);
+            once = true;
+        }
+      
         
     }
 
@@ -45,6 +51,6 @@ public class LightOrbDestroyer : MonoBehaviour,IDestroyable
 
     void IncrementTheNumberOfLightOrbsDestroyed(int amount)
     {
-        LightOrbsDestroyed.value += amount;
+        LightOrbsDestroyed.value =1;
     }
 }

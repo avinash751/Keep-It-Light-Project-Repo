@@ -41,7 +41,7 @@ public class DarkOrbDestroyer : MonoBehaviour, IDestroyable
     public virtual void  DestroyObject() /// destroyes the light orb 
     {
         Destroy(gameObject);
-        lightOrbDestroyed.value++;
+     
     }
     void Start()
     {

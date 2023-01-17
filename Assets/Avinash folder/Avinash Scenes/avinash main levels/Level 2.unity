@@ -49075,7 +49075,7 @@ MonoBehaviour:
   LightOrbPrefabTpSpawn: {fileID: 7521034891785767652, guid: 59f362d7a39ca5343973912d369b4eb7,
     type: 3}
   lightOrbsSpawnData: {fileID: 11400000, guid: e6a03e416fe966c42b73368038f7d20a, type: 2}
-  LightOrbsDestroyedToStartSpawnning: 2
+  LightOrbsDestroyedToStartSpawnning: 1
   AmountOfLightOrbsToSpawn: 1
   maxDelayTimeToSpawn: 0
   StartSpawning: 0
